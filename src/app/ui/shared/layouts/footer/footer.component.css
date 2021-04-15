@@ -1,3 +1,29 @@
 .page-footer{
     height: -100vh;
 }
+.fa-facebook{
+color: #4267B2; 
+}
+
+.fa-instagram {
+    color: #8a3ab9;
+}
+
+.fa-twitter{
+    color: #1DA1F2;
+}
+
+.fa-linkedin{
+    color: #0077b5;
+}
+
+.fa-youtube{
+    color: #FF0000;
+}
+.fa-google-plus{
+    color: #db4a39;
+}
+
+.txtfooter{
+    color: #693b69;
+}
