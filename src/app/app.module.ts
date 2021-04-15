@@ -18,6 +18,7 @@ import { NavbarComponent } from './ui/shared/layouts/navbar/navbar.component';
 import { FooterComponent } from './ui/shared/layouts/footer/footer.component';
 import { GlobalModelComponent } from './ui/shared/global-model/global-model.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

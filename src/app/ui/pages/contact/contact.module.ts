@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
-
-console.warn("home loaded")
+import { ContactRoutingModule } from './contact-routing.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    ContactRoutingModule
   ]
 })
-export class HomeModule { }
+export class ContactModule { }

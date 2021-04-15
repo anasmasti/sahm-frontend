@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
+import { AboutRoutingModule } from './about-routing.module';
 
-console.warn("home loaded")
-
-
+console.warn("about loaded")
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    AboutRoutingModule
   ]
 })
-export class HomeModule { }
+export class AboutModule { }
