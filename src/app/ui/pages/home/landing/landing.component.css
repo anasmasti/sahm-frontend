@@ -1,49 +1,30 @@
-.banner{
-    position: relative;
-    background: url(solidarite.jpg);
-    
-    background-size: cover;
-    background-position:center ;
-    padding: 250px 0 200px;
-    color: aliceblue;
-    height: -100vh;
-}
-
-.banner h2{
-    margin: 0;
-    padding: 0;
-    font-size: 2.8em;
-    font-weight: 1000;
-    text-transform: uppercase;
-    color: #ECD4EA;
-}
-
-.banner p{
-   margin: 1em 0 0;
-   padding: 0;
-   font-size: 1.2em;
-   line-height: 1.5em;
-   color: #ECD4EA;
-}
-
-.btnD1{
-   display: inline-block;
-   margin: 1em 0 0;
-   background: #693B69;
-   color: #fff;
-   padding: 10px 20px;
-   border-radius: 5px;
-   text-transform: uppercase;
-   text-decoration: none;
-   border: none;
-   font-weight: 800;
-}
-
-.btnD1:hover{
-   
-   background: #ECD4EA;
-   color: #A987A8 ;
+:root {
+    /* colors */
+    --mainColor: #693b69;
+    --secondaryColor: #ecd4ea;
+    /* border raduis */
+    --masterBorderRadius: 5px;
+    /* fonts size */
+    --minFontSize: 12px;
+ }
  
+.landing {
+  position: relative;
+  background: url(solidarite.jpg);
+  background-size: cover;
+  background-position: center;
+  color: aliceblue;
+  height: 100vh;
+}
+
+.landing h2 {
+  text-transform: uppercase;
+  color: var(--secondaryColor);
+}
+
+.landing p {
+  line-height: 1.5em;
+  color: var(--secondaryColor);
 }
 
 /* .content{
@@ -51,4 +32,3 @@
    opacity: 0.5;
    border-radius: 10px;
 } */
-

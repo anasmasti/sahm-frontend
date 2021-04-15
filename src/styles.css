@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  /* colors */
+  --mainColor: #693b69;
+  --secondaryColor: #ecd4ea;
+  /* border raduis */
+  --masterBorderRadius: 5px;
+  /* fonts size */
+  --minFontSize: 12px;
+}
+
+/* main button */
+.main-btn {
+  display: inline-block;
+  background: var(--mainColor);
+  color: #fff;
+  border-radius: var(--masterBorderRadius);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.main-btn:hover {
+  background: var(--secondaryColor);
+  color: var(--mainColor);
+}
+
+/* fonts eight */
+.font-bold {
+  font-weight: 900;
+}
+.font-normal {
+  font-weight: 500;
+}
+
+/* font size  */
+.txt-small {
+  font-size: var(--minFontSize);
+}
+
+/* active button */
+.router-link-active {
+    background: var(--mainColor);
+}

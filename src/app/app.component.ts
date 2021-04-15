@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {UsersService} from './ui/services/users.service'
+import { UsersService } from './services/users.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'Sahm-WebSite';
@@ -15,9 +15,7 @@ export class AppComponent {
 
   // }
 
-  constructor(private user:UsersService){
-    this.user.getData().subscribe(data=>
-      console.warn(data))
-
+  constructor(private user: UsersService) {
+    this.user.getData().subscribe((data) => console.warn(data));
   }
 }
