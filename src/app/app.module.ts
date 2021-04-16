@@ -19,6 +19,7 @@ import { FooterComponent } from './ui/shared/layouts/footer/footer.component';
 import { GlobalModelComponent } from './ui/shared/global-model/global-model.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -46,6 +47,7 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    ReactiveFormsModule,
     
   ],
   providers: [],

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +8,11 @@ import {HttpClient} from '@angular/common/http'
 export class UsersService {
 
   constructor(private http:HttpClient) { }
-  getData(){
-    let url = "https://jsonplaceholder.typicode.com/todos";
-    return this.http.get(url);    
+  getData() {
+    const url: string = 'posts';
+    return this.http.get(environment.API_URL + '/' + url);
   }
+
 
   // getData(){
   //   return {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {UsersService} from './services/users.service';
+import {FormControl} from '@angular/forms';
 
 
 @Component({
@@ -9,14 +10,21 @@ import {UsersService} from './services/users.service';
 })
 export class AppComponent {
   title = 'Sahm-WebSite';
+  data:any=[]
+
+   constructor(private user: UsersService) {
+    this.user.getData().subscribe(data =>{
+      console.warn(data)
+      this.data=data
+    }) 
+  }
   // name=""
   // constructor (private user:UsersService) {
   //   console.warn(this.user.getData())
   //   this.name=this.user.getData().name;
 
   // }
+  // title1 = new FormControl('');
 
-  constructor(private user: UsersService) {
-    this.user.getData().subscribe((data) => console.warn(data));
-  }
+ 
 }
