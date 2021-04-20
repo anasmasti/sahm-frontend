@@ -1,7 +1,7 @@
 :root {
     /* colors */
-    --mainColor: #693b69;
-    --secondaryColor: #ecd4ea;
+    --mainColor: #B8B5FF;
+    --secondaryColor: #B8B5FF;
     /* border raduis */
     --masterBorderRadius: 5px;
     /* fonts size */
@@ -10,7 +10,7 @@
  
 .landing {
   position: relative;
-  background: url(solidarite.jpg);
+ 
   background-size: cover;
   background-position: center;
   color: aliceblue;
@@ -20,17 +20,28 @@
   justify-content: center !important;
   width: 100%;
   z-index: 0;
+ 
 
+}
+img{
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  font-size: small;
+  width: 50%;
+ 
 }
 
 .landing h2 {
   text-transform: uppercase;
   color: var(--secondaryColor);
+  
 }
 
 .landing p {
   line-height: 1.5em;
-  color: var(--secondaryColor);
+  color: gray;
+  
 }
 
 .container-div{
@@ -41,8 +52,79 @@
   text-align: center;
 }
 
+.eclipse1{
+  background: #E4FBFF;
+  border-bottom-right-radius: 320px;
+  border-bottom-left-radius: 450px;
+  border-top-right-radius: 320px;
+  border-top-left-radius: 450px;
+  width: 20%;
+  height: 20vh;
+  justify-content: start;
+  transform: rotate(125deg); 
+  z-index: -1;
+  opacity: 0.3;
+  display: flex;
+  position: absolute;
+  animation: moveeclipse  ease-out 4s infinite;
+}
+
+.eclipse2{
+  background: #B8B5FF;
+  border-bottom-right-radius: 5000px;
+  border-bottom-left-radius: 5050px;
+  border-top-right-radius: 5000px;
+  border-top-left-radius: 5050px;
+  width: 10%;
+  height: 10vh;
+  margin-left: 350px;
+  transform: rotate(125deg); 
+  z-index: -1;
+  opacity: 0.1;
+  display: inline-flex;
+  justify-items: flex-end;
+  position: absolute;
+
+  animation: moveeclipse  ease-out 4s infinite;
+}
+
+.eclipse3{
+  background: #B8B5FF;
+  border-bottom-right-radius: 9050px;
+  border-bottom-left-radius: 9000px;
+  border-top-right-radius: 9050px;
+  border-top-left-radius: 9000px;
+  width: 20%;
+  height: 15vh;
+  /* margin-left: 350px; */
+  transform: rotate(55deg); 
+  z-index: -1;
+  opacity: 0.1;
+  display: inline-flex;
+  justify-items: flex-start;
+  position: absolute;
+
+  animation: moveeclipse  ease-out 4s infinite;
+}
+
+  
+
+@keyframes moveeclipse   {
+  0%   {}
+  50% { margin-top: -10px;}
+  100% {}
+}
+
+
+
+
 /* .content{
    background: #666559;
    opacity: 0.5;
    border-radius: 10px;
 } */
+
+
+
+
+

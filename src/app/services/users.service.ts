@@ -8,10 +8,19 @@ import { environment } from 'src/environments/environment';
 export class UsersService {
 
   constructor(private http:HttpClient) { }
-  getData() {
+
+  getData()
+   {
     const url: string = 'posts';
     return this.http.get(environment.API_URL + '/' + url);
   }
+
+  postData()
+  {
+    const url:string = 'posts'
+    return this.http.post(environment.API_URL+ '/'+ url,{})
+  }
+
 
 
   // getData(){

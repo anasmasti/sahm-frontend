@@ -10,26 +10,26 @@
   font-weight: 800;
   text-transform: uppercase;
   font-size: 2em;
-  color: #693b69 !important;
-
+  color: #B8B5FF !important;
+ 
 }
 
 .nav-item {
-  font-weight: 800;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
-.navbar-light .nav-link.active {
-  background: #693b69;
+.navbar-light  {
+  background: #B8B5FF;
   color: #fff  !important;
   border-radius: 10px;
 }
-
+/* 
 .navbar-light .nav-link:hover {
-  background: #693b69;
+  background: #B8B5FF;
   color: #fff !important;
   border-radius: 10px;
-}
+} */
 
 .ul-signlog{
  padding: 0;
@@ -38,4 +38,8 @@
 
 .sign-log{
   display: inline-block;
+  background:#E4FBFF ;
+  color: gray;
+  border-radius: 15px;
+ 
 }

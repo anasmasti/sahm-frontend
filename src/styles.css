@@ -2,8 +2,8 @@
 
 :root {
   /* colors */
-  --mainColor: #693b69;
-  --secondaryColor: #ecd4ea;
+  --mainColor: #B8B5FF;
+  --secondaryColor: #B8B5FF;
   /* border raduis */
   --masterBorderRadius: 5px;
   /* fonts size */
@@ -19,15 +19,15 @@
 .main-btn {
   display: inline-block;
   background: var(--mainColor);
-  color: #fff;
+  color: gray;
   border-radius: var(--masterBorderRadius);
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .main-btn:hover {
-  background: var(--secondaryColor);
-  color: var(--mainColor);
+  background: var(--mainColor);
+  color: gray;
 }
 
 /* fonts eight */
@@ -49,16 +49,19 @@
     border-radius: var(--masterBorderRadius);
     color: #fff;
 }
-/* main background */
-.main-bg{
-  background: var(--secondaryColor) ;
-  color: var(--txtColor);
-  /* border-radius: var(--masterBorderRadius) */
-}
+
+
 /*  main icone (footer) */
 .main-icone{
   display: inline-block;
   font-size: xx-large;
   justify-content:center;
 }
- 
+
+
+/* main background */ 
+.main-bg{
+  background: var(--txtColor)  ;
+  color:var(--secondaryColor);
+  border-radius: var(--masterBorderRadius)
+}

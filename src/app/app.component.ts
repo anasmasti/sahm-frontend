@@ -10,14 +10,14 @@ import {FormControl} from '@angular/forms';
 })
 export class AppComponent {
   title = 'Sahm-WebSite';
-  data:any=[]
+  // data:any=[]
 
-   constructor(private user: UsersService) {
-    this.user.getData().subscribe(data =>{
-      console.warn(data)
-      this.data=data
-    }) 
-  }
+  //  constructor(private user: UsersService) {
+  //   this.user.getData().subscribe(data =>{
+  //     console.warn(data)
+  //     this.data=data
+  //   }) 
+  // }
   // name=""
   // constructor (private user:UsersService) {
   //   console.warn(this.user.getData())
