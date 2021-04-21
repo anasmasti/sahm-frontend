@@ -18,8 +18,10 @@ import { NavbarComponent } from './ui/shared/layouts/navbar/navbar.component';
 import { FooterComponent } from './ui/shared/layouts/footer/footer.component';
 import { GlobalModelComponent } from './ui/shared/global-model/global-model.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ChatComponent } from './ui/shared/chat/chat.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -40,7 +42,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     NavbarComponent,
     FooterComponent,
     GlobalModelComponent,
-    
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
-    
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

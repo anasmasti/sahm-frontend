@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatComponent } from './ui/shared/chat/chat.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,11 @@ const routes: Routes = [
       import('./ui/pages/contact/contact.module').then(
         (mod) => mod.ContactModule
       ),
+  },
+
+  {
+    path: 'chat',
+    component: ChatComponent
   },
 ];
 
