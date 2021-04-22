@@ -2,10 +2,10 @@
 
 :root {
   /* colors */
-  --mainColor: #B8B5FF;
+  --mainColor: #E4FBFF;
   --secondaryColor: #B8B5FF;
   /* border raduis */
-  --masterBorderRadius: 5px;
+  --masterBorderRadius: 20px;
   /* fonts size */
   --minFontSize: 12px;
   /* text color */
@@ -14,6 +14,7 @@
 
 
 }
+
 
 /* main button */
 .main-btn {
@@ -25,10 +26,10 @@
   text-decoration: none;
 }
 
-.main-btn:hover {
+/* .main-btn:hover {
   background: var(--mainColor);
   color: gray;
-}
+} */
 
 /* fonts eight */
 .font-bold {
@@ -45,9 +46,9 @@
 
 /* active button */
 .router-link-active {
-    background: var(--mainColor);
+    background: var( --secondaryColor);
     border-radius: var(--masterBorderRadius);
-    color: #fff;
+    color: #fff !important;
 }
 
 

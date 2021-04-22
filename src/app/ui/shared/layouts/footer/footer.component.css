@@ -15,9 +15,15 @@
 
 .page-footer{
     height: -100vh;
+    
+    display: block;
+   
 }
 
 
 .fab{
     color: var(--secondaryColor);
+}
+.main-icone{
+    display:inline-flex;
 }
