@@ -1,115 +1,5 @@
-<!-- CSS only -->
-
-  <!-- <nav class=" navbar  navbar-expand-lg navbar-light bg-light d-flex position-relative">
-  
-    <div class="main-bg container-fluid"> -->
-         <!-- SignUp & LogIn -->
- <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto ul-signlog">
-  <li class="nav-item sign-log">
-    <a class="nav-link pr-2" [routerLink]="['/login']" routerLinkActive="router-link-active">
-      <i class="far fa-language mx-1"></i>Langage</a>
-  </li>
-
-  <li class="nav-item sign-log">
-    <a class="nav-link pr-2" [routerLink]="['/signup']" routerLinkActive="router-link-active">
-      <i class="far fa-user-plus mx-1" ></i>S'enregistrer</a>
-  </li>
-
-  <li class="nav-item sign-log">
-    <a class="nav-link pr-2" [routerLink]="['/login']" routerLinkActive="router-link-active">
-      <i class="fad fa-sign-in mx-1 "></i>Se connecter</a>
-  </li> 
-
- 
-</ul> -->
-    <!--End SignUp & LogIn -->
-      <!-- <a class="navbar-brand" href="#">Sahm</a> -->
-      <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-          <li class="nav-item active">
-            <a class="nav-link " [routerLink]="['/']" routerLinkActive="router-link-active">HOME</a>
-          </li>
-  
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['about']" routerLinkActive="router-link-active"> ABOUT</a>
-          </li>
-  
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active">CONTACT</a>
-          </li>
-        </ul>
-      </div>
-  
-     
-  
-    </div>
-  </nav> -->
 
 
-<!-- Navv2 -->
-
-
-<!-- 
-  <nav>
-    <label class="logo">SAHM</label>
-
-    <input type="checkbox" id="check">
-
-    <label for="check" class="checkbtn">
-      
-      <i class="fas fa-bars"></i>
-    </label>
-
-
-   <div class="menubtn">
-    <ul>
-
-      <li>
-        <a href="#" class="active" [routerLink]="['/']" routerLinkActive="router-link-active">HOME</a>
-      </li>
-
-      <li>
-        <a href="#" [routerLink]="['about']" routerLinkActive="router-link-active">ABOUT</a>
-      </li>
-
-      <li>
-        <a href="#" [routerLink]="['/contact']" routerLinkActive="router-link-active">CONTACT</a>
-      </li>
-
-    </ul>
-
-   </div>
-
-
-  </nav> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-
-   // Shorthand for $( document ).ready()
-$(function() {
-    console.log( "ready!" );
-    $(".toggle").on("click",function(){
-
-      if($(".item").hasClass("active")){
-        $(".item").removeClass("active");
-
-      }
-      else{
-        $(".item").addClass("active");
-
-      }
-
-
-
-
-    })
-});
- </script>
 
   <nav>
     <ul class="menu">
@@ -126,3 +16,23 @@ $(function() {
     
   </nav>
   
+
+  <script>
+
+    // Shorthand for $( document ).ready()
+ $(document).on("change",function() {
+     console.log( "ready!" );
+     $(".toggle").on("click",function(){
+ 
+ if($(".item").hasClass("active")){
+   $(".item").removeClass("active");
+
+ }
+ else{
+   $(".item").addClass("active");
+
+ }
+})
+    
+ });
+  </script>
