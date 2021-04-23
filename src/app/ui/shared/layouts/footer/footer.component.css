@@ -1,29 +1,34 @@
-
 :root {
     /* colors */
-    --mainColor: #E4FBFF;
-    --secondaryColor: #B8B5FF;
+    --mainColor: #B8B5FF;
+    --secondaryColor: #E4FBFF;
     /* border raduis */
-    --masterBorderRadius: 5px;
+    --masterBorderRadius: 20px;
     /* fonts size */
     --minFontSize: 12px;
     /* text color */
     --txtColor: #fff;
-  
+    /* main bg color  */
+    --mainBgColor: #FDFDFF;
+     /* Color Text */
+  --ColorText:gray;
+    
   }
   
 
 .page-footer{
-    height: -100vh;
-    
-    display: block;
-   
+   display: block;
 }
 
 
 .fab{
-    color: var(--secondaryColor);
+    color: var(--mainBgColor);
 }
 .main-icone{
     display:inline-flex;
+}
+/* Copyright text */
+p{
+    
+    color: var(--ColorText);
 }

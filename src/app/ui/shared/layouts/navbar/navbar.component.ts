@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-navbar',
@@ -6,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
+   
+  // console.log( "ready!" );
+
+  // $(".toggle").on("click",function(){
+   
+  //  if($(".item").hasClass("active")) {
+ 
+  //   $(".item").removeClass("active");
+  //  }
+  //  else {
+  //   $(".item").addClass("active");
+  //  }
+  //  })
+ 
+  // }
+
+

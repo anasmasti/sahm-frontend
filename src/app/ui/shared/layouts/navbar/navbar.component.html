@@ -1,38 +1,53 @@
+<nav>
+  <label for=""></label>
 
+<div class="d-flex justify-content-between  w-100 "> 
 
+  <div>
+      <!-- Button Langue -->
+  <ul class="mx-2 list-unstyled ">
+    <li>
+      <a href="" class="text-decoration-none" class="main-btn-secondary text-decoration-none px-3 py-1">
+        <i class="far fa-language main-btn-secondary"></i>
+        Langue</a>
+    </li>
+  </ul>
+  </div>
 
-  <nav>
-    <ul class="menu">
-      <li class="logo"><a href="#">Sahm</a></li>
-     <div class="item-principal d-flex">
-      <li class="item"><a href="#">Home</a></li>
-      <li class="item"><a href="#">About</a></li>
-      <li class="item"><a href="#">Contact</a></li>
-     </div>
-      <li class="item button"><a href="#">Login</a></li>
-      <li class="item button secondary"><a href="#">Sign Up</a></li>
-      <li class="toggle"><span class="bars"></span></li>
-    </ul>
-    
-  </nav>
+  <!-- Button HOME/ABOUT/CONTACT -->
+<div>
+  <ul class="d-flex flex-nowrap list-unstyled">
+    <li>
+      <a href="" class="text-decoration-none" class="px-3 py-2 text-decoration-none" 
+      [routerLink]="['/']" routerLinkActive="router-link-active">HOME</a>
+    </li>
+
+    <li class="px-2">
+      <a href="" class="text-decoration-none" class="px-3 py-2 text-decoration-none"
+      [routerLink]="['about']" routerLinkActive="router-link-active">ABOUT</a>
+    </li>
+
+    <li>
+      <a href="" class="text-decoration-none" class="px-3 py-2 text-decoration-none"
+      [routerLink]="['/contact']" routerLinkActive="router-link-active">CONTACT</a>
+    </li>
+  </ul>
+</div>
+
+<div>
+<!-- Button SignUp & LogIn -->
+  <ul class="d-flex flex-nowrap list-unstyled">
+    <li>
+      <a href="" class="main-btn-secondary text-decoration-none px-3 py-1"><i class="far fa-sign-in-alt main-btn-secondary px-1"></i>LOGIN</a>
+    </li>
+
+    <li class="px-2">
+      <a href="" class="text-decoration-none" class="main-btn-secondary text-decoration-none px-3 py-1"><i class="far fa-user-plus main-btn-secondary px-1"></i>SIGN UP</a>
+    </li>
+  </ul>
+</div>
+
+</div>
+
+</nav>
   
-
-  <script>
-
-    // Shorthand for $( document ).ready()
- $(document).on("change",function() {
-     console.log( "ready!" );
-     $(".toggle").on("click",function(){
- 
- if($(".item").hasClass("active")){
-   $(".item").removeClass("active");
-
- }
- else{
-   $(".item").addClass("active");
-
- }
-})
-    
- });
-  </script>

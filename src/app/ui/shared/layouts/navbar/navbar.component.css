@@ -1,217 +1,23 @@
-
-*{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-/* Padding Top , Left & Right of Navbar */
-nav{
-  padding: 5px 20px;
-  /* background: #B8B5FF; */
-}
-
-/*  */
-ul{
-  list-style-type: none;
-}
 a{
   color: gray;
-  text-decoration: none;
 }
 
-a:hover{
-  /* text-decoration: underline; */
-  background: #B8B5FF;
-  color: #fff;
-  border-radius: 20px;
-  padding: 5px;
-  transition: .25s;
-}
-
-/* Font size of the item */
-.menu li{
-  font-size: 16px;
-  padding:15px 5px ;
-}
-
-/* Display block of item */
-.menu li a{
-  display: block;
-}
-
-/* Sahm logo font size */
-.logo a{
-  font-size: 20px;
-  font-weight: bold;
-  color:#B8B5FF ;
-}
-
-/* Secondary button (SignUp)  */
-.button.secondary{
-  border-bottom: 1px #444 solid;
-}
-
-/* //////-------Mobile Menu----------////// */
-.menu{
+/* .menu{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
+  justify-content: center;
+} */
 
-.toggle{
-  order: 1;
-}
+/*  */
 
-.item.button{
-  order:2;
-}
-
-.item{
-  width: 100%;
-  text-align: center;
-  order: 3;
-  display: none;
-}
-
-.item.active{
-  display: block;
-}
-
-
-.toggle{
-  cursor: pointer;
-}
-
-/* Button Menu */
-.bars{
-  background: #999;
-  display: inline-block;
-  height: 2px;
-  position: relative;
-  width: 18px;
-}
-
-.bars::before,.bars::after{
-  background: #999;
-  content: "";
-  display: inline-block;
-  height: 2px;
-  position: absolute;
-  width: 18px;
-
-}
-
-.bars::before{
-  top: 5px;
-}
-
-.bars::after{
-  top: -5px;
-}
-
-/* Tablet Menu */
-@media all and (min-width:468px) {
-  .menu{
-    justify-content: center;
-  }
-
-  .logo{
-    flex:1 ;
-  }
-
-  .item.button{
-    width:auto;
-    order: 1;
-    display: block;
-  }
-
-  .toggle{
-    order: 2;
-  }
-
-  .button.secondary{
-    border: 0;
-  }
-
-  .button a{
-    text-decoration: none;
-    padding:7px 15px ;
-    background: #E4FBFF;
-    /* border: 1px solid; */
-    border-radius: 20px;
-  }
-
-  /* .button.secondary a {
-    background: transparent;
-  } */
-
-  .button a:hover{
-    transition: all .25s ;
-  }
-
-  .button:not(.secondary) a:hover{
-    background:#dbfaff ;
-    border-color:#dbfaff;
-  }
-
-  .button.secondary a:hover{
-    color:#ddd;
-  }
-
-}
-
-
-/* Desktop menu */
-
-@media all and (min-width: 768px){
-
-
-
-  .item{
-    display:block;
-    width: auto;
-    
-    
-  }
-
-  .item-principal{
-    margin: 0  200px;
-  }
-
-  .toggle{
-    display: none;
-  }
-
-  .logo{
-    order: 0;
-  }
-
-  .item{
-    order: 1;
-  }
-
-  .button{
-    order: 2;
-  }
-
-  .menu li{
-    padding:15px 10px ;
-
-  }
-
-  .menu li.button{
-    padding-right: 0;
-  }
-
-
-
-
-
-
-}
-
+/* Button HOME/ABOUT/SIGNUP/CONTACT */
+/* .principal{
+display: flex;
+justify-content: center;
+} */
+/* 
+.langue{
+  margin-right: auto;
+} */
 
 
 
