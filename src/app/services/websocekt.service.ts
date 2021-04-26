@@ -11,7 +11,11 @@ export class wsService {
     private socket: any
     private url: any = environment.SOCKET_URL
 
-    constructor() { this.socket = io(this.url) }
+    constructor() {
+        this.socket = io(this.url, {
+            withCredentials: true
+        })
+    }
 
     listen(eventName: string) {
         return new Observable((subscriber) => {
