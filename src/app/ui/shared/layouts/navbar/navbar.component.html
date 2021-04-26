@@ -1,44 +1,53 @@
-<!-- CSS only -->
+<nav>
+  <label for=""></label>
 
-  <nav class=" navbar  navbar-expand-lg navbar-light bg-light d-flex position-relative">
-    <div class="main-bg container-fluid">
-      <a class="navbar-brand" href="#">Sahm</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active">Home</a>
-          </li>
-  
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['about']" routerLinkActive="router-link-active"> About</a>
-          </li>
-  
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a>
-          </li>
-        </ul>
-      </div>
-  
-      <!-- SignUp & LogIn -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto ul-signlog">
-        <li class="nav-item sign-log">
-          <a class="nav-link pr-2" [routerLink]="['/signup']" routerLinkActive="router-link-active">
-            <i class="far fa-user-plus"></i>SignUp</a>
-        </li>
-  
-        <li class="nav-item sign-log">
-          <a class="nav-link pr-2" [routerLink]="['/login']" routerLinkActive="router-link-active">
-            <i class="fad fa-sign-in"></i>LogIn</a>
-        </li>
-      </ul>
-          <!--End SignUp & LogIn -->
-  
-    </div>
-  </nav>
+<div class="d-flex justify-content-between  w-100 "> 
 
+  <div>
+      <!-- Button Langue -->
+  <ul class="mx-2 list-unstyled ">
+    <li>
+      <a href="" class="text-decoration-none" class="main-btn-secondary text-decoration-none px-3 py-1">
+        <i class="far fa-language main-btn-secondary"></i>
+        Langue</a>
+    </li>
+  </ul>
+  </div>
+
+  <!-- Button HOME/ABOUT/CONTACT -->
+<div>
+  <ul class="d-flex flex-nowrap list-unstyled">
+    <li>
+      <a href="" class="text-decoration-none" class="px-3 py-2 text-decoration-none" 
+      [routerLink]="['/']" routerLinkActive="router-link-active">HOME</a>
+    </li>
+
+    <li class="px-2">
+      <a href="" class="text-decoration-none" class="px-3 py-2 text-decoration-none"
+      [routerLink]="['about']" routerLinkActive="router-link-active">ABOUT</a>
+    </li>
+
+    <li>
+      <a href="" class="text-decoration-none" class="px-3 py-2 text-decoration-none"
+      [routerLink]="['/contact']" routerLinkActive="router-link-active">CONTACT</a>
+    </li>
+  </ul>
+</div>
+
+<div>
+<!-- Button SignUp & LogIn -->
+  <ul class="d-flex flex-nowrap list-unstyled">
+    <li>
+      <a href="" class="main-btn-secondary text-decoration-none px-3 py-1"><i class="far fa-sign-in-alt main-btn-secondary px-1"></i>LOGIN</a>
+    </li>
+
+    <li class="px-2">
+      <a href="" class="text-decoration-none" class="main-btn-secondary text-decoration-none px-3 py-1"><i class="far fa-user-plus main-btn-secondary px-1"></i>SIGN UP</a>
+    </li>
+  </ul>
+</div>
+
+</div>
+
+</nav>
   

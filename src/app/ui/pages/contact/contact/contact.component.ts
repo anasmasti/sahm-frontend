@@ -15,20 +15,45 @@ export class ContactComponent implements OnInit {
     userId: new FormControl(''),
     id: new FormControl(''),
     title: new FormControl(''),
+    body: new FormControl(''),
   })
 
-  data:any=[]
+  data:any=[];
+  msgTrue:boolean=false;
 
-  constructor(private user: UsersService) {
+  constructor(public user: UsersService) {
    this.user.getData().subscribe(data =>{
      console.warn(data)
      this.data=data
    }) 
  }
 
-  onSubmit(){
-    console.warn(this.userForm.value);
-  }
+ addNewContact(form:any){
+  //  const newFormData = {userIduserId:101,id:2,title:'Fast & Furios',body:'lorem ytyzyutfyuzeuie zoyjsdgkfdhjkeu ysgdqTYdiohd yudgyus  dg ygf gkfj gfeuykfKJFggfv e'};
+
+   //Dynamic data from Form
+   console.log(form.value.userId);
+   console.log(form.value.id);
+   console.log(form.value.title);
+   console.log(form.value.body);  
+
+   const newFormData={userId: form.value.userId, id: form.value.id, title: form.value.title, body: form.value.body};
+
+
+
+
+   this.user.postData(newFormData).subscribe(data=>{
+     console.log(data);
+     this.msgTrue=true;
+   })
+ }
+
+
+
+
+  // onSubmit(){
+  //   console.warn(this.userForm.value);
+  // }
 
 
 

@@ -1,33 +1,37 @@
 <h1>Show List from API Data in Angular</h1>
 
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()" #userPost="ngForm">
+<form #addNewContactForm="ngForm" [formGroup]="userForm" (submit)="addNewContact(addNewContactForm)" >
     <div class="form-group col-md-2 mx-5 my-5">
         <div class="form-control">
             <label for="userId">UserId:</label>
             <input type="text" name="userId" id="userId" formControlName="userId" ngModel>
+        </div>
 
+
+        <div class="form-control">
             <label for="id">Id:</label>
             <input type="text" name="id" id="id" formControlName="id" ngModel>
+        </div>
 
+
+        <div class="form-control">
             <label for="title">Title:</label>
             <input type="text" name="title" id="title" formControlName="title" ngModel>
+        </div>
+
+
+        <div class="form-control">
+            <label for="body">Body:</label>
+            <input type="text" name="body" id="body" formControlName="body" ngModel>
+        </div>
             <!-- <p>Display value: {{title.value}}</p> -->
 
-        </div>
+        
     </div>
-    <button type="submit" class="btn btn-primary col-md-2 mx-5 mb-5"  >Submit</button>
+    <!-- <button type="submit" class="btn btn-primary col-md-2 mx-5 mb-5" (click)="addNewContact()"  >Add new contact</button> -->
+    <button class="form-control btn btn-primary" [disabled]="!addNewContactForm.valid" >Submit</button>
     
 </form>
 
-<table class="table" border="1">
-    <tr>
-        <td>Id</td>
-        <td>Title</td>
-        <td>User Id</td>
-    </tr>
-    <tr >
-        <td></td>
-        <td>formControlName["id"]</td>
-        <td>formControlName["title"]</td>
-    </tr>
-</table>
+
+<div *ngIf="msgTrue">Contact created succefully</div>

@@ -1,119 +1,59 @@
 :root {
-    /* colors */
-    --mainColor: #B8B5FF;
-    --secondaryColor: #B8B5FF;
-    /* border raduis */
-    --masterBorderRadius: 5px;
-    /* fonts size */
-    --minFontSize: 12px;
- }
+  /* colors */
+  --mainColor: #B8B5FF;
+  --secondaryColor: #E4FBFF;
+  /* border raduis */
+  --masterBorderRadius: 20px;
+  /* fonts size */
+  --minFontSize: 12px;
+  /* text color */
+  --txtColor: #fff;
+  /* main bg color  */
+  --mainBgColor: #FDFDFF;
+  /* main font-weight */
+  --mainFontWeight:800;
+  /* Color Text */
+  --ColorText:gray;
+
+
+}
  
 .landing {
-  position: relative;
- 
+  /* position: relative; */
   background-size: cover;
   background-position: center;
-  color: aliceblue;
   height: 80vh;
   display: flex !important;
   align-items: center;
-  justify-content: center !important;
   width: 100%;
   z-index: 0;
- 
-
+  flex-wrap: nowrap;
+  
 }
-img{
+
+/* img{
   display: flex;
   align-items: flex-end;
   align-content: flex-end;
   font-size: small;
   width: 50%;
  
-}
+} */
 
 .landing h2 {
-  text-transform: uppercase;
   color: var(--secondaryColor);
-  
+ 
+ 
 }
 
 .landing p {
+  color: var(--ColorText);
   line-height: 1.5em;
-  color: gray;
   
 }
 
-.container-div{
-  /* margin: 0; */
-  /* padding: 150px; */
-  font-weight: 500;
-  font-size: medium;
-  text-align: center;
-}
 
-.eclipse1{
-  background: #E4FBFF;
-  border-bottom-right-radius: 320px;
-  border-bottom-left-radius: 450px;
-  border-top-right-radius: 320px;
-  border-top-left-radius: 450px;
-  width: 20%;
-  height: 20vh;
-  justify-content: start;
-  transform: rotate(125deg); 
-  z-index: -1;
-  opacity: 0.3;
-  display: flex;
-  position: absolute;
-  animation: moveeclipse  ease-out 4s infinite;
-}
 
-.eclipse2{
-  background: #B8B5FF;
-  border-bottom-right-radius: 5000px;
-  border-bottom-left-radius: 5050px;
-  border-top-right-radius: 5000px;
-  border-top-left-radius: 5050px;
-  width: 10%;
-  height: 10vh;
-  margin-left: 350px;
-  transform: rotate(125deg); 
-  z-index: -1;
-  opacity: 0.1;
-  display: inline-flex;
-  justify-items: flex-end;
-  position: absolute;
-
-  animation: moveeclipse  ease-out 4s infinite;
-}
-
-.eclipse3{
-  background: #B8B5FF;
-  border-bottom-right-radius: 9050px;
-  border-bottom-left-radius: 9000px;
-  border-top-right-radius: 9050px;
-  border-top-left-radius: 9000px;
-  width: 20%;
-  height: 15vh;
-  /* margin-left: 350px; */
-  transform: rotate(55deg); 
-  z-index: -1;
-  opacity: 0.1;
-  display: inline-flex;
-  justify-items: flex-start;
-  position: absolute;
-
-  animation: moveeclipse  ease-out 4s infinite;
-}
-
-  
-
-@keyframes moveeclipse   {
-  0%   {}
-  50% { margin-top: -10px;}
-  100% {}
-}
 
 
 

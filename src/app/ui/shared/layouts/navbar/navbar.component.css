@@ -1,45 +1,99 @@
-.navbar {
+a{
+  color: gray;
+}
+
+/* .menu{
+  display: flex;
+  justify-content: center;
+} */
+
+/*  */
+
+/* Button HOME/ABOUT/SIGNUP/CONTACT */
+/* .principal{
+display: flex;
+justify-content: center;
+} */
+/* 
+.langue{
+  margin-right: auto;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .navbar {
   height: 6vh;
   display: inline-flex;
   z-index: 1;
   position: relative !important;
+  
 
-}
+} */
 
-.navbar-brand {
+/* .navbar-brand {
   font-weight: 800;
   text-transform: uppercase;
   font-size: 2em;
   color: #B8B5FF !important;
- 
-}
+} */
 
-.nav-item {
+/* .nav-item  {
   font-weight: 600;
-  text-transform: uppercase;
-}
+  
+  color: #fff !important;
+} */
 
-.navbar-light  {
+
+
+/* .navbar-light  {
   background: #B8B5FF;
   color: #fff  !important;
   border-radius: 10px;
-}
-/* 
-.navbar-light .nav-link:hover {
-  background: #B8B5FF;
-  color: #fff !important;
-  border-radius: 10px;
+  
 } */
 
-.ul-signlog{
- padding: 0;
+/* .navbar-light .nav-link:hover {
+  background: #B8B5FF;
+  color: #fff !important;
+  border-radius: 20px;
+  
+} */
+
+/* .ul-signlog{
+ padding: 10px;
  margin: 0;
+ display: block;
 }
 
 .sign-log{
   display: inline-block;
   background:#E4FBFF ;
-  color: gray;
-  border-radius: 15px;
- 
-}
+  color: gray ;
+  border-radius: 20px;
+  margin: 5px;
+  
+} */
