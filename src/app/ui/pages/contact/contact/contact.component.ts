@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import {FormControl,FormGroup} from '@angular/forms';
+import {FormControl,FormGroup, Validators} from '@angular/forms';
 import {UsersService} from './../../../../services/users.service';
 
 
@@ -12,9 +12,9 @@ export class ContactComponent implements OnInit {
   // @Input() data:any;
   
   userForm = new FormGroup({
-    userId: new FormControl(''),
-    id: new FormControl(''),
-    title: new FormControl(''),
+    userId: new FormControl('',Validators.minLength(2)),
+    id: new FormControl('',[Validators.maxLength(3),Validators.pattern('^[0-9]')]),
+    title: new FormControl('',Validators.pattern('^[a-z]+$')),
     body: new FormControl(''),
   })
 

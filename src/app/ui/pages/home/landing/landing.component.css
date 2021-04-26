@@ -53,7 +53,24 @@
 }
 
 
+@media screen and (max-width:800px) {
+  .landing{
+    z-index: 0;
+    /* position: relative; */
+    
+  }
 
+  img{
+    display: none;
+  }
+
+  .eclipse1 {
+    /* position: relative; */
+    z-index: 1;
+  }
+  
+
+}
 
 
 

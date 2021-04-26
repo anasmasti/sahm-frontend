@@ -16,9 +16,7 @@
   }
   
 
-.page-footer{
-   display: block;
-}
+
 
 
 .fab{
@@ -31,4 +29,12 @@
 p{
     
     color: var(--ColorText);
+}
+
+@media screen and (max-width:800px) {
+    footer{
+        display:inline-block;
+        flex-wrap: wrap;
+        
+    }
 }

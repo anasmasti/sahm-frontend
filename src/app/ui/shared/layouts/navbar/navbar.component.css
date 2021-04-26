@@ -1,99 +1,113 @@
+:root {
+  /* colors */
+  --mainColor: #B8B5FF;
+  --secondaryColor: #E4FBFF;
+  /* border raduis */
+  --masterBorderRadius: 20px;
+  /* fonts size */
+  --minFontSize: 12px;
+  /* text color */
+  --txtColor: #fff;
+  /* main bg color  */
+  --mainBgColor: #FDFDFF;
+   /* Color Text */
+   --ColorText:gray;
+  
+}
+
+*{
+  box-sizing: border-box;
+}
+
 a{
   color: gray;
 }
 
-/* .menu{
-  display: flex;
-  justify-content: center;
-} */
+.checkbtn{
+  font-size: 30px;
+  color: red;
+  /* float: right; */
+  margin-left: 20px;
+  cursor: pointer;
+  display: none;
 
-/*  */
-
-/* Button HOME/ABOUT/SIGNUP/CONTACT */
-/* .principal{
-display: flex;
-justify-content: center;
-} */
-/* 
-.langue{
-  margin-right: auto;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .navbar {
-  height: 6vh;
-  display: inline-flex;
-  z-index: 1;
-  position: relative !important;
-  
-
-} */
-
-/* .navbar-brand {
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 2em;
-  color: #B8B5FF !important;
-} */
-
-/* .nav-item  {
-  font-weight: 600;
-  
-  color: #fff !important;
-} */
-
-
-
-/* .navbar-light  {
-  background: #B8B5FF;
-  color: #fff  !important;
-  border-radius: 10px;
-  
-} */
-
-/* .navbar-light .nav-link:hover {
-  background: #B8B5FF;
-  color: #fff !important;
-  border-radius: 20px;
-  
-} */
-
-/* .ul-signlog{
- padding: 10px;
- margin: 0;
- display: block;
 }
 
-.sign-log{
-  display: inline-block;
-  background:#E4FBFF ;
-  color: gray ;
-  border-radius: 20px;
-  margin: 5px;
-  
+#check{
+  display: none;
+}
+
+
+
+@media screen and (max-width:900px) {
+ *{
+   list-style: none;
+ }
+  .Desktop{
+    display: none;
+  }
+}
+
+@media screen and (max-width:800px){
+  .Menu{
+    display: flex;
+    text-decoration: none;
+  }
+  .btn-signlog{
+    display: flex;
+   
+  }
+}
+
+/* .checkbtn{
+  font-size: 30px;
+  color: var(--mainColor);
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+
+@media (max-width: 952px){
+  nav div ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background:var(--mainBgColor) ;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+  }
+
+  nav div ul li{
+    display: block;
+  }
+
+  nav div ul li a {
+    font-size: 20px;
+  }
+
+  a:hover{
+    background: none;
+    color: var(--secondaryColor);
+  }
+
+  #check:checked ~ ul{
+    left: 0;
+  }
+
 } */
