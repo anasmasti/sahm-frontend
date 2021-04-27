@@ -138,3 +138,11 @@
   padding: 10px;
   border-radius: 20px;
 }
+
+/* main bg for links */
+.main-bg-sm-links{
+  background-color: var(--mainColor);
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 25px;
+}
