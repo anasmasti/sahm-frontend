@@ -14,8 +14,6 @@
   --mainFontWeight:800;
   /* Color Text */
   --ColorText:gray;
-
-
 }
  
 .landing {
@@ -26,19 +24,10 @@
   display: flex !important;
   align-items: center;
   width: 100%;
-  z-index: 0;
+  z-index: 2;
   flex-wrap: nowrap;
   
 }
-
-/* img{
-  display: flex;
-  align-items: flex-end;
-  align-content: flex-end;
-  font-size: small;
-  width: 50%;
- 
-} */
 
 .landing h2 {
   color: var(--secondaryColor);
@@ -48,8 +37,7 @@
 
 .landing p {
   color: var(--ColorText);
-  line-height: 1.5em;
-  
+  line-height: 1.5em;  
 }
 
 
@@ -63,23 +51,8 @@
   img{
     display: none;
   }
-
-  .eclipse1 {
-    /* position: relative; */
-    z-index: 1;
-  }
-  
-
 }
 
-
-
-
-/* .content{
-   background: #666559;
-   opacity: 0.5;
-   border-radius: 10px;
-} */
 
 
 

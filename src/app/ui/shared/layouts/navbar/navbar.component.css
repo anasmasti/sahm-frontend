@@ -19,19 +19,21 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-
-
 }
+
+/* Menu Mobile */
 .Mobile{
   display: none;
+  z-index: 1;
 }
 
 a{
   color: gray;
 }
 
+/* Button Menu Mobile */
 #check{
-  /* display: none; */
+  display: none;
 }
 
 
@@ -39,14 +41,10 @@ a{
 
 @media screen and (max-width:900px) {
  
+  /* Menu Desktop */
   .Desktop{
     display: none;
     z-index: 1;
-  }
-  label.logo{
-    font-size: 30px;
-    padding-left: 50px;
-    
   }
 
   nav ul li a {
@@ -55,6 +53,8 @@ a{
    justify-content: center;
    
   }
+
+  /* Button Menu Mobile */
   .checkbtn{
     font-size: 30px;
     color: #B8B5FF;
@@ -62,21 +62,32 @@ a{
     line-height: 80px;
     margin-right: 40px;
     cursor: pointer;
-    
     /* display: none; */
   }
+
+  /* Button HOME/ABOUT/CONTACT */
+  .router-link-active {
+    background: var( --mainColor) !important;
+    border-radius: var(--masterBorderRadius);
+    color: var(--mainBgColor) !important;
+    transition: .25s;
+    
+}
   
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:850px){
+  /* Menu Mobile */
   .Mobile{
     display: flex;
-    z-index: 2;
+   
   }
 
+ /* Button Menu Mobile */
   .checkbtn{
     display: flex;
   }
+
   ul{
     position: fixed;
     width: 100%;
@@ -85,9 +96,10 @@ a{
     top: 80px;
     left: -100%;
     text-align: center;
-    transition: all 2s;
+    transition: all 1s;
     text-transform: uppercase;
     font-weight: 800;
+    border-radius: 2px;
   }
 
   nav ul li{
@@ -116,55 +128,3 @@ a{
   
 }
 
-/* .checkbtn{
-  font-size: 30px;
-  color: var(--mainColor);
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-#check{
-  display: none;
-}
-
-@media (max-width: 952px){
-  nav div ul li a {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 858px){
-  .checkbtn{
-    display: block;
-  }
-
-  ul{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background:var(--mainBgColor) ;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-  }
-
-  nav div ul li{
-    display: block;
-  }
-
-  nav div ul li a {
-    font-size: 20px;
-  }
-
-  a:hover{
-    background: none;
-    color: var(--secondaryColor);
-  }
-
-  #check:checked ~ ul{
-    left: 0;
-  }
-
-} */

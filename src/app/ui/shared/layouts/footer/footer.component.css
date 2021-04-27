@@ -32,9 +32,8 @@ p{
 }
 
 @media screen and (max-width:800px) {
-    footer{
-        display:inline-block;
-        flex-wrap: wrap;
-        
+    .container{
+        display: block;
+        justify-content: space-between;
     }
 }

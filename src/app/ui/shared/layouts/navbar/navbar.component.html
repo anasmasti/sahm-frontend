@@ -1,14 +1,8 @@
-<!-- Desktop Menu -->
-
+<!--//////////////////////// Desktop Menu Start ///////////////////////////////-->
 <nav class="py-3 Desktop">
  
-  <input type="checkbox" name="check" id="check" >
-  <label for="check" class="checkbtn">
-    <i class="fas fa-bars toggle"></i>
-  </label>
-
+<!-- DIV BUTTON LANGUE -->
 <div class="d-flex justify-content-between  w-100 "> 
-
   <div>
       <!-- Button Langue -->
   <ul class="mx-2 list-unstyled ">
@@ -20,7 +14,7 @@
   </ul>
   </div>
 
-  <!-- Button HOME/ABOUT/CONTACT -->
+  <!--DIV Button HOME/ABOUT/CONTACT -->
 <div class="homebtn">
   <ul class="d-flex flex-nowrap list-unstyled ">
     <li class="item">
@@ -40,8 +34,8 @@
   </ul>
 </div>
 
+<!--Div Button SignUp & LogIn -->
 <div>
-<!-- Button SignUp & LogIn -->
   <ul class="d-flex flex-nowrap list-unstyled">
     <li>
       <a href="" class="main-btn-secondary text-decoration-none px-3 py-2">
@@ -60,28 +54,33 @@
 </div>
 
 </nav>
+<!--//////////////////////// Desktop Menu End ///////////////////////////////-->
 
 
 
-<!-- Mobile Menu -->
+<!--//////////////////////// Mobile Menu Start ///////////////////////////////-->
+<nav class="Mobile py-3">
 
-
-<nav class="Mobile">
-
+  <!-- Button Menu -->
   <input type="checkbox" id="check">
   <label for="check" class="checkbtn d-flex px-2 py-2">
     <i class="fas fa-bars"></i>
   </label>
 
-<div class="d-flex justify-content-center mt-2">
+
+<!-- Button LANGUE/LOGIN/SIGNUP -->
+<div class="d-flex justify-content-end mt-2">
  <button class="main-btn-secondary border-0 mx-4"><i class="far fa-language main-btn-secondary"></i>Langue</button>
  <button class="main-btn-secondary border-0"><i class="far fa-sign-in-alt main-btn-secondary"></i>LogIn</button>
  <button class="main-btn-secondary border-0 mx-4"><i class="far fa-user-plus main-btn-secondary"></i>SignUp</button>
 </div>
  
+<!-- BUTTON HOME/ABOUT/CONTACT -->
  <ul>
-   <li class="" ><a class="active" href="#" >Home</a></li>
-   <li class=""><a href="#">About</a></li>
-   <li class=""><a href="#">Contact</a></li>
+   <li class="" ><a class="active" href="#"  [routerLink]="['/']" routerLinkActive="router-link-active">Home</a></li>
+   <li class=""><a href="#" [routerLink]="['about']" routerLinkActive="router-link-active">About</a></li>
+   <li class=""><a href="#" [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a></li>
  </ul>
+
 </nav>
+<!--//////////////////////// Mobile Menu end ///////////////////////////////-->
