@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {UsersService} from './services/users.service';
 import {FormControl} from '@angular/forms';
+import { Store } from '@ngrx/store';
 
 
 @Component({
@@ -10,6 +11,18 @@ import {FormControl} from '@angular/forms';
 })
 export class AppComponent {
   title = 'Sahm-WebSite';
+  counter : any;
+  title1:any;
+constructor(private store: Store<{counter: {counter:number}}>) {}
+
+
+ngOnInit(): void{
+    this.store.select('counter').subscribe(data =>{
+     this.counter =  data.counter;
+    })
+}
+
+
   // data:any=[]
 
   //  constructor(private user: UsersService) {

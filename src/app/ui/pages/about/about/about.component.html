@@ -2,5 +2,19 @@
     <div class="form-control">
         <label for="">Put Somthing</label>
         <input type="text" name="" id="" [value]="name">
+        
+        <!-- <p>Counter is: {{counter}}</p> -->
     </div>
+</div>
+
+<div class="my-2 d-flex">
+    <button class="btn btn-primary mx-2" (click)="onIncrement()">
+        Increment
+        </button>
+        <button class="btn btn-warning" (click)="onDecrement()">
+        Decrement
+        </button>
+        <button class="btn btn-danger mx-2" (click)=" onReset()">
+        Reset
+        </button>
 </div>

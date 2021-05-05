@@ -1,3 +1,4 @@
+import { SinscrireComponent } from './ui/shared/globalSignLog/sinscrire/sinscrire/sinscrire.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChatComponent } from './ui/shared/chat/chat.component';
@@ -26,6 +27,23 @@ const routes: Routes = [
     path: 'chat',
     component: ChatComponent
   },
+
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./ui/shared/globalSignLog/sinscrire/sinscrire.module').then(
+        (mod) => mod.SinscrireModule
+      ),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+    import('./ui/shared/globalSignLog/seconnecter/seconnecter.module').then(
+      (mod)=>mod.SeconnecterModule
+    ),
+
+  },
+
 ];
 
 @NgModule({

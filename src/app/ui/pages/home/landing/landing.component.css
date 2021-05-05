@@ -17,21 +17,22 @@
 }
  
 .landing {
-  /* position: fixed; */
+  /* position: absolute; */
   background-size: cover;
   background-position: center;
   height: 80vh;
   display: flex !important;
   align-items: center;
   width: 100%;
-  z-index: 2;
+  z-index: 4;
   flex-wrap: nowrap;
+  
   
 }
 
 .landing h2 {
   color: var(--secondaryColor);
- 
+  
  
 }
 
@@ -45,7 +46,6 @@
   .landing{
     z-index: 0;
     /* position: relative; */
-    
   }
 
   img{

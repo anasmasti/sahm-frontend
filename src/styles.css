@@ -20,6 +20,9 @@
 *{
   background-color: var(--mainBgColor);
 }
+body{
+  background: var(--mainBgColor);
+}
 
 
 /* main button */
@@ -85,7 +88,7 @@
   height: 20vh;
   justify-content: start;
   transform: rotate(125deg); 
-  z-index: -1;
+  z-index: 1;
   opacity: 0.3;
   display: flex;
   position: absolute;
@@ -101,7 +104,7 @@
   width: 10%;
   height: 10vh;
   transform: rotate(125deg); 
-  z-index: -1;
+  z-index: 1;
   opacity: 0.1;
   display: inline-flex;
   justify-items: flex-end;
@@ -118,7 +121,7 @@
   width: 20%;
   height: 15vh;
   transform: rotate(55deg); 
-  z-index: -1;
+  z-index: 1;
   opacity: 0.1;
   display: inline-flex;
   justify-items: flex-start;
@@ -146,3 +149,4 @@
   border-radius: 20px;
   font-size: 25px;
 }
+
