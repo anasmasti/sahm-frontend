@@ -44,6 +44,25 @@ const routes: Routes = [
 
   },
 
+  {
+    path: 'signup-beneficiary',
+    loadChildren: () =>
+    import('./ui/pages/beneficiary/signup/signup.module').then(
+      (mod)=>mod.SignupModule
+    ),
+
+  },
+
+  {
+    path:'signup-giver',
+    loadChildren:() =>
+    import('./ui/pages/giver/signup/signup.module').then(
+      (mod)=>mod.SignupModule
+    )
+  },
+
+
+
 ];
 
 @NgModule({

@@ -14,6 +14,8 @@
     --mainFontWeight:800;
     /* Color Text */
     --ColorText:gray;
+    /* Authentification color */
+    --authColor:#7DDBEB;
   }
 
   *{
@@ -42,6 +44,8 @@
       border-radius: 40px;
       margin-top: 5%;
       margin-bottom: 10%;
+      box-shadow: 5px 10px  var(--secondaryColor);
+      border: 1px solid (var(--secondaryColor) );
 
   }
 
@@ -52,7 +56,7 @@
       width: 2000px;
       top: -10%;
       right:35%;
-      background-image: linear-gradient(-45deg,#7DDBEB 100%,var(--secondaryColor) 0%);
+      background-image: linear-gradient(-45deg,var(--authColor) 100%,var(--secondaryColor) 0%);
       transform: translateY(-50%);
       border-radius: 50%;
       float: left;
@@ -60,7 +64,7 @@
   }
 
   .forms-container{
-      /* position: relative; */
+      
       width: 100%;
       height: 100%;
       top: 0;
@@ -82,7 +86,7 @@
 
   .title{
       font-size: 3.2rem;
-      color: #7DDBEB;
+      color: var(--authColor);
       margin-bottom: 10px;
   }
 
@@ -123,13 +127,13 @@
   }
 
   .input-feild input:placeholder-shown{
-      color:#7DDBEB ;
+      color: var(--authColor);
       font-weight: 500;
 
   }
 
   .btn {
-      background-color: #7DDBEB;
+      background-color: var(--authColor);
       width: 150px;
       height: 49px;
       margin: 10px 0;
@@ -144,8 +148,7 @@
 
   .image{
       width: 80%;
-      background: none;
-      
+      background: none;  
   }
 
   .panels-container{
@@ -202,6 +205,30 @@
 
   }
 
+  @media screen and (max-width:800px) {
+     .panel{
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%; 
+     }
+
+     .forms-container{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+         padding: 40px;
+         background: rgba(255, 255 , 255 ,0.9);
+     }
+      
+  }
+
+
+  /* //////////////////////////////////////////////////////////////////////// */
 
   /* .container{
       position: relative;

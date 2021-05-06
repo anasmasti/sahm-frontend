@@ -14,6 +14,10 @@
   --mainBgColor: #FDFDFF;
    /* Color Text */
    --ColorText:gray;
+    /* Authentification color (beneficiary)*/
+    --authColor:#7DDBEB;
+    /* Authentification Color2 (giver) */
+    --authColor2:#6C63FF;
 
 }
 
@@ -22,6 +26,7 @@
 }
 body{
   background: var(--mainBgColor);
+ 
 }
 
 
