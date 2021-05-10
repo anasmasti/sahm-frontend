@@ -21,13 +21,11 @@
 
 }
 
-*{
-  background-color: var(--mainBgColor);
-}
 body{
-  background: var(--mainBgColor);
- 
+  background-color: var(--mainBgColor);
+  z-index: 1;
 }
+
 
 
 /* main button */
@@ -83,50 +81,48 @@ body{
 
 
 /* eclipse */
-.eclipse1{
-  background: #E4FBFF;
+.cercle1{
+  background: var(--secondaryColor);
   border-bottom-right-radius: 320px;
   border-bottom-left-radius: 450px;
   border-top-right-radius: 320px;
   border-top-left-radius: 450px;
-  width: 20%;
-  height: 20vh;
   justify-content: start;
   transform: rotate(125deg); 
-  z-index: 1;
-  opacity: 0.3;
+  z-index: -1;
+  opacity: 0.4;
   display: flex;
   position: absolute;
   animation: moveeclipse  ease-out 4s infinite;
+  
 }
 
-.eclipse2{
-  background: #B8B5FF;
+.cercle2{
+  background: var(--secondaryColor);
   border-bottom-right-radius: 5000px;
   border-bottom-left-radius: 5050px;
   border-top-right-radius: 5000px;
   border-top-left-radius: 5050px;
-  width: 10%;
-  height: 10vh;
-  transform: rotate(125deg); 
-  z-index: 1;
-  opacity: 0.1;
+ 
+  transform: rotate(65deg); 
+ 
+  z-index: -1;
+  opacity: 0.4;
   display: inline-flex;
   justify-items: flex-end;
   position: absolute;
   animation: moveeclipse  ease-out 4s infinite;
 }
 
-.eclipse3{
-  background: #B8B5FF;
+.cercle3{
+  background: var(--mainColor);
   border-bottom-right-radius: 9050px;
   border-bottom-left-radius: 9000px;
   border-top-right-radius: 9050px;
   border-top-left-radius: 9000px;
-  width: 20%;
-  height: 15vh;
-  transform: rotate(55deg); 
-  z-index: 1;
+ 
+  transform: rotate(45deg); 
+  z-index: -1;
   opacity: 0.1;
   display: inline-flex;
   justify-items: flex-start;

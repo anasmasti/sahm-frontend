@@ -34,7 +34,7 @@
   section{
       border: 1px solid var(--secondaryColor);
       border-radius: 30px;
-      box-shadow: 5px 10px var(--secondaryColor);
+      box-shadow: 5px 0px 18px var(--secondaryColor);
   }
 
   .formBox{
@@ -65,14 +65,15 @@
 
   /* Button SIGNUP */
 .btn {
-    background-color: var(--authColor);
+    background-color: var(--secondaryColor);
     width: 200px;
     transition: all .5s;
-    color: #fff;
+    color: var(--ColorText);
 }
 /* Button SIGNUP hover */
 .btn:hover{
     background-color: #6acfe1;
+    color: #fff;
 }
 
 

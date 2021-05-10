@@ -18,48 +18,103 @@
     --authColor:#7DDBEB;
   }
 
-  /* Bienvenue.... */
-  h1
-  {
+  .title{
+      color: var(--authColor);
+      font-weight: 700;
+  }
+  h2{
+      color: var(--txtColor);
+      font-weight: 700;
+  }
+
+  p {
+      color: var(--txtColor);   
+  }
+  .p{
+    color: var(--ColorText); 
+  }
+  a{
       color: var(--mainColor);
   }
 
-  /* Ou text */
-  h3{
-      color: #858585;
-  }
-
-  p{
+  label{
       color: var(--ColorText);
+      font-size: 17px;
+      padding-left: 5px;
+      font-weight: 600;
   }
 
-  .txtconnect{
-      color: var(--mainColor);
-  }
+ .formBox{
+     border-radius: 30px;
+     background: #FCFCFC;
+     z-index: 2;
+     margin-left: -27px;
+     box-shadow: 5px 0px 18px var(--mainColor);
 
-  /* text between lign  "" ____ou____"" */
-  .hr-sect {
-	display: flex;
-	flex-basis: 80%;
-	align-items: center;
-	color:var(--mainColor);
-	margin: 6px 0px;
-}
-.hr-sect::before,
-.hr-sect::after {
-	content: "";
-	flex-grow: 1;
-	background: var(--mainColor);
-	height: 1px;
-	font-size: 0px;
-	line-height: 0px;
-	margin: 0px 8px;
-}
+ }
 
-.inscription{
-    margin-top: 5%;
-    margin-bottom: 10%;
-}
+ .form-control{
+     /* border-radius: 20px; */
+     background: #F0F0F0;
+     border: none;
+     margin: 5px;
+     color: var(--ColorText);
+    
+ }
 
+ .imgBox{
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     justify-content: flex-end;
+     z-index: 4;
+    ;
+
+    
+     
+     
+ }
+
+ .image{
+     justify-content: center;
+     align-items: center;
+     align-content: center;
+     z-index: 4;
+ }
+
+ .imagecontainer{
+     background: var(--mainColor);
+     border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    align-items: flex-start !important;
+    box-shadow: 5px 0px 18px var(--mainColor)
+    
+ }
+
+ .btn{
+     width: 60%;
+     border-radius: 10px;
+ }
+
+ .btn:hover{
+     background: #a9a6fd;
+ }
+
+ @media screen and (max-width:900px) {
+    .panel{
+        display: none;
+    }
+
+    .imagecontainer{
+        border-radius: 30px;
+       
+    }
+
+    .formBox{
+        z-index: 0;    
+       
+    }
+
+}
 
 

@@ -16,8 +16,10 @@
   --ColorText:gray;
 }
  
+
+
 .landing {
-  /* position: absolute; */
+  /* position: relative; */
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -29,6 +31,27 @@
   
   
 }
+
+.cercleposition1{
+  width: 20%;
+  height: 20vh; 
+}
+
+.cercleposition2{
+  width: 10%;
+  height: 10vh;
+  right: 100px;
+  top: 300px;
+
+}
+
+.cercleposition3{
+  top: 450px;
+  right: 0;
+  width: 20%;
+  height: 15vh;
+}
+
 
 .landing h2 {
   color: var(--secondaryColor);
