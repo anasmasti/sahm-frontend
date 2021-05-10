@@ -14,55 +14,45 @@
   --mainFontWeight:800;
   /* Color Text */
   --ColorText:gray;
-
-
 }
  
 .landing {
-  /* position: relative; */
+  /* position: absolute; */
   background-size: cover;
   background-position: center;
   height: 80vh;
   display: flex !important;
   align-items: center;
   width: 100%;
-  z-index: 0;
+  z-index: 4;
   flex-wrap: nowrap;
+  
   
 }
 
-/* img{
-  display: flex;
-  align-items: flex-end;
-  align-content: flex-end;
-  font-size: small;
-  width: 50%;
- 
-} */
-
 .landing h2 {
   color: var(--secondaryColor);
- 
+  
  
 }
 
 .landing p {
   color: var(--ColorText);
-  line-height: 1.5em;
-  
+  line-height: 1.5em;  
 }
 
 
+@media screen and (max-width:800px) {
+  .landing{
+    z-index: 0;
+    /* position: relative; */
+  }
 
+  img{
+    display: none;
+  }
+}
 
-
-
-
-/* .content{
-   background: #666559;
-   opacity: 0.5;
-   border-radius: 10px;
-} */
 
 
 

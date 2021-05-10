@@ -14,21 +14,32 @@
   --ColorText:gray;
     
   }
-  
 
-.page-footer{
-   display: block;
-}
-
-
+  /* Color of icones */
 .fab{
     color: var(--mainBgColor);
 }
+
+/* Incones */
 .main-icone{
     display:inline-flex;
 }
+
 /* Copyright text */
 p{
-    
     color: var(--ColorText);
 }
+
+/* Footer Mobile */
+@media screen and (max-width:800px) {
+    .container{
+        display: block !important;
+        margin-left: 30px;
+        
+    }
+    .copyright{
+        margin-top: 5px;
+        margin-left: 60px;
+    }
+}
+

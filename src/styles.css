@@ -14,13 +14,19 @@
   --mainBgColor: #FDFDFF;
    /* Color Text */
    --ColorText:gray;
-  
-
+    /* Authentification color (beneficiary)*/
+    --authColor:#7DDBEB;
+    /* Authentification Color2 (giver) */
+    --authColor2:#6C63FF;
 
 }
 
 *{
   background-color: var(--mainBgColor);
+}
+body{
+  background: var(--mainBgColor);
+ 
 }
 
 
@@ -44,12 +50,6 @@
   text-decoration: none;
 }
 
-
-
-/* .main-btn:hover {
-  background: var(--mainColor);
-  color: gray;
-} */
 
 /* fonts eight */
 .font-bold {
@@ -82,7 +82,7 @@
 }
 
 
-/* eclipes */
+/* eclipse */
 .eclipse1{
   background: #E4FBFF;
   border-bottom-right-radius: 320px;
@@ -93,7 +93,7 @@
   height: 20vh;
   justify-content: start;
   transform: rotate(125deg); 
-  z-index: -1;
+  z-index: 1;
   opacity: 0.3;
   display: flex;
   position: absolute;
@@ -108,15 +108,12 @@
   border-top-left-radius: 5050px;
   width: 10%;
   height: 10vh;
-  
-  /* margin-left: 350px; */
   transform: rotate(125deg); 
-  z-index: -1;
+  z-index: 1;
   opacity: 0.1;
   display: inline-flex;
   justify-items: flex-end;
   position: absolute;
-
   animation: moveeclipse  ease-out 4s infinite;
 }
 
@@ -128,18 +125,14 @@
   border-top-left-radius: 9000px;
   width: 20%;
   height: 15vh;
-  /* margin-left: 350px; */
   transform: rotate(55deg); 
-  z-index: -1;
+  z-index: 1;
   opacity: 0.1;
   display: inline-flex;
   justify-items: flex-start;
   position: absolute;
-
   animation: moveeclipse  ease-out 4s infinite;
 }
-
-  
 
 @keyframes moveeclipse   {
   0%   {}
@@ -153,3 +146,12 @@
   padding: 10px;
   border-radius: 20px;
 }
+
+/* main bg for links */
+.main-bg-sm-links{
+  background-color: var(--mainColor);
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 25px;
+}
+

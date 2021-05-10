@@ -1,4 +1,8 @@
+import {  reset } from './../../../state/counter.actions';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+
 
 @Component({
   selector: 'app-about',
@@ -8,10 +12,28 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
 
   name="bruce";
+  value:any;
+  title:any;
 
-  constructor() { } 
+  constructor(private store: Store<{counter:{counter: number}}>) { } 
 
   ngOnInit(): void {
+  
   }
+
+  onIncrement(){
+    // this.store.dispatch(increment());
+  }
+  onDecrement() {
+    // this.store.dispatch(decrement());
+  }
+  onReset(){
+    this.store.dispatch(reset());
+  }
+
+  // onAdd(){
+  //   console.log(this.value);
+  //   this.store.dispatch(customIncrement({value: this.value}));
+  // }
 
 }

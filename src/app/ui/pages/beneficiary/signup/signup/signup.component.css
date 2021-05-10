@@ -1,0 +1,100 @@
+:root {
+    /* colors */
+    --mainColor: #B8B5FF;
+    --secondaryColor: #E4FBFF;
+    /* border raduis */
+    --masterBorderRadius: 20px;
+    /* fonts size */
+    --minFontSize: 12px;
+    /* text color */
+    --txtColor: #fff;
+    /* main bg color  */
+    --mainBgColor: #FDFDFF;
+     /* Color Text */
+     --ColorText:gray;
+      /* Authentification color */
+      --authColor:#7DDBEB;
+  
+  }
+
+  label{
+      color: var(--ColorText);
+  }
+
+  /* Link LOGIN */
+  .txtconnect{
+      color: var(--authColor);
+      text-transform: uppercase;
+  }
+
+  p{
+      color: var(--ColorText);
+  }
+
+  section{
+      border: 1px solid var(--secondaryColor);
+      border-radius: 30px;
+      box-shadow: 5px 10px var(--secondaryColor);
+  }
+
+  .formBox{
+      background-color: transparent;
+      border-radius: 30px;
+  }
+
+  .form-control{
+    height: 40px;
+    background-color: #f2f2f2;
+    margin: 10px 0;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+  }
+
+  .signup-form{
+      background-color: transparent;
+  }
+
+  /* Title */
+  h2{
+      text-transform: uppercase;
+      color: var(--authColor);
+      text-align: center;
+  }
+
+  /* Button SIGNUP */
+.btn {
+    background-color: var(--authColor);
+    width: 200px;
+    transition: all .5s;
+    color: #fff;
+}
+/* Button SIGNUP hover */
+.btn:hover{
+    background-color: #6acfe1;
+}
+
+
+/* Tablette SIGNUP */
+  @media screen and (max-width:800px) {
+      /* Container (Image & Form) */
+    .divcont{
+          display: flex;
+          flex-wrap: nowrap;
+      }
+
+      img{
+          max-width: 300px;
+          margin-right: 50px;
+      }   
+  }
+
+  /* Mobile SIGNUP */
+  @media screen and (max-width:600px) {
+    .panel{
+        display: none;
+    }
+    
+}
+ 

@@ -1,48 +1,52 @@
-<nav>
-  <label for=""></label>
-
+<!--//////////////////////// Desktop Menu Start ///////////////////////////////-->
+<nav class="py-3 Desktop">
+ 
+<!-- DIV BUTTON LANGUE -->
 <div class="d-flex justify-content-between  w-100 "> 
-
   <div>
       <!-- Button Langue -->
   <ul class="mx-2 list-unstyled ">
     <li>
-      <a href="" class="text-decoration-none" class="main-btn-secondary text-decoration-none px-3 py-1">
-        <i class="far fa-language main-btn-secondary"></i>
+      <a href="" class="text-decoration-none" class="main-btn-secondary text-decoration-none px-3 py-2">
+        <!-- <i class="far fa-language main-btn-secondary"></i> -->
         Langue</a>
     </li>
   </ul>
   </div>
 
-  <!-- Button HOME/ABOUT/CONTACT -->
-<div>
-  <ul class="d-flex flex-nowrap list-unstyled">
-    <li>
-      <a href="" class="text-decoration-none" class="px-3 py-2 text-decoration-none" 
+  <!--DIV Button HOME/ABOUT/CONTACT -->
+<div class="homebtn">
+  <ul class="d-flex flex-nowrap list-unstyled ">
+    <li class="item">
+      <a href="" class="px-3 py-2 text-decoration-none" 
       [routerLink]="['/']" routerLinkActive="router-link-active">HOME</a>
     </li>
 
-    <li class="px-2">
-      <a href="" class="text-decoration-none" class="px-3 py-2 text-decoration-none"
-      [routerLink]="['about']" routerLinkActive="router-link-active">ABOUT</a>
+    <li class="px-2 item">
+      <a href="" class="px-3 py-2 text-decoration-none"
+      [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT</a>
     </li>
 
-    <li>
-      <a href="" class="text-decoration-none" class="px-3 py-2 text-decoration-none"
+    <li class="item">
+      <a href="" class="px-3 py-2 text-decoration-none"
       [routerLink]="['/contact']" routerLinkActive="router-link-active">CONTACT</a>
     </li>
   </ul>
 </div>
 
+<!--Div Button SignUp & LogIn -->
 <div>
-<!-- Button SignUp & LogIn -->
   <ul class="d-flex flex-nowrap list-unstyled">
     <li>
-      <a href="" class="main-btn-secondary text-decoration-none px-3 py-1"><i class="far fa-sign-in-alt main-btn-secondary px-1"></i>LOGIN</a>
+      <a href="" [routerLink]="['/login']" class="main-btn-secondary text-decoration-none px-3 py-2">
+        <!-- <i class="far fa-sign-in-alt main-btn-secondary px-1"></i> -->
+        LOGIN</a>
     </li>
 
     <li class="px-2">
-      <a href="" class="text-decoration-none" class="main-btn-secondary text-decoration-none px-3 py-1"><i class="far fa-user-plus main-btn-secondary px-1"></i>SIGN UP</a>
+      <a href="" [routerLink]="['/signup']" class="main-btn-secondary text-decoration-none px-3 py-2">
+        <!-- <i class="far fa-user-plus main-btn-secondary px-1"></i> -->
+        SIGNUP</a>
     </li>
   </ul>
 </div>
@@ -50,4 +54,35 @@
 </div>
 
 </nav>
-  
+
+
+<!--//////////////////////// Desktop Menu End ///////////////////////////////-->
+
+
+
+<!--//////////////////////// Mobile Menu Start ///////////////////////////////-->
+<nav class="Mobile py-3">
+
+  <!-- Button Menu -->
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn d-flex px-2 py-2">
+    <i class="fas fa-bars"></i>
+  </label>
+
+
+<!-- Button LANGUE/LOGIN/SIGNUP -->
+<div class="d-flex justify-content-end mt-2">
+ <button class="main-btn-secondary border-0 mx-4">Langue</button>
+ <button class="main-btn-secondary border-0">LogIn</button>
+ <button class="main-btn-secondary border-0 mx-4">SignUp</button>
+</div>
+ 
+<!-- BUTTON HOME/ABOUT/CONTACT -->
+ <ul>
+   <li class="" ><a class="active" href="#"  [routerLink]="['/']" routerLinkActive="router-link-active">Home</a></li>
+   <li class=""><a href="#" [routerLink]="['about']" routerLinkActive="router-link-active">About</a></li>
+   <li class=""><a href="#" [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a></li>
+ </ul>
+
+</nav>
+<!--//////////////////////// Mobile Menu end ///////////////////////////////-->

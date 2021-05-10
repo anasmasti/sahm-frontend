@@ -12,22 +12,26 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+     $(".toggle").on("click",function(){
+   
+    if($(".item").hasClass("active")) {
+  
+     $(".item").removeClass("active");
+     console.log( "click!" );
+    }
+    else {
+     $(".item").addClass("active");
+     console.log( "Oops :(!" );
+    }
+    })
+  }
 }
    
-  // console.log( "ready!" );
+   console.log( "ready!" );
 
-  // $(".toggle").on("click",function(){
-   
-  //  if($(".item").hasClass("active")) {
  
-  //   $(".item").removeClass("active");
-  //  }
-  //  else {
-  //   $(".item").addClass("active");
-  //  }
-  //  })
  
-  // }
+  
 
 

@@ -1,99 +1,132 @@
+:root {
+  /* colors */
+  --mainColor: #B8B5FF;
+  --secondaryColor: #E4FBFF;
+  /* border raduis */
+  --masterBorderRadius: 20px;
+  /* fonts size */
+  --minFontSize: 12px;
+  /* text color */
+  --txtColor: #fff;
+  /* main bg color  */
+  --mainBgColor: #FDFDFF;
+   /* Color Text */
+   --ColorText:gray;
+  
+}
+
+*{
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Menu Mobile */
+.Mobile{
+  display: none;
+  z-index: 1;
+}
+
 a{
   color: gray;
 }
 
-/* .menu{
-  display: flex;
-  justify-content: center;
-} */
-
-/*  */
-
-/* Button HOME/ABOUT/SIGNUP/CONTACT */
-/* .principal{
-display: flex;
-justify-content: center;
-} */
-/* 
-.langue{
-  margin-right: auto;
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .navbar {
-  height: 6vh;
-  display: inline-flex;
-  z-index: 1;
-  position: relative !important;
-  
-
-} */
-
-/* .navbar-brand {
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 2em;
-  color: #B8B5FF !important;
-} */
-
-/* .nav-item  {
-  font-weight: 600;
-  
-  color: #fff !important;
-} */
-
-
-
-/* .navbar-light  {
-  background: #B8B5FF;
-  color: #fff  !important;
-  border-radius: 10px;
-  
-} */
-
-/* .navbar-light .nav-link:hover {
-  background: #B8B5FF;
-  color: #fff !important;
-  border-radius: 20px;
-  
-} */
-
-/* .ul-signlog{
- padding: 10px;
- margin: 0;
- display: block;
+/* Button Menu Mobile */
+#check{
+  display: none;
 }
 
-.sign-log{
-  display: inline-block;
-  background:#E4FBFF ;
-  color: gray ;
-  border-radius: 20px;
-  margin: 5px;
+
+
+
+@media screen and (max-width:900px) {
+ 
+  /* Menu Desktop */
+  .Desktop{
+    display: none;
+    z-index: 1;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+   background-color: #E4FBFF;
+   justify-content: center;
+   
+  }
+
+  /* Button Menu Mobile */
+  .checkbtn{
+    font-size: 30px;
+    color: #B8B5FF;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    /* display: none; */
+  }
+
+  /* Button HOME/ABOUT/CONTACT */
+  .router-link-active {
+    background: var( --mainColor) !important;
+    border-radius: var(--masterBorderRadius);
+    color: var(--mainBgColor) !important;
+    transition: .25s;
+    
+}
   
-} */
+}
+
+@media screen and (max-width:850px){
+  /* Menu Mobile */
+  .Mobile{
+    display: flex;
+   
+  }
+
+ /* Button Menu Mobile */
+  .checkbtn{
+    display: flex;
+  }
+
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #E4FBFF;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 1s;
+    text-transform: uppercase;
+    font-weight: 800;
+    border-radius: 2px;
+    padding-inline-start: 0px;
+    padding-inline-end: 20px; 
+  }
+
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+    background: #E4FBFF;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  a:hover,a.active{
+    background: none;
+    color: #B8B5FF;
+    border-radius: var(--masterBorderRadius);
+    padding: 5px 20px;
+  }
+ 
+  #check:checked ~ ul{
+    left: 0;
+  }
+
+
+  
+}
+
