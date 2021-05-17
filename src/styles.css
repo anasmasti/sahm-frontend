@@ -80,7 +80,7 @@ body{
 }
 
 
-/* eclipse */
+/* cercles  */
 .cercle1{
   background: var(--secondaryColor);
   border-bottom-right-radius: 320px;
@@ -103,9 +103,7 @@ body{
   border-bottom-left-radius: 5050px;
   border-top-right-radius: 5000px;
   border-top-left-radius: 5050px;
- 
   transform: rotate(65deg); 
- 
   z-index: -1;
   opacity: 0.4;
   display: inline-flex;
@@ -120,7 +118,6 @@ body{
   border-bottom-left-radius: 9000px;
   border-top-right-radius: 9050px;
   border-top-left-radius: 9000px;
- 
   transform: rotate(45deg); 
   z-index: -1;
   opacity: 0.1;
@@ -128,6 +125,22 @@ body{
   justify-items: flex-start;
   position: absolute;
   animation: moveeclipse  ease-out 4s infinite;
+}
+
+.cercle4{
+  background: var(--secondaryColor);
+  border-bottom-right-radius: 320px;
+  border-bottom-left-radius: 450px;
+  border-top-right-radius: 320px;
+  border-top-left-radius: 450px;
+  justify-content: start;
+  transform: rotate(125deg); 
+  z-index: -1;
+  opacity: 0.4;
+  display: flex;
+  position: absolute;
+  animation: moveeclipse  ease-out 4s infinite;
+  
 }
 
 @keyframes moveeclipse   {

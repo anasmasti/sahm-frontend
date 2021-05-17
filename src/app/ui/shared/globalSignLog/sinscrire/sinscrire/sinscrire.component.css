@@ -18,24 +18,29 @@
     --authColor:#7DDBEB;
   }
 
-  .title{
-      color: var(--authColor);
-      font-weight: 700;
-  }
+
+
+  /* SIGN UP Title */
   h2{
       color: var(--txtColor);
       font-weight: 700;
   }
 
+  /* Paragraph in left */
   p {
       color: var(--txtColor);   
   }
+
+  /* Text do you already have an account */
   .p{
     color: var(--ColorText); 
   }
+
+  /* Login Link */
   a{
       color: var(--mainColor);
   }
+
 
   label{
       color: var(--ColorText);
@@ -44,37 +49,33 @@
       font-weight: 600;
   }
 
+  /* div Form signup */
  .formBox{
      border-radius: 30px;
      background: #FCFCFC;
      z-index: 2;
      margin-left: -27px;
-     box-shadow: 5px 0px 18px var(--mainColor);
-
  }
 
+ /* Form Controls */
  .form-control{
      /* border-radius: 20px; */
      background: #F0F0F0;
      border: none;
      margin: 5px;
-     color: var(--ColorText);
-    
+     color: var(--ColorText);  
  }
 
+ /* Div of image city */
  .imgBox{
      display: flex;
      flex-direction: column;
      align-items: flex-end;
      justify-content: flex-end;
-     z-index: 4;
-    ;
-
-    
-     
-     
+     z-index: 4;  
  }
 
+/* Image city */
  .image{
      justify-content: center;
      align-items: center;
@@ -82,37 +83,50 @@
      z-index: 4;
  }
 
+ /* container div left (content & image) */
  .imagecontainer{
      background: var(--mainColor);
      border-bottom-left-radius: 30px;
     border-top-left-radius: 30px;
     align-items: flex-start !important;
-    box-shadow: 5px 0px 18px var(--mainColor)
-    
  }
 
+ /* button signup */
  .btn{
      width: 60%;
      border-radius: 10px;
  }
-
  .btn:hover{
      background: #a9a6fd;
  }
 
+  /* Border invalid control */
+ input.ng-invalid.ng-touched{
+     border: 2px solid red;
+ }
+
+ /* Border valid control */
+ input.ng-valid{
+    border: 2px solid rgb(34,187,51);
+}
+
+/* Message error Text */
+ .help-block{
+     color: #bb2124;
+ }
+
+ /* Mobile */
  @media screen and (max-width:900px) {
     .panel{
         display: none;
     }
 
     .imagecontainer{
-        border-radius: 30px;
-       
+        border-radius: 30px; 
     }
 
     .formBox{
-        z-index: 0;    
-       
+        z-index: 0;      
     }
 
 }

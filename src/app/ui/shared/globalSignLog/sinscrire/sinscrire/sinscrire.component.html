@@ -1,176 +1,185 @@
-<div class="row p-5" >
+<section>
 
- <div class="imagecontainer d-flex flex-column col-12 col-lg-8 p-5">
-
-        <!-- Div Content -->
-    <div class="content justify-content-center">
-      <h2>SIGN UP →</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Nequsam a repudiandae ut dignissimos cupiditate beatae saepe esse sapiente repellendus sint odit vitae
-         consequatur ea consectetur iste reprehenderit l quo! Modi.
-      
-       </p>
-     </div>
-
-  <!-- Div Image -->
-  <div class="imgBox align-items-end">
-
-      <div class="panel mx-5" >
-        <label for=""></label><br><br><br><br>
-          <img src="./../../../../../../assets/signup.png" alt="registre-img" class="image" width="650px">
+  <div class="row p-5" >
+    <!-- Div container (image & content) start-->
+     <div class="imagecontainer d-flex flex-column col-12 col-lg-8 p-5">
+    
+            <!-- Div Content -->
+        <div class="content justify-content-center">
+          <h2>SIGN UP →</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+             Nequsam a repudiandae ut dignissimos cupiditate beatae saepe esse sapiente repellendus sint odit vitae
+             consequatur ea consectetur iste reprehenderit l quo! Modi.
+          
+           </p>
+         </div>
+         <!-- Div Content END -->
+    
+      <!-- Div Image -->
+      <div class="imgBox align-items-end">
+    
+          <div class="panel mx-5" >
+            <label for=""></label><br><br><br><br>
+              <img src="./../../../../../../assets/signup.png" alt="registre-img" class="image" width="650px">
+          </div>
+    
       </div>
-
-      <!-- <div class="cercle1 cercleposition4 ">
-    </div> -->
-
-  </div>
-</div>
-
-  
-
-
-  <!-- Div Form -->
-  <div class="formBox col-12 col-lg-4 p-5">
-
-      <label for=""></label>
-      
-      <!-- SIGNUP Form start -->
-      <form action="#">
-          <div class="row">
-              <div class="form-group col-sm-6">
-                  <label for="nom">First Name</label>
-                  <input type="text" id="nom" class="form-control rounded-5">
-              </div>
-
-              <div class="form-group col-sm-6">
-                <label for="prenom">Last Name</label>
-                <input type="text" id="prenom" class="form-control rounded-5">
-            </div>
-          </div>
-
-        
-          <div class="form-group">
-              <label for="email">Email</label>
-                <input type="email" id="email" class="form-control rounded-5">
-          </div>
-
-          <div class="form-group">
-              <label for="password">Password</label>
-                <input type="password" id="password" class="form-control rounded-5">
-          </div>
-
-          <div class="form-group">
-              <label for="type">User type</label>
-                <select name="type" id="type" class="form-control rounded-5">
-                    <option selected disabled>---select type of user--</option>
-                    <option value="giver">Giver</option>
-                    <option value="beneficiary">Beneficiary</option>
-                </select>
-          </div>
-
-          <div class="form-group">
-              <label for="adresse">Adresse</label>
-                <input type="adresse" id="adresse" class="form-control rounded-5">
-          </div>
-
-          <div class="form-group">
-              <label for="tel">Telephone</label>
-                <input type="tel" id="tel" class="form-control rounded-5">
-          </div>
-
-          <div class="form-group" align="center" >
-                  
-              <br>
-              <input type="submit" value="Sign Up" class="btn main-btn rounded-5" >
-          </div>
-
-      </form>
-
-      <!-- Have you an account -->
-        <div align="center" class="d-flex justify-content-center my-4">
-          <p class="p">Do you already have an account?</p>&nbsp;
-          <a href="" [routerLink]="['/login']" class="text-decoration-1">Login</a>
-        </div>
-
-      </div>
-      <!-- Div Form END -->
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <section class="inscription">
-
-    <div class="d-flex row col-12 my-2 main-bg">
-    
-        <div class="justify-content-center col-lg-6 my-4">
-           <h1 class="px-4 my-4" align="center">Bienvenue dans l'espace d'inscription</h1> 
-    
-           <div align="center">
-            <a href="" class="main-btn-secondary text-decoration-none px-4 py-4" [routerLink]="['/signup-giver']">
-                S'inscrire en tant que donneur
-            </a>
-            
-            <div class="hr-sect"><h3>Ou</h3></div>
-            
-    
-            <a href="" class="main-btn-secondary px-3 py-4" [routerLink]="['/signup-beneficiary']">
-                S'inscrire en tant que bénéficiaire
-            </a>
-           </div>
-    
-          <div align="center" class="my-4">
-            <p>Avez-vous déjà un compte? </p>
-            <a href="" class="text-decoration-1 txtconnect" [routerLink]="['/login']" >SE CONNECTER</a>
-          </div>
-        </div>
-    
-        
-    
-        <div class="col-lg-6">
-            <img src="./../../../../../../assets/gbRegistre.png" alt="registre-img" width="600px">
-        </div>
-    
+      <!-- Div Image End -->
     </div>
+    <!-- Div container END -->
+    
+    
+    
+      <!-- Div Form -->
+      <div class="formBox col-12 col-lg-4 p-5">
+    
+          <label for=""></label>
+          
+          <!-- SIGNUP Form start -->
+          <form action="#" (ngSubmit)="onSubmit()" #f=ngForm [formGroup]="signUpForm">
+            <!-- fill data -->
+            <!-- <button class="btn btn-infos" (click)="fillValues()">Fill data</button> -->
+    
+            <!-- Row First & Last name -->
+              <div class="row">
+    
+                <!-- First Name -->
+                    <div class="form-group col-sm-6">
+                       <label for="nom">First Name</label>
+                       <input type="text" id="nom" name="nom" class="form-control rounded-pill"
+                        formControlName="nom" ngModel required>
+                      <!-- Error Message !! -->
+                        <span class="help-block px-2"
+                         *ngIf="!signUpForm.controls['nom'].valid && signUpForm.controls['nom'].touched">
+                         invalid first name</span>
+                    </div>
+    
+                  <!-- Last Name -->
+                  <div class="form-group col-sm-6">
+                    <label for="prenom">Last Name</label>
+                    <input type="text" id="prenom" name="prenom" class="form-control rounded-pill"
+                     formControlName="prenom" ngModel required>
+                    <!-- Error Message !! -->
+                    <span class="help-block px-2" 
+                     *ngIf="!signUpForm.controls['prenom'].valid && signUpForm.controls['prenom'].touched">
+                       invalid last name</span>
+                   </div>
+              </div>
+    
+            <!-- EMAIL -->
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" class="form-control rounded-pill"
+                   formControlName="email" ngModel required email>
+                    <!-- Error Message !! -->
+                    <span class="help-block px-2"
+                    *ngIf="!signUpForm.controls['email'].valid && signUpForm.controls['email'].touched">
+                      Please enter valid email. Ex: abc@gmail.com</span>
+                    <!-- <span class="error-text px-2 bg-danger" 
+                     *ngIf="f.controls.email && !f.controls.email.valid && f.controls.email.touched">
+                      Please enter valid email. Ex: abc@gmail.com</span> -->
+               </div>
+    
+              <!-- PASSWORD -->
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" class="form-control rounded-pill"
+                    formControlName="password" ngModel required>
+                    <!-- Error Message !! -->
+                    <span class="help-block px-2"
+                     *ngIf="!signUpForm.controls['password'].valid && signUpForm.controls['password'].touched">
+                      Please enter valid password</span>
+               </div>
+    
+              <!-- USER TYPE -->
+               <div class="form-group">
+                 <label for="type">User type</label>
+                 <select name="type" id="type" name="type" class="form-control rounded-pill"
+                    formControlName="type" ngModel required>
+                        <!-- <option selected disabled>---select type of user--</option> -->
+                        <option value="giver">Giver</option>
+                        <option value="beneficiary">Beneficiary</option>
+                  </select>
+                        <!-- Error Message !! -->
+                        <span class="help-block px-2"
+                         *ngIf="!signUpForm.controls['type'].valid && signUpForm.controls['type'].touched">
+                          Please select valid type</span>
+               </div>
+    
+              <!-- ADRESSE -->
+              <div class="form-group">
+                  <label for="adresse">Adresse</label>
+                  <input type="adresse" id="adresse" name="adresse" class="form-control rounded-pill"
+                    formControlName="adresse" ngModel required>
+                        <!-- Error Message !! -->
+                        <span class="help-block px-2"
+                         *ngIf="!signUpForm.controls['adresse'].valid && signUpForm.controls['adresse'].touched">
+                          Please enter valid adresse</span>
+              </div>
+    
+              <!-- TELEPHONE -->
+              <div class="form-group">
+                  <label for="tel">Telephone</label>
+                  <input type="tel" id="tel" name="tel" class="form-control rounded-pill"
+                    formControlName="tel" ngModel required>
+                     <!-- Error Message !! -->
+                     <span class="help-block px-2"
+                     *ngIf="!signUpForm.controls['tel'].valid && signUpForm.controls['tel'].touched">
+                      Please enter valid telephone</span>
+              </div>
+    
+              <div class="form-group" align="center" >
+                      
+                  <br>
+                  <!-- BUTTON SIGNUP -->
+                  <input type="submit" value="Sign Up" class="btn main-btn rounded-pill" [disabled]="!f.valid" >
+              </div>
+    
+          </form>
+    
+          <!-- Have you an account -->
+            <div align="center" class="d-flex justify-content-center my-4">
+              <p class="p">Do you already have an account?</p>&nbsp;
+              <a href="" [routerLink]="['/login']" class="text-decoration-1">Login</a>
+            </div>
+          
+     
+          </div>
+          <!-- Div Form END -->
+    
+          <!-- <div *ngIf="submitted">
+             <h1>Info User </h1>
+    
+             <table class="table">
+              <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Password</td>
+                <td>Type</td>
+                <td>Adresse</td>
+                <td>Telephone</td>
+              </tr> 
+     
+              <tr>
+               <td>{{nom}}</td>
+               <td>{{prenom}}</td>
+               <td>{{email}}</td>
+               <td>{{password}}</td>
+               <td>{{type}}</td>
+               <td>{{adresse}}</td>
+               <td>{{tel}}</td>
+             </tr> 
+             </table> 
+     </div>-->
+    
+         
+    
+    
+      </div>
+    
+    
+    
+    
 
-</section> -->
-
+</section>

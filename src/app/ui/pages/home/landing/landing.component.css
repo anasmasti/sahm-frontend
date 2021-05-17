@@ -34,7 +34,9 @@
 
 .cercleposition1{
   width: 20%;
-  height: 20vh; 
+  height: 20vh;
+  left: -100px;
+   
 }
 
 .cercleposition2{
@@ -50,6 +52,14 @@
   right: 0;
   width: 20%;
   height: 15vh;
+}
+
+.cercleposition4{
+  top: 550px;
+  right: 550px;
+  width: 10%;
+  height: 15vh;
+  opacity: 0.2;
 }
 
 
