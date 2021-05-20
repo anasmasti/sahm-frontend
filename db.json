@@ -1,0 +1,59 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "nom": "youssef",
+      "prenom": "sakini",
+      "email": "youssef@mediexperts.ma",
+      "password": "43543873",
+      "type": "beneficiary",
+      "adresse": "casablanca",
+      "tel": "+1234567890",
+      "id": 2
+    },
+    {
+      "nom": "alan",
+      "prenom": "walker",
+      "email": "alan@gmail.com",
+      "password": "564fkhnds",
+      "type": "giver",
+      "adresse": "Los angles",
+      "tel": "+313556945512",
+      "id": 3
+    },
+    {
+      "nom": "alan",
+      "prenom": "walker",
+      "email": "alan@gmail.com",
+      "password": "564fkhnds",
+      "type": "giver",
+      "adresse": "Los angles",
+      "tel": "+313556945512",
+      "id": 4
+    },
+    {
+      "nom": "kii",
+      "prenom": "ii",
+      "email": "iiii@hkhk.com",
+      "password": "789jjj5jh",
+      "type": "beneficiary",
+      "adresse": "dhg",
+      "tel": "+1234567890",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

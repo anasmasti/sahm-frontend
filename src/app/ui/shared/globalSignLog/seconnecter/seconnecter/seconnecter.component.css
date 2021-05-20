@@ -18,6 +18,13 @@
     --authColor:#7DDBEB;
   }
 
+  .seconnecter{
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    width: 100%;
+    z-index: 4;
+  }
 
   h2{
       color: var(--authColor);

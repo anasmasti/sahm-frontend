@@ -1,0 +1,13 @@
+{
+    "users": [
+{
+  "nom":"",
+  "prenom":"",
+  "email":"",
+  "password":"",
+  "type":"",
+  "adresse":"",
+  "tel":""
+}
+    ]
+}

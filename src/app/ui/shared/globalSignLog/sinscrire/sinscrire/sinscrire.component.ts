@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
+import { UsersService } from 'src/app/services/users.service';
 
 
 @Component({
@@ -21,7 +22,9 @@ signUpForm!:FormGroup;
   // tel!:string;
 
 // submitted:boolean =false;
-  constructor() {}
+
+      // defined the service in constructor
+      constructor(private users:UsersService) {}
 
   // =====Submit the form======
   // onFormSubmit(){
@@ -55,6 +58,17 @@ signUpForm!:FormGroup;
 
   onSubmit(){
     console.log(this.signUpForm);
+
+    // Post the data with FireBase
+    this.users.signUp(this.signUpForm.value.email,this.signUpForm.value.password).subscribe(response =>
+      {console.log(response);
+      },error =>{console.log(error)});
+
+      // Post the data with JsonServer
+      this.users.postData(this.signUpForm.value).subscribe(response => {
+        console.log(response);
+      })
+      
   }
 
   ngOnInit(): void {

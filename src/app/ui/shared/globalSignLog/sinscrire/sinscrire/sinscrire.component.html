@@ -1,4 +1,4 @@
-<section>
+<section class="sinscrire">
 
   <div class="row p-5" >
     <!-- Div container (image & content) start-->
@@ -84,11 +84,11 @@
               <div class="form-group">
                   <label for="password">Password</label>
                   <input type="password" id="password" name="password" class="form-control rounded-pill"
-                    formControlName="password" ngModel required>
+                    formControlName="password" ngModel required minlength="8">
                     <!-- Error Message !! -->
                     <span class="help-block px-2"
                      *ngIf="!signUpForm.controls['password'].valid && signUpForm.controls['password'].touched">
-                      Please enter valid password</span>
+                      Password should be of 8 characteres</span>
                </div>
     
               <!-- USER TYPE -->
