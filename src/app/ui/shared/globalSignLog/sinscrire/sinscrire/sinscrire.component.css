@@ -58,8 +58,9 @@
  .formBox{
      border-radius: 30px;
      background: #FCFCFC;
-     z-index: 2;
+     z-index: 4;
      margin-left: -27px;
+     
  }
 
  /* Form Controls */
@@ -69,6 +70,7 @@
      border: none;
      margin: 5px;
      color: var(--ColorText);  
+     z-index: 4;
  }
 
  /* Div of image city */
@@ -122,20 +124,36 @@
 
  /* Mobile */
  @media screen and (max-width:900px) {
- 
     .panel{
         display: none;
     }
 
     .imagecontainer{
-        border-radius: 30px; 
+        border-radius:30px 30px 10px 10px;
     }
 
     .formBox{
-        z-index: 0;   
-      
+        padding: 0;
+        margin: 0;
+        /* margin-left: 0.4px; */
+        /* background-color: red; */
+        border-radius: 0 0 30px 30px;  
+        z-index: auto;
+    }
+    .img-form{
+       /* padding: 10px; */
+       padding: 0;
+       margin: 0;
     }
 
+    .main-btn{
+        z-index: -1;
+    }
+
+    /* Have you an account text & login link */
+    .tologin{
+        display: block !important;
+    }
 }
 
 

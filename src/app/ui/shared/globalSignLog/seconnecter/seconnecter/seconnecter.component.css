@@ -18,6 +18,7 @@
     --authColor:#7DDBEB;
   }
 
+  /* Section (Container) */
   .seconnecter{
     background-size: cover;
     background-position: center;
@@ -26,11 +27,20 @@
     z-index: 4;
   }
 
+  /* LOGIN Title */
   h2{
       color: var(--authColor);
       font-weight: 700;
+      margin-bottom: 50px;
   }
 
+  /* New Here ? text */
+  h3{
+    color: var(--authColor);
+    font-weight: 700;
+}
+
+/* Paragraphe */
   p {
       color: var(--ColorText);   
   }
@@ -46,24 +56,23 @@
       font-weight: 600;
   }
 
+  /* LOGIN form */
  .formBox{
      border-radius: 30px;
      background: #FCFCFC;
      z-index: 2;
      margin-left: -27px;
-     /* box-shadow: 5px 0px 18px var(--secondaryColor); */
-
  }
 
+ /* LOGIN Form control */
  .form-control{
-     /* border-radius: 20px; */
      background: #F0F0F0;
      border: none;
      margin: 5px;
-     color: var(--ColorText);
-    
+     color: var(--ColorText);  
  }
 
+ /* Login Image box & content */
  .imgBox{
      display: flex;
      flex-direction: column;
@@ -73,13 +82,14 @@
  }
 
 
-
+/* Image LOGIN */
  .image{
      justify-content: center;
      align-items: center;
      align-content: center;
      z-index: 4;
  }
+
 
  .imagecontainer{
      background: var(--secondaryColor);
@@ -88,15 +98,33 @@
     align-items: flex-start !important;
  }
 
+ /* Button LOGIN */
  .btnlog{
      width: 60%;
      border: none;   
  }
 
+  /* Button LOGIN Hover */
  .btnlog:hover{
      background: #ccf6fd;
  }
 
+ /* Border invalid control */
+ input.ng-invalid.ng-touched{
+     border: 2px solid red;
+    }
+
+/* Border valid control */
+input.ng-valid{
+    border: 2px solid rgb(34,187,51);
+}
+
+/* Message error color */
+span{
+    color: #bb2124;
+}
+
+/* Mobile LOGIN form */
  @media screen and (max-width:900px) {
      .panel{
          display: none;
@@ -109,6 +137,12 @@
 
      .formBox{
          z-index: 0;
+        
+     }
+
+     .seconnecter{
+         display: flex;
+         flex-direction: column;
      }
 
  }

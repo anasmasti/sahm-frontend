@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from "@angular/forms";
+import { NgForm, FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-seconnecter',
@@ -8,14 +8,21 @@ import { NgForm } from "@angular/forms";
 })
 export class SeconnecterComponent implements OnInit {
 
+  loginForm !:FormGroup;
   constructor() { }
 
   ngOnInit(): void {
+    this.loginForm=new FormGroup({
+      'email':new FormControl(Validators.required,Validators.email),
+      'password':new FormControl(Validators.required)
+    })
   }
 
-  onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+  onSubmit() {
+    // console.log(f.value);  // { first: '', last: '' }
+    // console.log(f.valid);  // false
+    console.log(this.loginForm.value);
+
   }
 
 }

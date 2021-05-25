@@ -18,7 +18,7 @@ export class UsersService {
   constructor(private http:HttpClient) { }
 // Methode to get the data
   getData(){
-    const url: string = 'todos';
+    const url: string = 'posts';
     return this.http.get(environment.API_URL + '/' + url);
   }
 
@@ -33,7 +33,17 @@ signUp(email: string, password: string) {
   return this.http.post(
     `https://identitytoolkit.googleapis.com/v1/accounts:createAuthUri?key=AIzaSyDmyZJfX4kE189qBP3x5mwFhn6kjLBQCB8`,
     {email, password, returnSecureToken: true}
-  );
+  );  
+}
+
+getContact(){
+  const url:string ='api/contact';
+  return this.http.get(environment.API_SAHM_URL + '/' + url);
+}
+
+PostContact(contact:any){
+  const url:string ="api/contact";
+  return this.http.post(environment.API_SAHM_URL + '/' + url,contact)
 }
  
 

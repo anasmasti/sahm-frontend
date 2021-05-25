@@ -1,0 +1,181 @@
+:root {
+    /* colors */
+    --mainColor: #B8B5FF;
+    --secondaryColor: #E4FBFF;
+    /* border raduis */
+    --masterBorderRadius: 20px;
+    /* fonts size */
+    --minFontSize: 12px;
+    /* text color */
+    --txtColor: #fff;
+    /* main bg color  */
+    --mainBgColor: #FDFDFF;
+     /* Color Text */
+     --ColorText:gray;
+      /* Authentification color (beneficiary)*/
+      --authColor:#7DDBEB;
+      /* Authentification Color2 (giver) */
+      --authColor2:#6C63FF;
+  
+  }
+
+  /* cONTACT US TEXT */
+  h1{
+    color: var(--txtColor);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  h4{
+    color: var(--txtColor); 
+    font-weight: 500;
+    text-align: center;
+  }
+  
+
+ 
+  /* SIGN UP Title */
+  h2{
+      color: var(--txtColor);
+      font-weight: 700;
+  }
+
+  /* Paragraph in left */
+  p {
+      color: var(--txtColor);   
+  }
+
+  /* Text do you already have an account */
+  .p{
+    color: var(--ColorText); 
+  }
+
+  /* Login Link */
+  a{
+      color: var(--mainColor);
+  }
+
+
+  label{
+      color: var(--ColorText);
+      font-size: 17px;
+      padding-left: 5px;
+      font-weight: 600;
+  }
+
+  /* div Form signup */
+ .formBox{
+     border-radius: 30px;
+     background: #FCFCFC;
+     z-index: 4;
+     margin-left: -27px;
+     border-radius: 30px 0 0 30px ;
+    
+     
+ }
+
+ /* Form Controls */
+ .form-control{
+     /* border-radius: 20px; */
+     background: #F0F0F0;
+     border: none;
+     margin: 5px;
+     color: var(--ColorText);  
+     z-index: 4;
+ }
+
+
+ /* container div left (content & image) */
+ .imagecontainer{
+     background: var(--mainColor);
+     border-radius: 0 30px 30px 0 ;
+    align-items: flex-start !important;
+ }
+
+ .form-control.btn{
+    background: var(--mainColor) ;
+    color: #fff;
+    
+}
+
+ /* Mobile */
+ @media screen and (max-width:900px) {
+    .panel{
+        display: none;
+    }
+
+    .imagecontainer{
+        border-radius:30px 30px 10px 10px;
+    }
+
+    .formBox{
+        padding: 0;
+        margin: 0;
+        /* margin-left: 0.4px; */
+        /* background-color: red; */
+        border-radius: 0 0 30px 30px;  
+        z-index: auto;
+    }
+    .img-form{
+       /* padding: 10px; */
+       padding: 0;
+       margin: 0;
+    }
+
+    .main-btn{
+        z-index: -1;
+    }
+
+    /* Have you an account text & login link */
+    .tologin{
+        display: block !important;
+    }
+}
+
+
+
+
+  /* h1{
+    color: var(--mainColor);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  h4{
+    color: var(--mainColor); 
+    font-weight: 500;
+    text-align: center;
+  }
+
+  label{
+    color: var(--ColorText);
+    font-size: 17px;
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+
+ .form-control{
+    background: #F0F0F0;
+    border: none;
+    margin: 5px;
+    color: var(--ColorText);  
+    z-index: 4;
+}
+
+.form-control.btn{
+    background: var(--mainColor) ;
+    color: #fff;
+    
+}
+
+@media screen and (max-width:900px) {
+   .global{
+       display: block !important;
+   }
+
+   h4{
+       margin-top: 20px;
+       font-size: small;
+   }
+} */

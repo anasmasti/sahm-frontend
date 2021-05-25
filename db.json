@@ -44,6 +44,16 @@
       "adresse": "dhg",
       "tel": "+1234567890",
       "id": 5
+    },
+    {
+      "nom": "test",
+      "prenom": "test",
+      "email": "test@gmail.com",
+      "password": "test12345",
+      "type": "giver",
+      "adresse": "Los angles",
+      "tel": "+1234567890",
+      "id": 6
     }
   ],
   "comments": [

@@ -17,11 +17,11 @@ export class ChatComponent implements OnInit {
 
   }
 
-  setMessage() {
-    this._ws.emit('chat', { 'name': this.name, 'message': this.message })
-    this._ws.listen('get_message').subscribe(data => {
-      this.received_data = data;
-    })
-  }
+  // setMessage() {
+  //   this._ws.emit('chat', { 'name': this.name, 'message': this.message })
+  //   this._ws.listen('get_message').subscribe(data => {
+  //     this.received_data = data;
+  //   })
+  // }
 
 }

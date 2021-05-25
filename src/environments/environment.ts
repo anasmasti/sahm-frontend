@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   API_URL: 'https://jsonplaceholder.typicode.com',
   API2_URL:'http://localhost:3000',
-  SOCKET_URL: 'https://sahm-app.herokuapp.com',
+  // SOCKET_URL: 'https://sahm-app.herokuapp.com',
+  API_SAHM_URL: 'http://192.168.11.100:5050',
   // SOCKET_URL: 'http://localhost:5000',
 };
 

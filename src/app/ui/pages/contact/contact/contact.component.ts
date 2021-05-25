@@ -12,17 +12,17 @@ export class ContactComponent implements OnInit {
   // @Input() data:any;
   
   userForm = new FormGroup({
-    userId: new FormControl('',Validators.minLength(2)),
-    id: new FormControl('',[Validators.maxLength(3),Validators.pattern('^[0-9]')]),
-    title: new FormControl('',Validators.pattern('^[a-z]+$')),
-    body: new FormControl(''),
+    email: new FormControl(),
+    first_name: new FormControl(),
+    last_name: new FormControl(),
+    message: new FormControl(),
   })
 
   data:any=[];
   msgTrue:boolean=false;
 
   constructor(public user: UsersService) {
-   this.user.getData().subscribe(data =>{
+   this.user.getContact().subscribe(data =>{
      console.warn(data)
      this.data=data
    }) 
@@ -32,19 +32,18 @@ export class ContactComponent implements OnInit {
   //  const newFormData = {userIduserId:101,id:2,title:'Fast & Furios',body:'lorem ytyzyutfyuzeuie zoyjsdgkfdhjkeu ysgdqTYdiohd yudgyus  dg ygf gkfj gfeuykfKJFggfv e'};
 
    //Dynamic data from Form
-   console.log(form.value.userId);
-   console.log(form.value.id);
-   console.log(form.value.title);
-   console.log(form.value.body);  
+  //  console.log(form.value.userId);
+  //  console.log(form.value.id);
+  //  console.log(form.value.title);
+  //  console.log(form.value.body);  
 
-   const newFormData={userId: form.value.userId, id: form.value.id, title: form.value.title, body: form.value.body};
+   const newFormData={email: form.value.email, firstName: form.value.first_name, lastName: form.value.last_name, message: form.value.message};
 
-
-
-
-   this.user.postData(newFormData).subscribe(data=>{
+   this.user.PostContact(newFormData).subscribe(data=>{ 
+     console.log("Tesssssssssssssssssssssssssssssst");
      console.log(data);
      this.msgTrue=true;
+    
    })
  }
 
