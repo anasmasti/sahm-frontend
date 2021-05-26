@@ -39,96 +39,178 @@
           <form action="#" (ngSubmit)="onSubmit()" #f=ngForm [formGroup]="signUpForm">
             <!-- fill data -->
             <!-- <button class="btn btn-infos" (click)="fillValues()">Fill data</button> -->
+
+             <!-- USER TYPE -->
+             <div class="form-group">
+              <label for="type">User type</label>
+              <select name="type" id="type" name="type" class="form-control rounded-pill"
+                 formControlName="type" ngModel required>
+                     <!-- <option selected disabled>---select type of user--</option> -->
+                     <option value="giver">Giver</option>
+                     <option value="beneficiary">Beneficiary</option>
+               </select>
+                     <!-- Error Message !! -->
+                     <span class="help-block px-2"
+                      *ngIf="!signUpForm.controls['type'].valid && signUpForm.controls['type'].touched">
+                       Please select valid type</span>
+            </div>
     
             <!-- Row First & Last name -->
               <div class="row">
     
                 <!-- First Name -->
                     <div class="form-group col-sm-6">
-                       <label for="nom">First Name</label>
-                       <input type="text" id="nom" name="nom" class="form-control rounded-pill"
-                        formControlName="nom" ngModel required>
+                       <label for="first_name">First Name</label>
+                       <input type="text" id="first_name" name="first_name" class="form-control rounded-pill"
+                        formControlName="first_name" ngModel required>
                         
                       <!-- Error Message !! -->
                         <span class="help-block px-2"
-                         *ngIf="!signUpForm.controls['nom'].valid && signUpForm.controls['nom'].touched">
+                         *ngIf="!signUpForm.controls['first_name'].valid && signUpForm.controls['first_name'].touched">
                          invalid first name</span>
                     </div>
     
                   <!-- Last Name -->
                   <div class="form-group col-sm-6">
-                    <label for="prenom">Last Name</label>
-                    <input type="text" id="prenom" name="prenom" class="form-control rounded-pill"
-                     formControlName="prenom" ngModel required>
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" class="form-control rounded-pill"
+                     formControlName="last_name" ngModel required>
 
                     <!-- Error Message !! -->
                     <span class="help-block px-2" 
-                     *ngIf="!signUpForm.controls['prenom'].valid && signUpForm.controls['prenom'].touched">
+                     *ngIf="!signUpForm.controls['last_name'].valid && signUpForm.controls['last_name'].touched">
                        invalid last name</span>
                    </div>
               </div>
+
+                 <!-- Row Gender & Age -->
+                 <div class="row">
     
-            <!-- EMAIL -->
-              <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" class="form-control rounded-pill"
-                   formControlName="email" ngModel required email>
-                    <!-- Error Message !! -->
-                    <span class="help-block px-2"
-                    *ngIf="!signUpForm.controls['email'].valid && signUpForm.controls['email'].touched">
-                      Please enter valid email. Ex: abc@gmail.com</span>
-                    <!-- <span class="error-text px-2 bg-danger" 
-                     *ngIf="f.controls.email && !f.controls.email.valid && f.controls.email.touched">
-                      Please enter valid email. Ex: abc@gmail.com</span> -->
-               </div>
-    
-              <!-- PASSWORD -->
-              <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" id="password" name="password" class="form-control rounded-pill"
-                    formControlName="password" ngModel required minlength="8">
-                    <!-- Error Message !! -->
-                    <span class="help-block px-2"
-                     *ngIf="!signUpForm.controls['password'].valid && signUpForm.controls['password'].touched">
-                      Password should be of 8 characteres</span>
-               </div>
-    
-              <!-- USER TYPE -->
-               <div class="form-group">
-                 <label for="type">User type</label>
-                 <select name="type" id="type" name="type" class="form-control rounded-pill"
-                    formControlName="type" ngModel required>
-                        <!-- <option selected disabled>---select type of user--</option> -->
-                        <option value="giver">Giver</option>
-                        <option value="beneficiary">Beneficiary</option>
-                  </select>
+                  <!-- Gender -->
+                      <div class="form-group col-sm-6">
+                         <label for="gender">Gender</label>
+                         <select name="gender" id="gender" name="gender" class="form-control rounded-pill"
+                         formControlName="gender" ngModel required>
+                             <option value="male">Male</option>
+                             <option value="female">Female</option>
+                       </select>
+                          
                         <!-- Error Message !! -->
+                          <span class="help-block px-2"
+                           *ngIf="!signUpForm.controls['gender'].valid && signUpForm.controls['gender'].touched">
+                           invalid first name</span>
+                      </div>
+      
+                    <!-- Age -->
+                    <div class="form-group col-sm-6">
+                      <label for="age">Age</label>
+                      <select name="age" id="age" name="age" class="form-control rounded-pill"
+                      formControlName="age" ngModel required>
+                          <option value="18">18</option>
+                          <option value="19">19</option>
+                          <option value="20">20</option>
+                          <option value="21">21</option>
+                          <option value="22">22</option>
+                          <option value="23">23</option>
+                          <option value="24">24</option>
+                          <option value="25">25</option>
+                    </select>
+  
+                      <!-- Error Message !! -->
+                      <span class="help-block px-2" 
+                       *ngIf="!signUpForm.controls['age'].valid && signUpForm.controls['age'].touched">
+                         invalid last name</span>
+                     </div>
+                </div>
+
+                 <!-- Row School level & job -->
+              <div class="row">
+    
+                <!-- School level -->
+                    <div class="form-group col-sm-6">
+                       <label for="school_level">School level</label>
+                       <input type="text" id="school_level" name="school_level" class="form-control rounded-pill"
+                        formControlName="school_level" ngModel required>
+                        
+                      <!-- Error Message !! -->
                         <span class="help-block px-2"
-                         *ngIf="!signUpForm.controls['type'].valid && signUpForm.controls['type'].touched">
-                          Please select valid type</span>
-               </div>
+                         *ngIf="!signUpForm.controls['school_level'].valid && signUpForm.controls['school_level'].touched">
+                         invalid first name</span>
+                    </div>
+    
+                  <!-- job -->
+                  <div class="form-group col-sm-6">
+                    <label for="job">Job</label>
+                    <input type="text" id="job" name="job" class="form-control rounded-pill"
+                     formControlName="job" ngModel required>
+
+                    <!-- Error Message !! -->
+                    <span class="help-block px-2" 
+                     *ngIf="!signUpForm.controls['job'].valid && signUpForm.controls['job'].touched">
+                       invalid last name</span>
+                   </div>
+              </div>
+
+              <!-- CIN -->
+              <div class="form-group">
+                <label for="cin">Cin</label>
+                <input type="cin" id="cin" name="cin" class="form-control rounded-pill"
+                 formControlName="cin" ngModel required>
+                  <!-- Error Message !! -->
+                  <span class="help-block px-2"
+                  *ngIf="!signUpForm.controls['cin'].valid && signUpForm.controls['cin'].touched">
+                    Please enter you cin</span>
+             </div>
+    
+           
     
               <!-- ADRESSE -->
               <div class="form-group">
-                  <label for="adresse">Adresse</label>
-                  <input type="adresse" id="adresse" name="adresse" class="form-control rounded-pill"
-                    formControlName="adresse" ngModel required>
+                  <label for="adress">Adress</label>
+                  <input type="adress" id="adress" name="adress" class="form-control rounded-pill"
+                    formControlName="adress" ngModel required>
                         <!-- Error Message !! -->
                         <span class="help-block px-2"
-                         *ngIf="!signUpForm.controls['adresse'].valid && signUpForm.controls['adresse'].touched">
-                          Please enter valid adresse</span>
+                         *ngIf="!signUpForm.controls['adress'].valid && signUpForm.controls['adress'].touched">
+                          Please enter valid adress</span>
               </div>
     
               <!-- TELEPHONE -->
               <div class="form-group">
-                  <label for="tel">Telephone</label>
-                  <input type="tel" id="tel" name="tel" class="form-control rounded-pill"
-                    formControlName="tel" ngModel required>
+                  <label for="phone">Phone</label>
+                  <input type="phone" id="phone" name="phone" class="form-control rounded-pill"
+                    formControlName="phone" ngModel required>
                      <!-- Error Message !! -->
                      <span class="help-block px-2"
-                     *ngIf="!signUpForm.controls['tel'].valid && signUpForm.controls['tel'].touched">
+                     *ngIf="!signUpForm.controls['phone'].valid && signUpForm.controls['phone'].touched">
                       Please enter valid telephone</span>
               </div>
+
+
+               <!-- EMAIL -->
+               <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control rounded-pill"
+                 formControlName="email" ngModel required email>
+                  <!-- Error Message !! -->
+                  <span class="help-block px-2"
+                  *ngIf="!signUpForm.controls['email'].valid && signUpForm.controls['email'].touched">
+                    Please enter valid email. Ex: abc@gmail.com</span>
+                  <!-- <span class="error-text px-2 bg-danger" 
+                   *ngIf="f.controls.email && !f.controls.email.valid && f.controls.email.touched">
+                    Please enter valid email. Ex: abc@gmail.com</span> -->
+             </div>
+  
+            <!-- PASSWORD -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control rounded-pill"
+                  formControlName="password" ngModel required minlength="8">
+                  <!-- Error Message !! -->
+                  <span class="help-block px-2"
+                   *ngIf="!signUpForm.controls['password'].valid && signUpForm.controls['password'].touched">
+                    Password should be of 8 characteres</span>
+             </div>
     
               <div class="form-group" align="center" >
                       

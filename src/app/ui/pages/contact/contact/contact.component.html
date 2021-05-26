@@ -1,13 +1,13 @@
 <section class="sinscrire">
-
-        <div class="row img-form p-5" >
+         <!-- Div Container start -->
+        <div class="row containerform p-5" >
 
                   <!-- Div Form -->
             <div class="formBox col-12 col-lg-7 p-5">
           
                 <label for=""></label>
                 
-                <!-- SIGNUP Form start -->
+                <!-- Contact Form start -->
                 <form #addNewContactForm="ngForm" [formGroup]="userForm" (ngsubmit)="addNewContact(addNewContactForm)" >
                      
                         <div class="form-group">
@@ -47,11 +47,12 @@
                     </form>
          
                 </div>
+                <!-- Div Form End -->
 
 
 
-          <!-- Div container (image & content) start-->
-           <div class="imagecontainer col-lg-5 p-5">
+          <!-- Div content start-->
+           <div class="content col-lg-5 p-5">
 
                 <div class="">
                         <h1>CONTACT US</h1><br><br><br>
@@ -60,16 +61,17 @@
                          </h4>
                           
                     </div>
+
+                    <div align="center" class="img mt-4">
+                            <img src="./../../../../../assets/ContactUs.png" alt="ContactUs" width="400px">
+                    </div>
           
         
           </div>
-          <!-- Div container END -->
+          <!-- Div content END -->
           
-          
-          
-          
-              
             </div>
+            <!-- Div Container start -->
           
       </section>
 
