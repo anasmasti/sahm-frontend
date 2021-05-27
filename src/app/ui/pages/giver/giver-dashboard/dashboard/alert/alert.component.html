@@ -1,0 +1,20 @@
+<div>
+    <div class="row">
+        <div class="col-md-5" style="color: red;"><h3><i class="fas fa-exclamation-triangle"></i> ALERTE <i class="fas fa-exclamation-triangle"></i></h3></div>
+        <div class="col-md-7"><button class="btn btn-danger" style="float: right; background-color:  var(--mainColor); border-color:  var(--mainColor);">call administrateur</button></div>
+        
+    </div>
+   
+    <hr>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; ">
+       <div *ngFor="let action of actions" class="card" style="width: 11rem; height: 18rem;" >
+           <div style="height: 2rem; width: 100%; background-color: red;text-align: center; padding-top: 3px;"><h5 style="color: white;"><i class="fas fa-exclamation-triangle"></i>  SOS</h5></div>
+           <img class="card-img-top" src={{action.src}} >
+           <div class="card-body" style="text-align: center;">
+           <h5 class="card-title">{{action.nomAction}}</h5>
+           <a href="#" class="btn btn-primary" style="background-color:  var(--mainColor); border-color:  var(--mainColor);">contribuer</a>
+           </div>
+       </div>
+    </div>
+ 
+</div>
