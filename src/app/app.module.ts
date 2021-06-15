@@ -25,7 +25,6 @@ import { ChatComponent } from './ui/shared/chat/chat.component';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './ui/state/counter.reducer';
-import { SinscrireComponent } from './ui/shared/globalSignLog/sinscrire/sinscrire/sinscrire.component';
 import { SeconnecterComponent } from './ui/shared/globalSignLog/seconnecter/seconnecter/seconnecter.component';
 import { DashboardActionComponent } from './ui/pages/beneficiary/dashboard-action/dashboard-action.component';
 import { ActionsComponent } from './ui/pages/beneficiary/dashboard-action/actions/actions.component';
@@ -59,7 +58,6 @@ const material = [MatDialogModule , MatButtonModule];
     NavbarComponent,
     FooterComponent,
     ChatComponent,
-    SinscrireComponent,
     SeconnecterComponent,
     DashboardActionComponent,
     ActionsComponent,

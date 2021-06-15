@@ -1,34 +1,38 @@
-import { Inject, Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-// import { DOCUMENT } from "@angular/common";
+import { Contact } from '../models/contact.model';
+import { Observable } from 'rxjs';
 import * as bootstrap from "bootstrap";
 
-interface AuthResponseData{
-  idToken:string;
-  email:string;
-  refreshToken:string;
-  expiresIn:string;
-  localId:string;
-}
+
+// interface AuthResponseData{
+//   idToken:string;
+//   email:string;
+//   refreshToken:string;
+//   expiresIn:string;
+//   localId:string;
+// }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class UsersService {
 
-  // $ : any;
-  constructor(private http:HttpClient ) { }
-// Methode to get the data
-  getData(){
+export class UsersService {
+  constructor(private http: HttpClient) {}
+  // Methode to get the data
+  getData() {
     const url: string = 'posts';
     return this.http.get(environment.API_URL + '/' + url);
   }
 
   // Methode to post the data (JsonServer)
-  postData(createRessource:any) {
-    const url:string = 'posts'
-    return this.http.post(environment.API2_URL + '/' +url,createRessource)
+  postData(createRessource: any): Observable<Contact[]> {
+    const url: string = 'posts';
+    return this.http.post<Contact[]>(
+      environment.API2_URL + '/' + url,
+      createRessource
+    );
   }
 
 // Post the email & password of signup form (FireBase)
@@ -51,11 +55,9 @@ PostContact(contact:any){
  
 
 
-  // getData(){
-  //   return {
-  //     name:"peter",
-  //     email:"peter@gmail.com",
-  //     age:26
-  //   }
-  // }
+  // Post the Infos Of SignUp form
+  PostBenefited(benefited: any) {
+    const url: string = 'api/benefited';
+    return this.http.post(environment.API_SAHM_URL + '/' + url, benefited);
+  }
 }
