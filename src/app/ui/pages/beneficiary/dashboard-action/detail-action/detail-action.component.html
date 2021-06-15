@@ -1,0 +1,37 @@
+<body>
+    <table class="table my-5 p-5 ">
+        <thead >
+          <tr>
+            <th scope="col" class="info_action">Info Action</th>
+            <th scope="col">Etat</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hero of HEROES">
+            <td class="info_action">Etat</td>
+            <td>Otto</td>
+            <td>
+               <form action="#">
+                <button type="button" class="btn btn-detail m-2" mat-raised-button
+                matTooltip="Info about the action"
+                aria-label="Button that displays a tooltip when focused or hovered over"  (click)="open()" >Détail </button>
+                <button type="button" class="btn btn-danger  m-2" >Annuler</button>
+               </form>
+            </td>
+           </tr>
+           <tr>
+            <td ></td>
+            <td ></td>
+            <td ><button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Valider</button></td>
+           </tr>
+        </tbody>
+      </table>
+</body>
+
+<!-- Vetement Modal -->
+<app-global-model [id]="ModalId"> 
+  <h1>From Detail Action</h1> 
+</app-global-model>
+<!-- /Vetement Modal -->
+

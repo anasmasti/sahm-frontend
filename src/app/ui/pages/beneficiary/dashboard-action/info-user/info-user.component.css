@@ -1,0 +1,136 @@
+/* .row{
+    display: flex;
+    flex-direction: column;
+}
+.col-12{
+    text-align: left;
+}
+input{
+    border: none;
+    background: transparent;
+} */
+
+.card{
+    width: 80%;
+    margin: auto;
+    height: 100%;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.params_btn{
+    /* margin: auto; */
+    /* margin-right: 200px;
+    margin-left: 200px; */
+    width: 20%;
+    position: absolute; 
+    bottom: 12px;
+    right: 12px;
+    background-color: #B8B5FF ;
+    border : none;
+    outline: none;
+    
+
+}
+
+.params_btn:hover{
+    background-color: #6C63FF ;
+    outline: none;
+    
+}
+
+.params_btn:focus{
+    outline: none;
+}
+
+.info{
+    margin-right: 10px;
+    margin-right: 10px;
+    margin-right: 10px;
+    color: gray;
+}
+
+h5{
+    color: #B8B5FF;
+}
+
+@media only screen and (max-width: 1000px){
+
+    .card{
+        width: 100%;
+    }
+    
+}
+
+
+/* Validation style */
+
+:root {
+    /* colors */
+    --mainColor: #B8B5FF;
+    --secondaryColor: #E4FBFF;
+    /* border raduis */
+    --masterBorderRadius: 20px;
+    /* fonts size */
+    --minFontSize: 12px;
+    /* text color */
+    --txtColor: #fff;
+    /* main bg color  */
+    --mainBgColor: #FDFDFF;
+    /* main font-weight */
+    --mainFontWeight:800;
+    /* Color Text */
+    --ColorText:gray;
+    /* Authentification color */
+    --authColor:#7DDBEB;
+  }
+  
+  /* .modal {
+      display:block;
+    } */
+  
+  input.ng-invalid.ng-touched{
+      border: 2px solid red;
+  }
+  
+  span{
+    color: red;
+  }
+  
+  input.ng-valid{
+    border: 2px solid rgb(34,187,51);
+  }
+  
+  label{
+    color: var(--ColorText);
+    font-size: 17px;
+    padding-left: 5px;
+    font-weight: 600;
+  }
+  
+  .main-btn{
+    width: 40%;
+    background: #a9a6fd;
+    color: white;
+  }
+  
+  .main-btn:hover{
+    background: #b9b7ff;
+  }
+  
+  .form-group{
+    margin-top: 1em;
+  }
+
+  .btn-cancel{
+    width: 20%;
+    /* background: red; */
+    color: white;
+    border: none;
+  }
+
+  .btn-cancel:hover{
+    background: rgb(255, 112, 112);
+  }

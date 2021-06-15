@@ -1,0 +1,129 @@
+<!-- <div class="row text-center">
+
+    <!--Grid column
+    <div class="col-md-12 mb-4">
+
+      <h2 class="my-3 h2" style="margin: auto;">User Name</h2>
+
+      <div class="container">
+        <div class="row">
+            <div class="col-12 my-2">Nom : <label id="name">Hmmouch</label></div>
+            <div class="col-12 my-2">Prenom : <label id="aymen">Aymen</label></div>
+            <div class="col-12 my-2">Cin : <label id="cin">BB124578</label></div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary my-3">Modifier</button>
+
+    </div>
+    <!--Grid column
+
+  </div> -->
+
+<div class="card rounded-3 float-end" style="margin: auto;">
+  <div class="card-body">
+    <h5 class="card-title">Informations</h5>
+    <hr />
+    <div class="infos my-4">
+      <div class="col-12 my-3">
+        <label class="info">Nom :</label>
+        <label id="name">Hmmouch</label>
+      </div>
+      <div class="col-12 my-3">
+        <label class="info">Prénom :</label>
+        <label id="prenom">Aymen</label>
+      </div>
+      <div class="col-12 my-3">
+        <label class="info">Cin :</label>
+        <label [(id)]="id">BB103597</label>
+      </div>
+    </div>
+    <button
+      class="btn btn-primary me-md-2 params_btn rounded-pill"
+      type="button"
+      (click)="open()"
+    >
+      <i class="fa fa-cog" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+
+<app-global-model [id]="ModalId" >
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+
+      <form action="#" #f=ngForm [formGroup]="InsertData">
+        
+        <div class="row">
+            <!-- firstName -->
+            <div class="form-group col-sm-6">
+              <label for="firstName">Prénom</label>
+              <input type="text" id="firstName" name="firstName" class="form-control rounded-pill"
+              formControlName="firstName" ngModel required>
+                <!-- Error Message !! -->
+                <span class="help-block px-2" *ngIf="!InsertData.controls['firstName'].valid && InsertData.controls['firstName'].touched">Prénom est invalid !!!!!</span>
+            </div>
+
+            <!-- lastName -->
+            <div class="form-group col-sm-6">
+              <label for="lastName">Nom</label>
+              <input type="text" id="lastName" name="lastName" class="form-control rounded-pill"
+              formControlName="lastName" ngModel required>
+                <!-- Error Message !! -->
+                <span class="help-block px-2" *ngIf="!InsertData.controls['lastName'].valid && InsertData.controls['lastName'].touched">Nom est invalid !!!!!</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- age -->
+            <div class="form-group col-sm-6">
+              <label for="age">Age</label>
+              <input type="text" id="age" name="age" class="form-control rounded-pill"
+              formControlName="age" ngModel required>
+                <!-- Error Message !! -->
+                <span class="help-block px-2" *ngIf="!InsertData.controls['age'].valid && InsertData.controls['age'].touched">Age est invalid !!!!!</span>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group col-sm-6">
+              <label for="Phone">Téléphone</label>
+              <input type="text" id="Phone" name="Phone" class="form-control rounded-pill"
+              formControlName="Phone" ngModel required>
+                <!-- Error Message !! -->
+                <span class="help-block px-2" *ngIf="!InsertData.controls['Phone'].valid && InsertData.controls['Phone'].touched">Téléphone est invalid !!!!!</span>
+            </div>
+        </div>
+      
+        <!-- email -->
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" class="form-control rounded-pill"
+          formControlName="email" ngModel required email>
+            <!-- Error Message !! -->
+            <span class="help-block px-2" *ngIf="!InsertData.controls['email'].valid && InsertData.controls['email'].touched">Email est invalide !!!!!  Ex: abc@gmail.com</span>
+        </div>
+      
+        <!-- password -->
+        <!-- <div class="form-group">
+          <label for="InputPassword">Passworde</label>
+          <input type="password" id="InputPassword" name="InputPassword" class="form-control rounded-pill"
+          formControlName="InputPassword" ngModel required>
+            <!-- Error Message !! 
+            <span class="help-block px-2" *ngIf="!InsertData.controls['InputPassword'].valid && InsertData.controls['InputPassword'].touched">Id est invalid !!!!!</span>
+        </div> -->
+        
+        <!-- <div class="form-group" align="center" >
+          <!-- BUTTON UPDATE 
+          <input type="submit" value="Modifier" class="btn main-btn rounded-pill" [disabled]="!f.valid" >
+        </div> -->
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary rounded-pill bg-danger btn-cancel" data-bs-dismiss="modal">Close</button>
+      <input type="submit" value="Modifier" class="btn main-btn rounded-pill" [disabled]="!f.valid" >
+
+    </div>  
+</app-global-model>

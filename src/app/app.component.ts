@@ -1,26 +1,52 @@
-import { Component, Input } from '@angular/core';
-import {UsersService} from './services/users.service';
-import {FormControl} from '@angular/forms';
-import { Store } from '@ngrx/store';
-
+import { Component, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
+
+
 export class AppComponent {
+//   title = 'Sahm-WebSite';
+//   counter : any;
+//   title1:any;
+// constructor(private store: Store<{counter: {counter:number}}> , public dialog : MatDialog) {}
+
+
+// ngOnInit(): void{
+//     this.store.select('counter').subscribe(data =>{
+//      this.counter =  data.counter;
+//     })
+// }
+
+// openDialog(){
+//   this.dialog.open(ActionsComponent)
+// }
+
+
+  //   title = 'Sahm-WebSite';
+  //   counter : any;
+  //   title1:any;
+  // constructor(private store: Store<{counter: {counter:number}}> , public dialog : MatDialog) {}
+  // ngOnInit(): void{
+  //     this.store.select('counter').subscribe(data =>{
+  //      this.counter =  data.counter;
+  //     })
+  // }
+  // openDialog(){
+  //   this.dialog.open(ActionsComponent)
+  // }
+
   title = 'Sahm-WebSite';
   counter : any;
   title1:any;
-constructor(private store: Store<{counter: {counter:number}}>) {}
 
+  animal!: string;
+  name!: string;
 
-ngOnInit(): void{
-    this.store.select('counter').subscribe(data =>{
-     this.counter =  data.counter;
-    })
-}
+  constructor() {}
 
 
   // data:any=[]
@@ -39,5 +65,6 @@ ngOnInit(): void{
   // }
   // title1 = new FormControl('');
 
- 
+
 }
+

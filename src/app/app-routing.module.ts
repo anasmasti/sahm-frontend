@@ -62,6 +62,22 @@ const routes: Routes = [
     )
   },
 
+  {
+    path:'dashboard-action',
+    loadChildren:() =>
+    import('./ui/pages/beneficiary/dashboard-action/dashboard-action.module').then(
+      (mod)=>mod.DashboardActionModule
+    )
+  },
+
+  {
+    path:'global-modal',
+    loadChildren:() =>
+    import('./ui/shared/global-model/global-model/global-model.module').then(
+      (mod)=>mod.GlobalModelModule
+    )
+  },
+
 
 
 ];

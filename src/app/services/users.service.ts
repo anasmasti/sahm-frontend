@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+// import { DOCUMENT } from "@angular/common";
+import * as bootstrap from "bootstrap";
 
 interface AuthResponseData{
   idToken:string;
@@ -15,7 +17,8 @@ interface AuthResponseData{
 })
 export class UsersService {
 
-  constructor(private http:HttpClient) { }
+  // $ : any;
+  constructor(private http:HttpClient ) { }
 // Methode to get the data
   getData(){
     const url: string = 'posts';
@@ -33,7 +36,7 @@ signUp(email: string, password: string) {
   return this.http.post(
     `https://identitytoolkit.googleapis.com/v1/accounts:createAuthUri?key=AIzaSyDmyZJfX4kE189qBP3x5mwFhn6kjLBQCB8`,
     {email, password, returnSecureToken: true}
-  );  
+  );
 }
 
 getContact(){

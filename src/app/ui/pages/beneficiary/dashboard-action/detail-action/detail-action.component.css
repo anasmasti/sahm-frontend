@@ -1,0 +1,55 @@
+
+th, td {
+    padding: 20px; 
+    text-align: center;
+    /* border: 2px solid; */
+}
+
+.info_action{
+    width: 52%;
+}
+
+thead{
+    background-color: transparent;
+    border-top-right-radius: 12px;
+}
+
+body{
+    background-color: #B8B5FF;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    /* height: ; */
+    /* overflow: auto; */
+}
+
+th{
+    color: #FDFDFF ;
+}
+
+td{
+    
+    background-color: #FDFDFF;
+}
+
+.btn-detail{
+    background-color: #B8B5FF ;
+    border : none;
+    outline: none;
+}
+
+.btn-detail:hover{
+    background-color: #6C63FF ;
+    outline: none;
+    color: #FDFDFF;
+
+}
+
+button{
+    color: #FDFDFF;
+}
+
+.btn-success{
+    /* position: relative; */
+    /* floatright; */
+    margin: auto;
+}

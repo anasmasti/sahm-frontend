@@ -1,0 +1,19 @@
+@media only screen and (max-width: 1000px) {
+
+    header,body{
+        margin: auto;
+        padding: 0;
+    }
+
+    .row{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+}
+
+.info_user{
+  float: right;
+  height: 100%;
+  width: 100%;
+}
+
