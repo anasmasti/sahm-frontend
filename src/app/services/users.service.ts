@@ -3,8 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Contact } from '../models/contact.model';
 import { Observable } from 'rxjs';
-import * as bootstrap from "bootstrap";
-
 
 // interface AuthResponseData{
 //   idToken:string;
@@ -35,25 +33,13 @@ export class UsersService {
     );
   }
 
-// Post the email & password of signup form (FireBase)
-signUp(email: string, password: string) {
-  return this.http.post(
-    `https://identitytoolkit.googleapis.com/v1/accounts:createAuthUri?key=AIzaSyDmyZJfX4kE189qBP3x5mwFhn6kjLBQCB8`,
-    {email, password, returnSecureToken: true}
-  );
-}
-
-getContact(){
-  const url:string ='api/contact';
-  return this.http.get(environment.API_SAHM_URL + '/' + url);
-}
-
-PostContact(contact:any){
-  const url:string ="api/contact";
-  return this.http.post(environment.API_SAHM_URL + '/' + url,contact)
-}
- 
-
+  // Post the email & password of signup form (FireBase)
+  signUp(email: string, password: string) {
+    return this.http.post(
+      `https://identitytoolkit.googleapis.com/v1/accounts:createAuthUri?key=AIzaSyDmyZJfX4kE189qBP3x5mwFhn6kjLBQCB8`,
+      { email, password, returnSecureToken: true }
+    );
+  }
 
   // Post the Infos Of SignUp form
   PostBenefited(benefited: any) {

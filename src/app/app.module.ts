@@ -35,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -77,6 +78,7 @@ const material = [MatDialogModule , MatButtonModule];
     MatFormFieldModule,
     MatInputModule,
     GlobalModelModule,
+    MatTooltipModule,
     
     StoreModule.forRoot({counter: counterReducer}),
     StoreModule.forRoot({}, {}),

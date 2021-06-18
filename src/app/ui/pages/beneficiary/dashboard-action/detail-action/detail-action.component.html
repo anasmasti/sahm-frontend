@@ -1,37 +1,60 @@
-<body>
-    <table class="table my-5 p-5 ">
-        <thead >
-          <tr>
-            <th scope="col" class="info_action">Info Action</th>
-            <th scope="col">Etat</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let hero of HEROES">
-            <td class="info_action">Etat</td>
-            <td>Otto</td>
-            <td>
-               <form action="#">
-                <button type="button" class="btn btn-detail m-2" mat-raised-button
-                matTooltip="Info about the action"
-                aria-label="Button that displays a tooltip when focused or hovered over"  (click)="open()" >Détail </button>
-                <button type="button" class="btn btn-danger  m-2" >Annuler</button>
-               </form>
-            </td>
-           </tr>
-           <tr>
-            <td ></td>
-            <td ></td>
-            <td ><button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Valider</button></td>
-           </tr>
-        </tbody>
-      </table>
-</body>
 
-<!-- Vetement Modal -->
-<app-global-model [id]="ModalId"> 
-  <h1>From Detail Action</h1> 
+  <table class="table table-responsive my-5 p-5">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center text-white p-3">Info Action</th>
+        <th scope="col" class="text-center text-white p-3">Etat</th>
+        <th scope="col" class="text-center text-white p-3" ></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hero of HEROES">
+        <td class="text-center p-3 w-25"><label class="my-2 ">aaa</label></td>
+        <td class="text-center p-3 w-25"><label class="my-2">aaa</label></td>
+        <td class="text-center p-3 w-25">
+          <form action="#">
+            <button
+              type="button"
+              class="btn btn-detail mx-2 rounded-pill text-white"
+              data-toggle="tooltip"
+              title="Détail"
+              (click)="open()"
+            >
+              <i class="fas fa-info"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger mx-2 rounded-pill"
+              data-toggle="tooltip"
+              title="Annuler"
+            >
+              <i class="fas fa-times" color="white"></i>
+            </button>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="text-center p-2 w-25"> <label class="my-2">Valider vos besoins :</label> </td>
+        <td class="text-center p-2 w-25">
+          <button
+            class="btn btn-valider rounded-pill"
+            id="button-validate"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="Valider"
+            (click)='changeClass()'
+            #ButtonValidate
+          >
+          <i class="fas fa-check"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<!-- Detail Modal -->
+<app-global-model [id]="ModalId">
+  <h1>From Detail Action</h1>
 </app-global-model>
-<!-- /Vetement Modal -->
-
+<!-- /Detail Modal -->

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { GlobalModalService } from 'src/app/services/global-modal.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { GlobalModalService  } from 'src/app/services/global-modal.service';
 // import * as bootstrap from "bootstrap";
 
 @Component({
@@ -17,6 +17,7 @@ export class DetailActionComponent implements OnInit {
   ];
   $ : any ;
   ModalId : any = "DetailActionModal";
+  @ViewChild('ButtonValidate') myDiv!: ElementRef  ;
   constructor( private ModalService : GlobalModalService ) { }
 
   ngOnInit(): void {
@@ -28,6 +29,15 @@ export class DetailActionComponent implements OnInit {
 
   open() {
       this.ModalService.openModal(this.ModalId);
+  }
+
+  changeClass(){
+    $("#"+this.myDiv.nativeElement.id).removeClass("btn-valider");
+    $("#"+this.myDiv.nativeElement.id).addClass("btn-validée");
+    $("#"+this.myDiv.nativeElement.id).attr('title','Validée');
+
+    // console.log(this.myDiv.nativeElement.id);
+    
   }
 
 }

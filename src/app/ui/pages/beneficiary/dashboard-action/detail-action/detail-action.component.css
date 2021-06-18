@@ -1,55 +1,72 @@
+:root {
+    /* colors */
+    --mainColor: #B8B5FF;
+    /* darkcolor */
+    --darkmainColor: #6C63FF;
 
-th, td {
-    padding: 20px; 
-    text-align: center;
-    /* border: 2px solid; */
-}
-
-.info_action{
-    width: 52%;
-}
-
-thead{
-    background-color: transparent;
-    border-top-right-radius: 12px;
-}
-
-body{
-    background-color: #B8B5FF;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    /* height: ; */
-    /* overflow: auto; */
-}
-
-th{
-    color: #FDFDFF ;
-}
+    --secondaryColor: #E4FBFF;
+    /* border raduis */
+    --masterBorderRadius: 20px;
+    /* fonts size */
+    --minFontSize: 12px;
+    /* text color */
+    --txtColor: #fff;
+    /* main bg color  */
+    --mainBgColor: #FDFDFF;
+    /* main font-weight */
+    --mainFontWeight:800;
+    /* Color Text */
+    --ColorText:gray;
+    /* Authentification color */
+    --authColor:#7DDBEB;
+  }
 
 td{
-    
-    background-color: #FDFDFF;
+    background-color: var(--mainBgColor);
 }
 
+/* button Detail */
 .btn-detail{
-    background-color: #B8B5FF ;
-    border : none;
-    outline: none;
+    background-color: var(--mainColor) ;
 }
 
 .btn-detail:hover{
-    background-color: #6C63FF ;
-    outline: none;
-    color: #FDFDFF;
-
+    /* background-color: var(--darkmainColor); */
+    background-color: #6C63FF;
+    background-color: rgb(128, 128, 128);
 }
 
-button{
-    color: #FDFDFF;
+/* button valider */
+.btn-valider{
+    background-color: green;
+    border: 3px solid green ;
+    color: white;
 }
 
-.btn-success{
-    /* position: relative; */
-    /* floatright; */
-    margin: auto;
+/* button validée */
+.btn-validée{
+    background-color: transparent;
+    color: green;
+    border: 3px solid green ;
+}
+
+/* icon */
+i{
+    width: 1em;
+}
+
+/* labels */
+label{
+    color: var(--ColorText);
+    font-size: 17px;
+    padding-left: 5px;
+    font-weight: 600;
+  }
+
+/* box shadow and radius table */
+table{
+    background-color: var(--mainColor); 
+    border-collapse: collapse;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px 0.5px rgb(226, 226, 226);
 }

@@ -1,88 +1,364 @@
 <!--//////////////////////// Desktop Menu Start ///////////////////////////////-->
 <nav class="py-3 Desktop">
- 
-<!-- DIV BUTTON LANGUE -->
-<div class="d-flex justify-content-between  w-100 "> 
-  <div>
+  <!-- DIV BUTTON LANGUE -->
+  <div class="d-flex justify-content-between w-100">
+    <div class="" style="width: 25%">
       <!-- Button Langue -->
-  <ul class="mx-2 list-unstyled ">
-    <li>
-      <a href="" class="text-decoration-none" class="main-btn-secondary text-decoration-none px-3 py-2">
-        <!-- <i class="far fa-language main-btn-secondary"></i> -->
-        Langue</a>
-    </li>
-  </ul>
+      <ul class="mx-2 list-unstyled my-3">
+        <li>
+          <a
+            href=""
+            class="text-decoration-none"
+            class="main-btn-secondary text-decoration-none px-3 py-2 mx-3"
+          >
+            <!-- <i class="far fa-language main-btn-secondary"></i> -->
+            Langue</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!--DIV Button HOME/ABOUT/CONTACT -->
+    <div class="homebtn">
+      <ul class="d-flex flex-nowrap list-unstyled my-3">
+        <li class="item">
+          <a
+            href=""
+            class="main-btn-secondary px-3 py-2 text-decoration-none"
+            [routerLink]="['/']"
+            routerLinkActive="router-link-active"
+            >HOME</a
+          >
+        </li>
+
+        <li class="px-2 item">
+          <a
+            href=""
+            class="main-btn-secondary px-3 py-2 text-decoration-none"
+            [routerLink]="['/about']"
+            routerLinkActive="router-link-active"
+            >ABOUT</a
+          >
+        </li>
+
+        <li class="item">
+          <a
+            href=""
+            class="main-btn-secondary px-3 py-2 text-decoration-none"
+            [routerLink]="['/contact']"
+            routerLinkActive="router-link-active"
+            >CONTACT</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!--Div Button SignUp & LogIn -->
+    <!-- <div>
+    <ul class="d-flex flex-nowrap list-unstyled">
+      <li>
+        <a href="" [routerLink]="['/login']" class="main-btn-secondary text-decoration-none px-3 py-2">
+          <i class="far fa-sign-in-alt main-btn-secondary px-1"></i>
+          LOGIN</a>
+      </li>
+
+      <li class="px-2">
+        <a href="" [routerLink]="['/signup']" class="main-btn-secondary text-decoration-none px-3 py-2">
+          <i class="far fa-user-plus main-btn-secondary px-1"></i>
+          SIGNUP</a>
+      </li>
+    </ul>
+  </div> -->
+
+    <!--DIV Connected User -->
+    <div class="connected-user my-2 w-25 d-flex">
+      <div
+        class="user-name w-75 h-100 position-relative d-flex"
+      >
+        <h6 class="my-3 mr-5">Ayman</h6>
+      </div>
+      <div class="dropdown mr-4 d-flex justify-content-md-center">
+        <div class="img-user d-flex position-relative w-75 h-75 my-2">
+          <img
+            src="./../../../../../assets/User/user.svg"
+            class="user-img w-100"
+            alt=""
+          />
+          <img
+            src="./../../../../../assets/User/circle.svg"
+            class="user-circle position-absolute bottom-0 start-0 rounded-circle"
+            alt=""
+            width="18px"
+          />
+        </div>
+        <div class="dropdown-content">
+          <button
+            mat-flat-button
+            class="w-100 btn-modif-profile"
+            (click)="open()"
+          >
+            Modifier votre profile
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!--DIV Button HOME/ABOUT/CONTACT -->
-<div class="homebtn">
-  <ul class="d-flex flex-nowrap list-unstyled ">
-    <li class="item">
-      <a href="" class="px-3 py-2 text-decoration-none" 
-      [routerLink]="['/']" routerLinkActive="router-link-active">HOME</a>
-    </li>
-
-    <li class="px-2 item">
-      <a href="" class="px-3 py-2 text-decoration-none"
-      [routerLink]="['/about']" routerLinkActive="router-link-active">ABOUT</a>
-    </li>
-
-    <li class="item">
-      <a href="" class="px-3 py-2 text-decoration-none"
-      [routerLink]="['/contact']" routerLinkActive="router-link-active">CONTACT</a>
-    </li>
-  </ul>
-</div>
-
-<!--Div Button SignUp & LogIn -->
-<div>
-  <ul class="d-flex flex-nowrap list-unstyled">
-    <li>
-      <a href="" [routerLink]="['/login']" class="main-btn-secondary text-decoration-none px-3 py-2">
-        <!-- <i class="far fa-sign-in-alt main-btn-secondary px-1"></i> -->
-        LOGIN</a>
-    </li>
-
-    <li class="px-2">
-      <a href="" [routerLink]="['/signup']" class="main-btn-secondary text-decoration-none px-3 py-2">
-        <!-- <i class="far fa-user-plus main-btn-secondary px-1"></i> -->
-        SIGNUP</a>
-    </li>
-  </ul>
-</div>
-
-</div>
-
 </nav>
-
 
 <!--//////////////////////// Desktop Menu End ///////////////////////////////-->
 
 
-
 <!--//////////////////////// Mobile Menu Start ///////////////////////////////-->
 <nav class="Mobile py-3">
-
   <!-- Button Menu -->
-  <input type="checkbox" id="check">
+  <input type="checkbox" id="check" />
   <label for="check" class="checkbtn d-flex px-2 py-2">
     <i class="fas fa-bars"></i>
   </label>
 
+  <!-- Button LANGUE/LOGIN/SIGNUP -->
+  <!-- <div class="d-flex justify-content-end mt-2">
+    <button class="main-btn-secondary border-0 mx-4">Langue</button>
+    <button class="main-btn-secondary border-0" [routerLink]="['/login']">
+      LogIn
+    </button>
+    <button class="main-btn-secondary border-0 mx-4" [routerLink]="['/signup']">
+      SignUp
+    </button>
+  </div> -->
 
-<!-- Button LANGUE/LOGIN/SIGNUP -->
-<div class="d-flex justify-content-end mt-2">
- <button class="main-btn-secondary border-0 mx-4">Langue</button>
- <button class="main-btn-secondary border-0" [routerLink]="['/login']">LogIn</button>
- <button class="main-btn-secondary border-0 mx-4" [routerLink]="['/signup']">SignUp</button>
-</div>
- 
-<!-- BUTTON HOME/ABOUT/CONTACT -->
- <ul>
-   <li class="" ><a class="active" href="#"  [routerLink]="['/']" routerLinkActive="router-link-active">Home</a></li>
-   <li class=""><a href="#" [routerLink]="['about']" routerLinkActive="router-link-active">About</a></li>
-   <li class=""><a href="#" [routerLink]="['/contact']" routerLinkActive="router-link-active">Contact</a></li>
- </ul>
+  <!--DIV Connected User -->
+  <div class="connected-user w-100 d-flex">
+    <div
+      class="user-name w-75 h-100 position-relative d-flex"
+    >
+      <h6 class=" mr-5">Ayman</h6>
+    </div>
+    <div class="dropdown mr-4 d-flex justify-content-md-center">
+      <div class="img-user d-flex position-relative min-vw-50 h-100 justify-content-center">
+        <img
+          src="./../../../../../assets/User/user.svg"
+          class="my-auto"
+          alt=""
+          style="width: 3em;"
+        />
+        <img
+          src="./../../../../../assets/User/circle.svg"
+          class="user-circle position-absolute bottom-0 start-0 rounded-circle"
+          alt=""
+          width="18px"
+        />
+      </div>
+      <div class="dropdown-content">
+        <button
+          mat-flat-button
+          class="btn-modif-profile w-100"
+          (click)="open()"
+          style="color: var(--ColorText) ;"
+        >
+          Modifier votre profile
+        </button>
+      </div>
+    </div>
+  </div>
 
+  <!-- BUTTON HOME/ABOUT/CONTACT -->
+  <ul>
+    <li class="">
+      <a
+        class="active"
+        href="#"
+        [routerLink]="['/']"
+        routerLinkActive="router-link-active"
+        >Home</a
+      >
+    </li>
+    <li class="">
+      <a href="#" [routerLink]="['about']" routerLinkActive="router-link-active"
+        >About</a
+      >
+    </li>
+    <li class="">
+      <a
+        href="#"
+        [routerLink]="['/contact']"
+        routerLinkActive="router-link-active"
+        >Contact</a
+      >
+    </li>
+  </ul>
 </nav>
+
 <!--//////////////////////// Mobile Menu end ///////////////////////////////-->
+
+
+
+
+
+
+
+<!--//////////////////////// Detail Modal ///////////////////////////////-->
+<app-global-model [id]="ModalId">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form action="#" #f="ngForm" [formGroup]="InsertData">
+      <div class="row">
+        <!-- firstName -->
+        <div class="form-group col-sm-6">
+          <label for="firstName">Prénom</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            class="form-control rounded-pill"
+            formControlName="firstName"
+            ngModel
+            required
+          />
+          <!-- Error Message !! -->
+          <span
+            class="help-block px-2"
+            *ngIf="
+              !InsertData.controls['firstName'].valid &&
+              InsertData.controls['firstName'].touched
+            "
+            >Prénom est invalid !!!!!</span
+          >
+        </div>
+
+        <!-- lastName -->
+        <div class="form-group col-sm-6">
+          <label for="lastName">Nom</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            class="form-control rounded-pill"
+            formControlName="lastName"
+            ngModel
+            required
+          />
+          <!-- Error Message !! -->
+          <span
+            class="help-block px-2"
+            *ngIf="
+              !InsertData.controls['lastName'].valid &&
+              InsertData.controls['lastName'].touched
+            "
+            >Nom est invalid !!!!!</span
+          >
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- age -->
+        <div class="form-group col-sm-6">
+          <label for="age">Age</label>
+          <input
+            type="text"
+            id="age"
+            name="age"
+            class="form-control rounded-pill"
+            formControlName="age"
+            ngModel
+            required
+          />
+          <!-- Error Message !! -->
+          <span
+            class="help-block px-2"
+            *ngIf="
+              !InsertData.controls['age'].valid &&
+              InsertData.controls['age'].touched
+            "
+            >Age est invalid !!!!!</span
+          >
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group col-sm-6">
+          <label for="Phone">Téléphone</label>
+          <input
+            type="text"
+            id="Phone"
+            name="Phone"
+            class="form-control rounded-pill"
+            formControlName="Phone"
+            ngModel
+            required
+          />
+          <!-- Error Message !! -->
+          <span
+            class="help-block px-2"
+            *ngIf="
+              !InsertData.controls['Phone'].valid &&
+              InsertData.controls['Phone'].touched
+            "
+            >Téléphone est invalid !!!!!</span
+          >
+        </div>
+      </div>
+
+      <!-- email -->
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control rounded-pill"
+          formControlName="email"
+          ngModel
+          required
+          email
+        />
+        <!-- Error Message !! -->
+        <span
+          class="help-block px-2"
+          *ngIf="
+            !InsertData.controls['email'].valid &&
+            InsertData.controls['email'].touched
+          "
+          >Email est invalide !!!!! Ex: abc@gmail.com</span
+        >
+      </div>
+
+      <!-- password -->
+      <!-- <div class="form-group">
+        <label for="InputPassword">Passworde</label>
+        <input type="password" id="InputPassword" name="InputPassword" class="form-control rounded-pill"
+        formControlName="InputPassword" ngModel required>
+          <!-- Error Message !! 
+          <span class="help-block px-2" *ngIf="!InsertData.controls['InputPassword'].valid && InsertData.controls['InputPassword'].touched">Id est invalid !!!!!</span>
+      </div> -->
+
+      <!-- <div class="form-group" align="center" >
+        <!-- BUTTON UPDATE 
+        <input type="submit" value="Modifier" class="btn main-btn rounded-pill" [disabled]="!f.valid" >
+      </div> -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary rounded-pill bg-danger btn-cancel"
+      data-bs-dismiss="modal"
+    >
+      Close
+    </button>
+    <input
+      type="submit"
+      value="Modifier"
+      class="btn main-btn rounded-pill"
+      [disabled]="!f.valid"
+    />
+  </div>
+</app-global-model>
+<!--//////////////////////// End Mobile Menu end ///////////////////////////////-->
