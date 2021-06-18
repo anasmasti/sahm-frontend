@@ -1,0 +1,167 @@
+.card{
+  width: 120px;
+  height: 100px;
+  margin: 12px;
+  padding: 0px;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(126, 126, 126);
+  border:0.1 solid transparent ;
+  border-radius: 12px;
+  background-image: url("../../../../../../../assets/help.png");
+}
+.card:hover{
+  box-shadow: 0px 0px 20px 1px rgba(85, 85, 85, 0.7);
+  transition: box-shadow 0.3s ease-in-out;
+  transform: scale(1.1, 1.1);
+}
+.card-container{
+  display: flex; justify-content: space-between; flex-wrap: wrap; 
+}
+h3{
+  color: var(--authColor);
+}
+.my-pagination /deep/ .ngx-pagination .current {
+background: var(--authColor);
+color: white;
+}
+.my-pagination /deep/ .ngx-pagination  {
+background:transparent;
+color: var(--authColor);
+float: right;
+
+}
+/* .my-pagination /deep/  {
+float: right;
+} */
+.mrg{
+margin: auto;
+}
+
+.hit{
+height: 100%;
+background: var(--authColor);
+color: white;
+}
+
+:root {
+  /* colors */
+  --mainColor: #B8B5FF;
+  --secondaryColor: #E4FBFF;
+  /* border raduis */
+  --masterBorderRadius: 20px;
+  /* fonts size */
+  --minFontSize: 12px;
+  /* text color */
+  --txtColor: #fff;
+  /* main bg color  */
+  --mainBgColor: #FDFDFF;
+   /* Color Text */
+   --ColorText:gray;
+    /* Authentification color (beneficiary)*/
+    --authColor:#7DDBEB;
+    /* Authentification Color2 (giver) */
+    --authColor2:#6C63FF;
+
+}
+.alEnd{
+  text-align: end;
+}
+.alCenter{
+  text-align: center;
+}
+h6{
+  font-size: 12px; margin-top: 0px;
+}
+
+.shado{
+  background-color: var(--mainColor) ;
+  color: white  ;
+  border: 1px solid;
+  padding: 10px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+.modalDiv{
+  border-radius: 20px;
+
+}
+.tittle-model{
+  background-color: var(--secondaryColor) ;
+  color: var(--mainColor) ;
+}
+
+.ng-md{
+  border-radius: 30%;
+}
+h6{
+  margin-top: 0px;
+  margin-bottom: 1px;
+}
+.titleH{
+  margin: auto;
+  margin-left: 10px;
+  margin-top: 8px;
+  margin-bottom: 0px;
+}
+.card{
+  width: 116px;
+   height: 120px; 
+  margin: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+ padding-top: 10px;
+ padding-bottom: 0px;
+ padding-right: 0px;
+ padding-left: 0px;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(126, 126, 126);
+  border:0.1 solid transparent ;
+  border-radius: 12px;
+  background-color: var(--txtColor) ;
+}
+.card:hover{
+  box-shadow: 0px 0px 20px 1px rgba(85, 85, 85, 0.7);
+  transition: box-shadow 0.3s ease-in-out;
+  transform: scale(1.1, 1.1);
+}
+.card-container{
+  display: flex; justify-content: space-between; flex-wrap: wrap; 
+}
+h3{
+  color: var(--authColor);
+}
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: var(--mainColor);
+  color: white;
+  border: solid 1px white;
+  }
+  .my-pagination ::ng-deep .ngx-pagination  {
+    /* border: solid 1px white; */
+  /* background : white; */
+  color: white;
+  float: left;
+  /* width: 97%; */
+  margin: 0px;
+  
+  }
+  .hide-page-numbers ::ng-deep .ngx-pagination li:not(.pagination-previous):not(.pagination-next) {
+    display: none;
+  }
+/* .my-pagination /deep/  {
+float: right;
+} */
+.mrg{
+margin: auto;
+}
+.brd{
+  border-top-left-radius: 30px;
+   border-bottom-left-radius: 30px;
+}
+.hit{
+  height: 100%;
+  background: var(--authColor);
+  color: white;
+  border-left: none; border-top-right-radius: 30px; border-bottom-right-radius: 30px;
+  }

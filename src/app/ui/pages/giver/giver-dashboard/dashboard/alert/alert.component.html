@@ -1,20 +1,227 @@
-<div>
-    <div class="row">
-        <div class="col-md-5" style="color: red;"><h3><i class="fas fa-exclamation-triangle"></i> ALERTE <i class="fas fa-exclamation-triangle"></i></h3></div>
-        <div class="col-md-7"><button class="btn btn-danger" style="float: right; background-color:  var(--mainColor); border-color:  var(--mainColor);">call administrateur</button></div>
-        
-    </div>
+
+<div class="row titleH">
+  <div class="col-md-6">
+    <h5 style= "color: var(--txtColor);">ALERT   </h5>
+  </div> 
+  <div class="col-md-6">
    
-    <hr>
-    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; ">
-       <div *ngFor="let action of actions" class="card" style="width: 11rem; height: 18rem;" >
-           <div style="height: 2rem; width: 100%; background-color: red;text-align: center; padding-top: 3px;"><h5 style="color: white;"><i class="fas fa-exclamation-triangle"></i>  SOS</h5></div>
-           <img class="card-img-top" src={{action.src}} >
-           <div class="card-body" style="text-align: center;">
-           <h5 class="card-title">{{action.nomAction}}</h5>
-           <a href="#" class="btn btn-primary" style="background-color:  var(--mainColor); border-color:  var(--mainColor);">contribuer</a>
-           </div>
-       </div>
-    </div>
+  </div>
+ </div>
+ <div class="row  p-0 " style="height:180px;">
  
-</div>
+ <div class="alert " style=" display: flex; justify-content: flex-start; flex-wrap: wrap;">
+   <button class="card" style="width: 103px;  "  *ngFor="let action of listActions | paginate: { id: 'id2', itemsPerPage: 4, currentPage: page, totalItems: totalLength }" (click)="selectedalert(action._id); open(content)" >
+      <div class="panel panel-default card-input" style="margin: auto;"  >
+         <div class="panel-body" style="color: var(--mainColor);" >
+            <div class="icn" >
+               <i class="fas fa-people-carry" style="font-size: 40px;"></i>
+            </div>
+             
+                <h6 *ngIf="action.vetement.selected == 'true'">vétement</h6>
+                <h6  *ngIf="action.abonnement_mobile.selected == 'true' || action.abonnement_transport.selected == 'true' ">abonnement</h6>
+                <h6 *ngIf="action.autre.selected == 'true'">autre</h6>
+                <h6 style="margin-top: 0px;margin-bottom: 5px;"> date : {{ action.date_action | date:'dd-MM-yyyy' }} </h6>
+           
+         </div>
+      </div>
+   </button>
+      
+ </div>
+ <div class="row">
+   <div class="col-md-12">
+     <pagination-controls id="id2" class="my-pagination hide-page-numbers"(pageChange)="page = $event"></pagination-controls>
+   </div>
+ </div>
+ 
+
+ 
+ </div>
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  ---------------------modal popup ------------------------- -->
+
+<ng-template #content let-modal>
+  <div class="modal-header tittle-model" >
+    <h4 class="modal-title" id="modal-basic-title">Aider user 1  <i class="fas fa-hands-helping"></i> </h4> 
+    <!-- <button type="button"  class="close btn btn-outline-danger cls" aria-label="Close" (click)="modal.dismiss('Cross click')" style ="outline: none !important;">
+      <span aria-hidden="true">&times;</span>
+    </button> -->
+  </div>
+  <div class="modal-body" style="height: 500px; overflow-y: scroll;">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col" colspan="2">Informations de bénéficiaire</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let benif of selectedBenif">
+        <tr>
+          <td>Nom complet :</td>
+          <td><label>{{ benif.last_name }}  {{ benif.first_name }}</label></td>
+        </tr>
+        <tr>
+          <td>sexe :</td>
+          <td><label>{{ benif.gender }} </label></td>
+        </tr>
+        <tr>
+          <td>Age :</td>
+          <td><label>{{ benif.age }}</label></td>
+        </tr>
+        <tr>
+          <td>Tél :</td>
+          <td><label>{{ benif.phone }}</label></td>
+        </tr>
+        <tr>
+          <td>Email :</td>
+          <td><label>{{ benif.email }}</label></td>
+        </tr>
+        <tr>
+          <td>Adresse :</td>
+          <td><label>{{ benif.adress }}</label></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col" colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let action of selectedAlert" >
+          <td>Date de disposition :</td>
+          <td><label>{{ action.date_action | date:'dd-MM-yyyy' }}</label></td>
+        </tr>
+       
+      </tbody>
+    </table>
+       <div class="vetement" *ngIf="selectedAlert[0].vetement.selected == 'true'">
+       
+          <h6>vétement </h6>
+        
+            <div class="row">
+              <div class="col-md-4 alEnd">
+                type :
+              </div>
+              <div class="col-md-8 alCenter">
+                <label>{{ selectedAlert[0].vetement.type }}</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 alEnd">
+                size :
+              </div>
+              <div class="col-md-8 alCenter">
+                <label>{{ selectedAlert[0].vetement.size }}</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 alEnd">
+                sexe :
+              </div>
+              <div class="col-md-8 alCenter">
+                <label>{{ selectedAlert[0].vetement.gender }}</label>
+              </div>
+            </div>
+       <hr>
+       </div>
+      
+       <div class="abonnement"  *ngIf="selectedAlert[0].abonnement_mobile.selected == 'true' || selectedAlert[0].abonnement_transport.selected == 'true' ">
+       
+        <h6>Abonnement </h6>
+      
+          <div class="row" *ngIf="selectedAlert[0].abonnement_transport.selected == 'true'">
+            <div class="col-md-4 alEnd">
+              transport :
+            </div>
+            <div class="col-md-8 alCenter">
+              <label>type : {{selectedAlert[0].abonnement_transport.type_abonnement}} </label>
+            </div>
+          </div>
+          <div class="row" *ngIf="selectedAlert[0].abonnement_mobile.selected == 'true'" >
+            <div class="col-md-4 alEnd">
+              mobile :
+            </div>
+            <div class="col-md-8 alCenter">
+              <label>operateur : {{selectedAlert[0].abonnement_mobile.operateur}}</label>
+            </div>
+          </div>
+    <hr>
+     </div>
+     
+    
+
+    <div class="autre" *ngIf="selectedAlert[0].autre.selected == 'true'">
+       
+      <h6>Autre type  </h6>
+   
+       <div class="row">
+         <div class="col-md-4 alEnd">
+           autre :
+         </div>
+         <div class="col-md-8 alCenter">
+           <label>{{selectedAlert[0].autre.text}}</label>
+         </div>
+       </div>
+       
+   <hr>
+     </div> 
+
+
+    <div class="row">
+          <div class="col-md-4">
+              Plus de détails :
+          </div>
+          <div class="col-md-8" *ngFor="let action of selectedAlert" >
+              <p>{{ action.details }}</p> 
+          </div>
+    </div> 
+         
+           
+        
+  
+  </div> 
+  <div class="modal-footer " >
+      <button type="submit" class="main-btn-secondary border-0 mx-2 btn" (click)="contribuer(selectedAlert[0]._id); modal.close('Save click'); reload();">Contribuer</button>
+      <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="modal.close('Save click')">Annuler</button>
+  </div>
+</ng-template>

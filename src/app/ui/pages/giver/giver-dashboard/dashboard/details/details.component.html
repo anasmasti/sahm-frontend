@@ -1,28 +1,296 @@
-<div class="row">
-  <div class="col-md-5" style="color:  var(--mainColor);"><h3>Vos contributions</h3></div>
+<div class="row titleH" >
+  <h5 style= "color: var(--ColorText);">VOS CONTRIBUTIONS </h5>
+</div>
+<div class="row ">
+<div *ngIf="Contributions == 0" class="pasEncore" style=" text-align: center; margin-top: 20px; margin-bottom: 30px;">
+  <i style="font-size: 60px;  color: var(--ColorText)" class="fas fa-info-circle"></i>
+  <h5>
+    vous n'avez pas encore contribué   
+  </h5>
+  <h6>
+    pour aider les demondeurs d'aide veuiller selectionner une des actions situées dans la zone "CONTRIBUER"
+  </h6>
+  <h6>
+    noté que les actions situées dans la zone "ALERT" est dédié au demandes urgentes !
+  </h6>
+</div>
+
+<div *ngIf="Contributions != 0" class="alert" style=" display: flex; justify-content: flex-start;">
+ 
+  <table class="table">
+     <thead class="thead-dark">
+       <tr style="color:var(--ColorText);">
+  
+         <th scope="col">objet</th>
+         <th scope="col">statut</th>
+         <th scope="col">date demande</th>
+         <th scope="col">etat</th>
+         <th scope="col"  style="text-align: center;"></th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let action of Contributions | paginate: { id: 'id3', itemsPerPage: 3, currentPage: page, totalItems: totalLength }" style="color:var(--ColorText);">
+         <td>objet</td>
+         <td>{{action.statut}}</td>
+         <td>{{ action.date_action | date:'dd-MM-yyyy' }}</td>
+         <td>{{action.etat}}</td>
+          <td>
+     
+               <button id="{{action._id}}"  *ngIf="action.etat != 'validé'" type="button" class="main-btn-secondary border-02 btn" (click)="valider(action._id); reload();"  ><i class="fas fa-check-circle"></i></button>
+               <button  id="{{action._id}}"  *ngIf="action.etat != 'validé'"  type="button" (click)="initialiserAction(action._id); reload();" class="main-btn-secondary border-0 mx-2 btn" ><i class="fas fa-ban"></i></button>
+
+        
+           
+           <button type="button" class="main-btn-secondary border-02 btn"(click)="  open(content) ;  selectedaction(action._id);"   ><i class="fas fa-info-circle"></i></button>
+          </td>
+       </tr>
+
+     
+       
+     </tbody>
+   </table>
+     
   
 </div>
-<hr>
-<div>
-    <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">objet</th>
-            <th scope="col">beneficiary</th>
-            <th scope="col" colspan="2" style="text-align: center;">action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Vaitement</td>
-            <td>beneficiary</td>
-            <td><button class="btn btn-primary" style="background-color:  var(--mainColor); border-color:  var(--mainColor);">details</button></td><td> <button class="btn btn-success" style="background-color:  var(--mainColor); border-color:  var(--mainColor);">payer</button></td>
-          </tr>
-          <tr>
-            <td>Abonnement</td>
-            <td>beneficiary</td>
-            <td><button class="btn btn-primary" style="background-color:  var(--mainColor); border-color:  var(--mainColor);">details</button></td><td> <button class="btn btn-success" style="background-color:  var(--mainColor); border-color:  var(--mainColor);">payer</button></td>
-          </tr>
-        </tbody>
-      </table>
+<div  *ngIf="Contributions != 0 " class="row">
+  <div class="col-md-12">
+    <pagination-controls id="id3" class="my-pagination hide-page-numbers"(pageChange)="page = $event"></pagination-controls>
+  </div>
 </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  ---------------------modal popup ------------------------- -->
+
+<ng-template #content let-modal>
+  <div class="modal-header tittle-model" >
+    <h4 class="modal-title" id="modal-basic-title">Aider user 1  <i class="fas fa-hands-helping"></i> </h4> 
+    <!-- <button type="button"  class="close btn btn-outline-danger cls" aria-label="Close" (click)="modal.dismiss('Cross click')" style ="outline: none !important;">
+      <span aria-hidden="true">&times;</span>
+    </button> -->
+  </div>
+  <div class="modal-body" style="height: 500px; overflow-y: scroll;">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col" colspan="2">Informations de bénéficiaire</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let benif of selectedBenif">
+        <tr>
+          <td>Nom complet :</td>
+          <td><label>{{ benif.last_name }}  {{ benif.first_name }}</label></td>
+        </tr>
+        <tr>
+          <td>sexe :</td>
+          <td><label>{{ benif.gender }} </label></td>
+        </tr>
+        <tr>
+          <td>Age :</td>
+          <td><label>{{ benif.age }}</label></td>
+        </tr>
+        <tr>
+          <td>Tél :</td>
+          <td><label>{{ benif.phone }}</label></td>
+        </tr>
+        <tr>
+          <td>Email :</td>
+          <td><label>{{ benif.email }}</label></td>
+        </tr>
+        <tr>
+          <td>Adresse :</td>
+          <td><label>{{ benif.adress }}</label></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col" colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let action of selectedAction" >
+          <td>Date de disposition :</td>
+          <td><label>{{ action.date_action | date:'dd-MM-yyyy' }}</label></td>
+        </tr>
+       
+      </tbody>
+    </table>
+       <div class="vetement" *ngIf="selectedAction[0].vetement.selected == 'true'">
+       
+          <h6>vétement </h6>
+        
+            <div class="row">
+              <div class="col-md-4 alEnd">
+                type :
+              </div>
+              <div class="col-md-8 alCenter">
+                <label>{{ selectedAction[0].vetement.type }}</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 alEnd">
+                size :
+              </div>
+              <div class="col-md-8 alCenter">
+                <label>{{ selectedAction[0].vetement.size }}</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 alEnd">
+                sexe :
+              </div>
+              <div class="col-md-8 alCenter">
+                <label>{{ selectedAction[0].vetement.gender }}</label>
+              </div>
+            </div>
+       <hr>
+       </div>
+      
+       <div class="abonnement">
+       
+        <h6>Abonnement </h6>
+      
+          <div class="row" *ngIf="selectedAction[0].abonnement_transport.selected == 'true'">
+            <div class="col-md-4 alEnd">
+              transport :
+            </div>
+            <div class="col-md-8 alCenter">
+              <label>type : {{selectedAction[0].abonnement_transport.type_abonnement}}</label>
+            </div>
+          </div>
+          <div class="row" *ngIf="selectedAction[0].abonnement_mobile.selected == 'true'" >
+            <div class="col-md-4 alEnd">
+              mobile :
+            </div>
+            <div class="col-md-8 alCenter">
+              <label>{{  selectedAction[0].abonnement_mobile.operator }}</label>
+            </div>
+          </div>
+    
+     </div>
+     <hr>
+    
+
+    <div class="autre" *ngIf="selectedAction[0].selected == 'true'">
+       
+      <h6>Autre type  </h6>
+   
+       <div class="row">
+         <div class="col-md-4 alEnd">
+           autre :
+         </div>
+         <div class="col-md-8 alCenter">
+           <label>téléphone portable</label>
+         </div>
+       </div>
+       
+   <hr>
+     </div> 
+
+
+    <div class="row">
+          <div class="col-md-4">
+              Plus de détails :
+          </div>
+          <div class="col-md-8" *ngFor="let action of selectedAction" >
+              <p>{{ action.details }}</p> 
+          </div>
+    </div> 
+         
+           
+        
+     
+      <!-- <div class="row" class="row">
+          <div class="col-md-6">
+              Nom complet : <br>
+              sexe : <label>M</label> <br>
+              Age : <label>20</label><br>
+              Tél : <label>0604060406</label><br>
+              Email : <label>user@mail.com</label><br>
+              Adresse : <label>33 rue  </label>
+          </div>
+          <div class="col-md-6"><br>
+            <img style="height: 100px; width: 100px; margin-left: 20%;" src="../../../../../../assets/user.png" alt="">
+          </div>
+      </div>
+      <hr>
+      <div>
+          Objet/Service : <label>Abonnement tram</label><br>
+          Plus de détails : <label>j'ai besoins d'une carte abonnemenet tram pour aller au centre de formation</label>
+      </div>-->
+  </div> 
+  <div class="modal-footer " >
+      <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="modal.close('Save click')">fermer</button>
+  </div>
+</ng-template>

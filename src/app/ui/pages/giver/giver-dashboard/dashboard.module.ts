@@ -8,6 +8,7 @@ import { ActionsComponent } from './dashboard/actions/actions.component';
 import { InfoComponent } from './dashboard/info/info.component';
 import { DetailsComponent } from './dashboard/details/details.component';
 import { DetailsBenefiComponent } from './dashboard/details-benefi/details-benefi.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -20,6 +21,7 @@ import { DetailsBenefiComponent } from './dashboard/details-benefi/details-benef
   imports: [
     CommonModule,
     DashboardRoutingModule,
+    NgxPaginationModule,
     
   ]
 })

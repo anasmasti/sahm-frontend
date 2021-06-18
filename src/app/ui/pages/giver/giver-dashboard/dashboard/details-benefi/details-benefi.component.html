@@ -1,1 +1,77 @@
-<p>details-benefi works!</p>
+
+  
+  
+
+
+<!--  ---------------------modal popup ------------------------- -->
+
+<ng-template #content let-modal>
+    <div class="modal-header tittle-model" >
+      <h4 class="modal-title" id="modal-basic-title">Aider user 1  <i class="fas fa-hands-helping"></i> </h4> 
+      <!-- <button type="button"  class="close btn btn-outline-danger cls" aria-label="Close" (click)="modal.dismiss('Cross click')" style ="outline: none !important;">
+        <span aria-hidden="true">&times;</span>
+      </button> -->
+    </div>
+    <div class="modal-body" >
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col" colspan="2">Informations de bénéficiaire</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Nom complet :</td>
+            <td><label>user 1 </label></td>
+          </tr>
+          <tr>
+            <td>sexe :</td>
+            <td><label>Masculain</label></td>
+          </tr>
+          <tr>
+            <td>Age :</td>
+            <td><label>20</label></td>
+          </tr>
+          <tr>
+            <td>Tél :</td>
+            <td><label>0604060406</label></td>
+          </tr>
+          <tr>
+            <td>Email :</td>
+            <td><label>user@mail.com</label></td>
+          </tr>
+          <tr>
+            <td>Adresse :</td>
+            <td><label>33 rue roterdham newyork usa</label></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col" colspan="2">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Date de disposition :</td>
+            <td><label></label></td>
+              <!-- <td><label>{{ date_action }}</label></td> -->
+          </tr>
+          <tr>
+            <td>Objet/Service :</td>
+            <td><label>Abonnement transport</label></td>
+          </tr>
+          <tr>
+            <td>Plus de détails :</td>
+            <td> <p> details</p> </td>
+            <!-- <td> <p>{{ details }}</p> </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div> 
+    <div class="modal-footer " >
+        <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="modal.close('Save click')">Contribuer</button>
+        <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="modal.close('Save click')">Annuler</button>
+    </div>
+  </ng-template>

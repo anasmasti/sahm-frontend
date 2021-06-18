@@ -13,7 +13,6 @@ import { InfoComponent } from './ui/pages/admin/dashboard/info/info.component';
 import { ListComponent } from './ui/pages/admin/dashboard/list/list.component';
 import { DetailComponent } from './ui/pages/admin/dashboard/detail/detail.component';
 import { ActionComponent } from './ui/pages/beneficiary/dashboard/action/action.component';
-import { AlertComponent } from './ui/pages/giver/dashboard/alert/alert.component';
 import { NavbarComponent } from './ui/shared/layouts/navbar/navbar.component';
 import { FooterComponent } from './ui/shared/layouts/footer/footer.component';
 import { GlobalModelComponent } from './ui/shared/global-model/global-model.component';
@@ -42,7 +41,6 @@ import { SeconnecterComponent } from './ui/shared/globalSignLog/seconnecter/seco
     ListComponent,
     DetailComponent,
     ActionComponent,
-    AlertComponent,
     NavbarComponent,
     FooterComponent,
     GlobalModelComponent,
@@ -51,7 +49,7 @@ import { SeconnecterComponent } from './ui/shared/globalSignLog/seconnecter/seco
     SeconnecterComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     AppRoutingModule,
     NgbModule,
     HttpClientModule,

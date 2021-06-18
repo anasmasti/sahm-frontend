@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
+import { type } from 'jquery';
 import { UsersService } from 'src/app/services/users.service';
 
 
@@ -68,19 +69,34 @@ signUpForm!:FormGroup;
       this.users.postData(this.signUpForm.value).subscribe(response => {
         console.log(response);
       })
+
+      this.users.PostBenefited(this.signUpForm.value).subscribe(response => {
+        console.log(`'Post Succesfully !!!'${response}`);
+      })
       
   }
 
   ngOnInit(): void {
     this.signUpForm=new FormGroup({
-      'nom':new FormControl(Validators.required),
-      'prenom':new FormControl(Validators.required),
-      'email':new FormControl([Validators.required,Validators.email]),
-      'password':new FormControl(),
-      'type':new FormControl(),
-      'adresse':new FormControl(),
-      'tel':new FormControl()
+
+'first_name':new FormControl(Validators.required),
+'last_name':new FormControl(Validators.required),
+'gender' :new FormControl(Validators.required),
+'age' :new FormControl(Validators.required),
+'school_level' :new FormControl(Validators.required),
+'job' :new FormControl(Validators.required),
+'phone' :new FormControl(Validators.required),
+'email' :new FormControl([Validators.required,Validators.email]),
+'password':new FormControl(),
+'adress' :new FormControl(Validators.required),
+'cin' :new FormControl(Validators.required),
+'type' :new FormControl(Validators.required),
     })
+  }
+
+  ShowGiverControl(){
+    
+    
   }
 
 }

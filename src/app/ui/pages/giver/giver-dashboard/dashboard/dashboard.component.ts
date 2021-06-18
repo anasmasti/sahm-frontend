@@ -6,15 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  closeResult!: string;
   public actions:Array<any> = [
-    {nomAction: 'abonnement', src: '../../../../../../assets/bus.png'},
-    {nomAction: 'abonnement', src: '../../../../../../assets/bus.png'},
-    {nomAction: 'abonnement', src: '../../../../../../assets/bus.png'},
-    {nomAction: 'abonnement', src: '../../../../../../assets/bus.png'},
+
 ];
-  constructor() { }
+  constructor(
+   
+  ) { }
 
   ngOnInit(): void {
   }
+
 
 }
