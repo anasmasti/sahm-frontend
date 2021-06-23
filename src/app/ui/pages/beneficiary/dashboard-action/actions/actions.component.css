@@ -1,32 +1,42 @@
 
-.card-title{
-    font-size: 14px;
-    width: 70%;
-  }
 
   .container{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
     justify-content: center;
   }
   .card{
-    width: 25%;
+    /* width: 25%;
     height: 25%;
     margin: 12px;
     cursor: pointer;
     text-decoration: none;
     color: rgb(126, 126, 126);
     border:0.1 solid transparent ;
-    border-radius: 12px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 0px 0px rgb(0,0,0,0.5); */
+    width: 20%;
+    height:23rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    cursor: pointer;
+    margin: 10px;
+    transition: all .2s ease-in-out;
   }
   .card:hover{
     box-shadow: 0px 0px 20px 1px rgba(204, 204, 204, 0.7);
-    transition: box-shadow 0.3s ease-in-out;
+    /* transition: box-shadow 0.1s ease-in-out;
     transform: scale(1.1, 1.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out; */
+    /*-ms-transform: scale(1.1,1.1) 1s;  IE 9 */
+  /* transform: scale(1.1,1.1) 1s;  Standard syntax 
+  animation: 2s;*/
+  transform: scale(1.1,1.1)
 
   }
+
   thead{
     height: 5rem;
     margin: 0 auto;
@@ -38,7 +48,6 @@
   }
   tr td{
     background-color: white;
-    border: 1px solid white;
     width: 100%;
   }
   .div_glb{
@@ -55,10 +64,11 @@
 
   }
   .card-img-top{
-    width:100%;
-    height: 15em;
+    /* width:100%; */
+    margin-top: 25px;
+    height: 8rem;
     padding: 1em;
-    color:#B8B5FF;
+    /* color:#B8B5FF; */
   }
   /* .btn-primary{
     background-color: var(--mainColor);
@@ -85,59 +95,36 @@
   }
 
   .card-input-element {
-      /* display: none; */
-      font-size: inherit;
-      margin: 0;
-      position: absolute;
-      right: 10px;
-      top: 10px;
+      display: none;
     }
 
   .card-input{
-    border: 4px solid transparent ;
-    border-radius: 12px;
+    border: 5px solid transparent ;
+    border-radius: 30px;
+
   }
   
   .card-input-element:checked ~ .card-input{
-    border: 4px solid #6C63FF ;
-  }
+    border: 5px solid #6C63FF ; 
+     /* background-color: #B8B5FF ; */
+    /*/* background: rgb(0,0,0);
+    background: linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);  */
+}
 
-  .card-input-element{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: #fff;
-    border: 1px solid gray;
-    border-radius: 50%;
-    cursor: pointer;
-    height: 20px;
-    outline: none;
-    transition: 
-      background 0.2s ease-out,
-      border-color 0.2s ease-out;
-    width: 20px; 
-    display: flex;
-    justify-content: center;
-  }
+/*  .card-input-element:checked ~ .card-input .panel-body .card-title ,
+  .card-input-element:checked ~ .card-input .panel-body p{
+     border: 4px solid #6C63FF ; 
+    color: white ;
+  }*/
+  
 
-  .card-input-element::after {
-      border: 1px solid #fff;
-      border-top: 0;
-      border-left: 0;
-      content: '';
-      display: block;
-      height: 0.75rem;
-      left: 25%;
-      position: absolute;
-      top: 50%;
-      bottom: 50%;
-      transform: 
-        rotate(45deg)
-        translate(-50%, -50%);
-      width: 0.375rem;
-   }
+
+ 
+
+  
 
    .card-input-element:checked{
-    background: #3a3a3d;
+    background: #6C63FF;
      border-color: #6C63FF;
    }
 
@@ -189,8 +176,8 @@ h6{
 }
 
 .title{
-  padding-top: 20px; 
-  padding-bottom: 20px; 
+  padding-top: 5px; 
+  padding-bottom: 5px; 
   color: #6C63FF;
   font-size: 30px;
 
@@ -216,4 +203,168 @@ h6{
     display: flex;
     flex-direction: column;
   }
+  .panel-body{
+    width: 100%;
+  }
+
+  button{
+    width: 30%;
+  }
+
+  .action-header{
+    /* display: flex; */
+    flex-direction: column;
+  }
+
+  h2{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+.div_global{
+  /* border: 2px solid black; */
+  /* padding: 20px; */
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 30px;
+    /* background: chartreuse; */
+
+}
+
+/* .modal-body{
+} */
+
+
+
+p{
+  min-height: 100px;
+  font-family: 'Poppins', sans-serif;
+  color: #a0a0a0;
+  user-select:none;
+}
+
+.title{
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: gray;
+  user-select:none;
+}
+
+.panel-body{
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+}
+
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+.card-vetement{
+  width: 25%;
+  height:15rem;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  cursor: pointer;
+  margin: 10px;
+  transition: all .2s ease-in-out;
+  background: white;
+}
+
+.card-vetement:hover{
+  box-shadow: 0px 0px 20px 1px rgba(204, 204, 204, 0.7);
+  /* transition: box-shadow 0.1s ease-in-out;
+  transform: scale(1.1, 1.1);
+  transition: transform 0.3s ease-in-out; */
+  /*-ms-transform: scale(1.1,1.1) 1s;  IE 9 */
+  /* transform: scale(1.1,1.1) 1s;  Standard syntax 
+  animation: 2s;*/
+  transform: scale(1.1,1.1)
+
+}
+
+.card-body{
+    border: 5px solid transparent ;
+    border-radius: 30px;
+    height: 100%;
+    position: relative;
+}
+
+
+.modal-footer{
+  width: 100%;
+  /* background-color: red; */
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.card-input-element:checked ~ .card-body{
+  border: 5px solid #6C63FF ; 
+   /* background-color: #B8B5FF ; */
+  /*/* background: rgb(0,0,0);
+  background: linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%);  */
+}
+
+/* vetement-type */
+
+
+@media (max-width:992px){
+  .div_global{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-vetement{
+    width: 80%;
+    margin: auto;
+  }
+
+ /* label{
+    margin-bottom:2rem;
+  } */
+  .modal-footer{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.vetement-type{
+  position: relative;
+   bottom: 0px;
+
+  /*width: 100%;
+  margin: auto; */
+}
+
+
+.size{
+  width: 100%;
+  padding: 10px;
+}
+
+
+.action-header{
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-autre{
+  background-color: transparent;
+  transition: 0.5s  ;
+  font-size: 20px;
+  color: gray;
+}
+.btn-autre:hover{
+  background-color: rgb(235, 235, 235);
 }

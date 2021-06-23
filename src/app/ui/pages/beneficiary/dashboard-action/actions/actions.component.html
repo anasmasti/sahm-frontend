@@ -1,407 +1,372 @@
-<!-- <div class="modal" tabindex="0">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
+<div class="action-header">
+  <h2 class="w-50" style="font-size: 30px; color: gray; padding: 20px;">
+   Quesque vous voulez :
+  </h2>
+  <div class="text-center d-flex justify-content-center w-25">
+    <button type="submit" id="action_Autre" class="btn-autre my-auto h-50 w-75  border-0" 
+      (click)="
+      open(this.ModalAutre , 'action_Autre' , true)
+      ">
+      Autre
+    </button>
+  </div>
+</div>
+<div class="div_global">
+  <!-- Vetement card --------------------------------------->
+  <label class="card main-border-radius my-3 mx-4">
+    <input
+      type="checkbox"
+      name="action_Vet"
+      class="card-input-element"
+      id="action_Vet"
+      (change)="
+        MaximumSelection('action_Vet'); open(this.ModalVetement, 'action_Vet',false)
+      "
+      value="Vêtements"
+    />
+    <div class="panel panel-default card-input w-100 h-100">
+      <img
+        src="./../../../../../../assets/Action/fashion.svg"
+        alt="registre-img"
+        class="card-img-top"
+      />
+      <div class="panel-body mx-auto">
+        <h4 class="card-title text-center title">Vêtements</h4>
+        <p class="text-center">Choisir différent type de vêtement</p>
       </div>
     </div>
-  </div>
-</div> -->
+  </label>
+  <!-- Vetement card END --------------------------------------->
 
-<!-- <h1>it Worksss!!!!</h1> -->
+  <!-- Abonnement Transport card --------------------------------------->
+  <label class="card main-border-radius my-3 mx-4">
+    <input
+      type="checkbox"
+      name="action_ATransport"
+      class="card-input-element"
+      id="action_ATransport"
+      (change)="
+        MaximumSelection('action_ATransport');
+        open(this.ModalATran, 'action_ATransport',false)
+      "
+      value="Abonnement Transport"
+    />
+    <div class="panel panel-default card-input w-100 h-100">
+      <img
+        src="./../../../../../../assets/Action/bus.svg"
+        alt="registre-img"
+        class="card-img-top"
+      />
+      <div class="panel-body mx-auto">
+        <h4 class="card-title text-center title">Abonnement Transport</h4>
+        <p class="text-center">Vous offre une carte d'abonnement bus ou tram</p>
+      </div>
+    </div>
+  </label>
+  <!-- Abonnement Transport card END --------------------------------------->
 
-<div class="div_glb">
-  <table class="table table-striped" id="table">
-    <thead>
-      <tr>
-        <th scope="col" style="text-align: center">
-          <label style="padding-top: 20px; padding-bottom: 20px; color: white"
-            >Actions</label
-          >
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="row" style="text-align: center">
-          <div
-            class="btn-group container"
-            role="group"
-            aria-label="Card Action group"
-            style="text-align: center"
-          >
-            <!-- <div class="card"> -->
-            <label class="card main-border-radius my-3">
-                <h6
-                    class="card-title"
-                  >
-                    Vêtements
-                </h6>
-                <input
-                  type="checkbox"
-                  name="product_Vet"
-                  class="card-input-element bg-primary"
-                  id="product_Vet"
-                  (change)="MaximumSelection('product_Vet');open(this.ModalVetement , 'product_Vet' )"
-                  value="Vêtements"
-                />  
-                <hr class="mt-0" >
-                
-                <div class="panel panel-default card-input">
-                  <img src="./../../../../../../assets/vetement.svg" alt="registre-img" class="card-img-top" width="450px">
-                  <div class="panel-body">
-                    
-                  </div>
-              </div>
-            </label>
-            <!-- </div> -->
+  <!-- Abonnement Telephone card --------------------------------------->
+  <label class="card main-border-radius my-3 mx-4">
+    <input
+      type="checkbox"
+      name="action_ATelephone"
+      class="card-input-element"
+      id="action_ATelephone"
+      (change)="
+        MaximumSelection('action_ATelephone');
+        open(this.ModalATele, 'action_ATelephone',false)
+      "
+      value="Abonnement Telephone"
+    />
+    <div class="panel panel-default card-input w-100 h-100">
+      <img
+        src="./../../../../../../assets/Action/smartphone.svg"
+        alt="registre-img"
+        class="card-img-top"
+      />
+      <div class="panel-body mx-auto">
+        <h4 class="card-title text-center title">Abonnement Telephone</h4>
+        <p class="text-center">Vous offre une abonnement dans différent opérateurs télécoms marocains</p>
+      </div>
+    </div>
+  </label>
+  <!-- Abonnement Telephone card END --------------------------------------->
 
-            <label class="card">
-              <input
-                type="checkbox"
-                name="product_ATelephone"
-                class="card-input-element"
-                id="product_ATelephone"
-                (change)="MaximumSelection('product_ATelephone');open(this.ModalATele, 'product_ATelephone')"
-                value="Abonnement Telephone"
-              />
+  <!-- Abonnement Formation card --------------------------------------->
+  <label class="card main-border-radius my-3 mx-4">
+    <input
+      type="checkbox"
+      name="action_Formation"
+      class="card-input-element"
+      id="action_Formation"
+      (change)="
+        MaximumSelection('action_Formation');
+        open(this.ModalFormation, 'action_Formation',false)
+      "
+      value="Formation"
+    />
+    <div class="panel panel-default card-input w-100 h-100">
+      <img
+        src="./../../../../../../assets/Action/education.svg"
+        alt="registre-img"
+        class="card-img-top"
+      />
+      <div class="panel-body mx-auto">
+        <h4 class="card-title text-center title">Formation</h4>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+  </label>
+  <!-- Abonnement Formation card END --------------------------------------->
 
-              <div class="panel panel-default card-input">
-                <img src="./../../../../../../assets/abonnement-telephone.svg" alt="registre-img" class="card-img-top" width="450px">
-                <div class="panel-body">
-                  <h6
-                    class="card-title"
-                    style="margin-top: 10%; margin-bottom: 10%"
-                  >
-                    Abonnement Telephone
-                  </h6>
-                </div>
-              </div>
-            </label>
-
-            <label class="card">
-              <input
-                type="checkbox"
-                name="product_ATransport"
-                class="card-input-element"
-                id="product_ATransport"
-                (change)="MaximumSelection('product_ATransport') ; open(this.ModalATran, 'product_ATransport')"
-                value="Abonnement Transport"
-              />
-
-              <div class="panel panel-default card-input">
-                <img src="./../../../../../../assets/abonnement-transport.svg" alt="registre-img" class="card-img-top" width="450px">
-                <div class="panel-body">
-                  <h6
-                    class="card-title"
-                    style="margin-top: 10%; margin-bottom: 10%"
-                  >
-                    Abonnement Transport
-                  </h6>
-                </div>
-              </div>
-            </label>
-
-            <label class="card">
-              <input
-                type="checkbox"
-                name="product_For"
-                class="card-input-element"
-                id="product_For"
-                (change)="MaximumSelection('product_For'); open(this.ModalFormation, 'product_For')"
-                value="Formation"
-              />
-
-              <div class="panel panel-default card-input">
-                <img src="./../../../../../../assets/Formation.svg" alt="registre-img" class="card-img-top" width="450px">
-                <div class="panel-body">
-                  <h6
-                    class="card-title"
-                    style="margin-top: 10%; margin-bottom: 10%"
-                  >
-                    Formation
-                  </h6>
-                </div>
-              </div>
-            </label>
-
-            <label class="card">
-              <input
-                type="checkbox"
-                name="product_Aut"
-                class="card-input-element"
-                id="product_Aut"
-                (change)="MaximumSelection('product_Aut'); open(this.ModalAutre, 'product_Aut')"
-                value="Autre"
-              />
-
-              <div class="panel panel-default card-input">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots card-img-top" viewBox="0 0 16 16">
-                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-                </svg>
-                <div class="panel-body">
-                  <h6
-                    class="card-title"
-                    style="margin-top: 10%; margin-bottom: 10%"
-                  >
-                    Autre
-                  </h6>
-                </div>
-              </div>
-            </label>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Abonnement Autre card --------------------------------------->
+  <!-- <label class="card main-border-radius my-3 mx-4">
+    <input
+      type="checkbox"
+      name="action_Autre"
+      class="card-input-element"
+      id="action_Autre"
+      (change)="
+        MaximumSelection('action_Autre'); open(this.ModalAutre , 'action_Autre')
+      "
+      value="Autre"
+    />
+    <div class="panel panel-default card-input w-100 h-100">
+      <img
+        src="./../../../../../../assets/Action/other.svg"
+        alt="registre-img"
+        class="card-img-top"
+      />
+      <div class="panel-body mx-auto">
+        <h4 class="card-title text-center title">Aure</h4>
+        <p class="text-center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+  </label> -->
+  <!-- Abonnement Autre card END --------------------------------------->
 </div>
 
 <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
-
 <!-- Vetement Modal -->
-<app-global-model [id]="ModalVetement"> 
-      <div class="div_glb">
-        <table class="table table-striped " style="background-color: white;">
-          <thead>
-            <tr>
-              <th scope="col" style="text-align: center">
-                <label class="title"
-                  >Vêtement</label
-                >
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td scope="row" style="text-align: center">
-                <div
-                  class="btn-group container"
-                  role="group"
-                  aria-label="Card Action group"
-                  style="text-align: center"
-                >
-                  <!-- <div class="card"> -->
-                  <label class="card main-border-radius my-3">
-                    <input
-                      type="radio"
-                      name="product"
-                      class="card-input-element"
-                      id="product_tshirt"
-                      value="Vêtements"
-                      (change)="Size('product_tshirt','top')"
-                    />
+<app-global-model [id]="ModalVetement">
+  <div class="div_global">
+    <div class="modal-header w-100">
+      <h5 class="modal-title title m-0 p-2">
+        Choisir votre besoin de vêtement
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
 
-                    <div class="panel panel-default card-input">
-                      <img
-                        src="./../../../../../../assets/tshirt.svg"
-                        alt="registre-img"
-                        class="card-img"
-                        width="450px"
-                      />
-                      <div class="panel-body">
-                        <h6 class="card-title">T Shirt</h6>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label class="card main-border-radius my-3">
-                    <input
-                      type="radio"
-                      name="product"
-                      class="card-input-element"
-                      id="product_sweater"
-                      value="Vêtements"
-                      (change)="Size('product_sweater','top')"
-                    />
-
-                    <div class="panel panel-default card-input">
-                      <img
-                        src="./../../../../../../assets/sweater.svg"
-                        alt="registre-img"
-                        class="card-img"
-                        width="450px"
-                      />
-                      <div class="panel-body">
-                        <h6 class="card-title">Sweater</h6>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label class="card main-border-radius my-3">
-                    <input
-                      type="radio"
-                      name="product"
-                      class="card-input-element"
-                      id="product_pullCapuche"
-                      value="Vêtements"
-                      (change)="Size('product_pullCapuche','top')"
-                    />
-
-                    <div class="panel panel-default card-input">
-                      <img
-                        src="./../../../../../../assets/pull-avec-capuche.svg"
-                        alt="registre-img"
-                        class="card-img"
-                        width="450px"
-                      />
-                      <div class="panel-body">
-                        <h6 class="card-title">pull avec capuche</h6>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label class="card main-border-radius my-3">
-                    <input
-                      type="radio"
-                      name="product"
-                      class="card-input-element"
-                      id="product_jeans"
-                      value="Vêtements"
-                      (change)="Size('product_jeans','top')"
-                    />
-
-                    <div class="panel panel-default card-input">
-                      <img
-                        src="./../../../../../../assets/jeans.svg"
-                        alt="registre-img"
-                        class="card-img"
-                        width="450px"
-                      />
-                      <div class="panel-body">
-                        <h6 class="card-title">Pantalon</h6>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label class="card main-border-radius my-3">
-                    <input
-                      type="radio"
-                      name="product"
-                      class="card-input-element"
-                      id="product_sneakers"
-                      value="Vêtements"
-                      (change)="Size('product_sneakers','bottom')"
-                    />
-
-                    <div class="panel panel-default card-input">
-                      <img
-                        src="./../../../../../../assets/sneakers.svg"
-                        alt="registre-img"
-                        class="card-img"
-                        width="450px"
-                      />
-                      <div class="panel-body">
-                        <h6 class="card-title">Chaussure</h6>
-                      </div>
-                    </div>
-                  </label>
-                  <!-- </div> -->
-                </div>
-              </td>
-            </tr>
-            <tr>
-
-              <!-- Size -->
-                <!-- Size Top -->
-                <div class="div_size_top" id="size_Top" style="display: none">
-                  <h3>Size :</h3>
-                  <div class="size size_top">
-                    <div class="form-check form-check-inline mx-4">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="inlineRadio1"
-                        value="option1"
-                      />
-                      <label class="form-check-label" for="inlineRadio1">XL</label>
-                    </div>
-                    <div class="form-check form-check-inline mx-4">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="inlineRadio1"
-                        value="option1"
-                      />
-                      <label class="form-check-label" for="inlineRadio1">L</label>
-                    </div>
-                    <div class="form-check form-check-inline mx-4">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="inlineRadio2"
-                        value="option2"
-                      />
-                      <label class="form-check-label" for="inlineRadio2">M</label>
-                    </div>
-                    <div class="form-check form-check-inline mx-4">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="inlineRadio2"
-                        value="option2"
-                      />
-                      <label class="form-check-label" for="inlineRadio2">S</label>
-                    </div>
-                    <div class="form-check form-check-inline mx-4">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="inlineRadioOptions"
-                        id="inlineRadio2"
-                        value="option2"
-                      />
-                      <label class="form-check-label" for="inlineRadio2">XS</label>
-                    </div>
-                  </div>
-                </div>
-                <!-- /Size Top -->
-
-
-                <!-- Size buttom -->
-                <div class="size div_size_buttom" id="size_Bottom" style="display: none">
-                  <h3>Size :</h3>
-                  <div class="size">
-                    <input
-                      type="number"
-                      name="size_sneakers"
-                      id="size_sneakers"
-                      value="0"
-                      min="35"
-                      max="47"
-                    />
-                    EU
-                  </div>
-                </div>
-              <!-- /Size buttom -->
-
-            </tr>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary rounded-pill"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-submit rounded-pill">Submit</button>
-            </div>
-          </tbody>
-        </table>
-        <div class="row"></div>
+    <!-- <div class="modal-body w-100 mx-auto bg-danger"> -->
+    <label class="card-vetement main-border-radius my-3">
+      <input
+        type="radio"
+        name="product"
+        class="card-input-element"
+        id="product_tshirt"
+        value="Vêtements"
+        (change)="Size('product_tshirt', 'top')"
+      />
+      <div class="card-body">
+        <img
+          src="./../../../../../../assets/tshirt.svg"
+          alt="registre-img"
+          class="card-img"
+          width="450px"
+        />
+        <div class="vetement-type">
+          <h4 class="title text-center">T Shirt</h4>
+        </div>
       </div>
+    </label>
+
+    <label class="card-vetement main-border-radius my-3">
+      <input
+        type="radio"
+        name="product"
+        class="card-input-element"
+        id="product_sweater"
+        value="Sweater"
+        (change)="Size('product_sweater', 'top')"
+      />
+      <div class="card-body">
+        <img
+          src="./../../../../../../assets/sweater.svg"
+          alt="registre-img"
+          class="card-img"
+          width="450px"
+        />
+        <div class="vetement-type">
+          <h4 class="title text-center">Sweater</h4>
+        </div>
+      </div>
+    </label>
+
+    <label class="card-vetement main-border-radius my-3">
+      <input
+        type="radio"
+        name="product"
+        class="card-input-element"
+        id="product_pullCapuche"
+        value="Sweater"
+        (change)="Size('product_pullCapuche', 'top')"
+      />
+      <div class="card-body">
+        <img
+          src="./../../../../../../assets/pull-avec-capuche.svg"
+          alt="registre-img"
+          class="card-img"
+          width="450px"
+        />
+        <div class="vetement-type w-100">
+          <h4 class="title text-center">pull avec capuche</h4>
+        </div>
+      </div>
+    </label>
+
+    <label class="card-vetement main-border-radius my-3">
+      <input
+        type="radio"
+        name="product"
+        class="card-input-element"
+        id="product_jeans"
+        value="Sweater"
+        (change)="Size('product_jeans', 'top')"
+      />
+      <div class="card-body">
+        <img
+          src="./../../../../../../assets/jeans.svg"
+          alt="registre-img"
+          class="card-img"
+          width="450px"
+        />
+        <div class="vetement-type">
+          <h4 class="title text-center">Pantalon</h4>
+        </div>
+      </div>
+    </label>
+
+    <label class="card-vetement main-border-radius my-3">
+      <input
+        type="radio"
+        name="product"
+        class="card-input-element"
+        id="product_sneakers"
+        value="sneakers"
+        (change)="Size('product_sneakers', 'bottom')"
+      />
+      <div class="card-body">
+        <img
+          src="./../../../../../../assets/sneakers.svg"
+          alt="registre-img"
+          class="card-img"
+          width="450px"
+        />
+        <div class="vetement-type">
+          <h4 class="title text-center">Pantalon</h4>
+        </div>
+      </div>
+    </label>
+    <!-- </div> -->
+
+    <!-- Size -->
+    <!-- Size Top -->
+    <div class="size div_size_top" id="size_Top" style="display: none">
+      <h3>Taille :</h3>
+      <div class="size size_top">
+        <div class="form-check form-check-inline mx-4">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio1"
+            value="option1"
+          />
+          <label class="form-check-label" for="inlineRadio1">XL</label>
+        </div>
+        <div class="form-check form-check-inline mx-4">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio1"
+            value="option1"
+          />
+          <label class="form-check-label" for="inlineRadio1">L</label>
+        </div>
+        <div class="form-check form-check-inline mx-4">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio2"
+            value="option2"
+          />
+          <label class="form-check-label" for="inlineRadio2">M</label>
+        </div>
+        <div class="form-check form-check-inline mx-4">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio2"
+            value="option2"
+          />
+          <label class="form-check-label" for="inlineRadio2">S</label>
+        </div>
+        <div class="form-check form-check-inline mx-4">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="inlineRadioOptions"
+            id="inlineRadio2"
+            value="option2"
+          />
+          <label class="form-check-label" for="inlineRadio2">XS</label>
+        </div>
+      </div>
+    </div>
+    <!-- /Size Top -->
+
+    <!-- Size buttom -->
+    <div class="size div_size_buttom" id="size_Bottom" style="display: none">
+      <h3>Taille :</h3>
+      <div class="size">
+        <input
+          type="number"
+          name="size_sneakers"
+          id="size_sneakers"
+          value="0"
+          min="35"
+          max="47"
+        />
+        EU
+      </div>
+    </div>
+    <!-- /Size buttom -->
+    <div class="modal-footer w-100 text-center">
+      <button
+        type="button"
+        class="btn btn-secondary rounded-pill"
+        data-bs-dismiss="modal"
+      >
+        Close
+      </button>
+      <button type="button" class="btn btn-submit rounded-pill">Submit</button>
+    </div>
+    <div class="row"></div>
+  </div>
 </app-global-model>
 <!-- /Vetement Modal -->
 
@@ -409,162 +374,101 @@
 
 <!-- Abonnement Telephone Modal -->
 <app-global-model [id]="ModalATele">
-    <h1>From Actions A Telephone</h1> 
+  <h1>From Actions A Telephone</h1>
 </app-global-model>
 <!-- /Abonnement Telephone Modal -->
 
 <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
 <!-- Abonnement Transport Modal -->
-<app-global-model [id]="ModalATran"> 
-      <div class="div_glb">
-        <table class="table table-striped " style="background-color: white;">
-          <thead>
-            <tr>
-              <th scope="col" style="text-align: center">
-                <label class="title"
-                  >Vêtement</label
-                >
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td scope="row" style="text-align: center">
-                <div
-                  class="btn-group container"
-                  role="group"
-                  aria-label="Card Action group"
-                  style="text-align: center"
-                >
-                  <!-- <div class="card"> -->
-                  <label class="card main-border-radius my-3">
-                    <input
-                      type="radio"
-                      name="product"
-                      class="card-input-element"
-                      id="product_tshirt"
-                      value="Vêtements"
-                      (change)="Size('product_tshirt','top')"
-                    />
+<app-global-model [id]="ModalATran">
+  <div class="div_global">
+    <div class="modal-header w-100">
+      <h5 class="modal-title title m-0 p-2">
+        Choisir un type de Transport 
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
 
-                    <div class="panel panel-default card-input">
-                      <img
-                        src="./../../../../../../assets/tshirt.svg"
-                        alt="registre-img"
-                        class="card-img"
-                        width="450px"
-                      />
-                      <div class="panel-body">
-                        <h6 class="card-title">T Shirt</h6>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label class="card main-border-radius my-3">
-                    <input
-                      type="radio"
-                      name="product"
-                      class="card-input-element"
-                      id="product_sweater"
-                      value="Vêtements"
-                      (change)="Size('product_sweater','top')"
-                    />
-
-                    <div class="panel panel-default card-input">
-                      <img
-                        src="./../../../../../../assets/sweater.svg"
-                        alt="registre-img"
-                        class="card-img"
-                        width="450px"
-                      />
-                      <div class="panel-body">
-                        <h6 class="card-title">Sweater</h6>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label class="card main-border-radius my-3">
-                    <input
-                      type="radio"
-                      name="product"
-                      class="card-input-element"
-                      id="product_pullCapuche"
-                      value="Vêtements"
-                      (change)="Size('product_pullCapuche','top')"
-                    />
-
-                    <div class="panel panel-default card-input">
-                      <img
-                        src="./../../../../../../assets/pull-avec-capuche.svg"
-                        alt="registre-img"
-                        class="card-img"
-                        width="450px"
-                      />
-                      <div class="panel-body">
-                        <h6 class="card-title">pull avec capuche</h6>
-                      </div>
-                    </div>
-                  </label>
-
-                  <label class="card main-border-radius my-3">
-                    <input
-                      type="radio"
-                      name="product"
-                      class="card-input-element"
-                      id="product_jeans"
-                      value="Vêtements"
-                      (change)="Size('product_jeans','top')"
-                    />
-
-                    <div class="panel panel-default card-input">
-                      <img
-                        src="./../../../../../../assets/jeans.svg"
-                        alt="registre-img"
-                        class="card-img"
-                        width="450px"
-                      />
-                      <div class="panel-body">
-                        <h6 class="card-title">Pantalon</h6>
-                      </div>
-                    </div>
-                  </label>
-
-                  
-                  <!-- </div> -->
-                </div>
-              </td>
-            </tr>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary rounded-pill"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-submit rounded-pill">Submit</button>
-            </div>
-          </tbody>
-        </table>
+    <!-- Bus card -->
+    <label class="card-vetement main-border-radius my-3">
+      <input
+        type="radio"
+        name="Transport"
+        class="card-input-element"
+        id="transport_bus"
+        value="bus"
+      />
+      <div class="card-body">
+        <img
+          src="./../../../../../../assets/Action/bus.svg"
+          alt="registre-img"
+          class="card-img"
+          width="450px"
+        />
+        <div class="vetement-type">
+          <h4 class="title text-center">Bus</h4>
+        </div>
       </div>
-        
+    </label>
+    <!-- Bus card END -->
+
+
+    <!-- Tram card -->
+    <label class="card-vetement main-border-radius my-3">
+      <input
+        type="radio"
+        name="Transport"
+        class="card-input-element"
+        id="transport_tram"
+        value="tram"
+      />
+      <div class="card-body">
+        <img
+          src="./../../../../../../assets/Action/tram.svg"
+          alt="registre-img"
+          class="card-img"
+          width="450px"
+        />
+        <div class="vetement-type">
+          <h4 class="title text-center">Tram</h4>
+        </div>
+      </div>
+    </label>
+    <!-- Tram card END -->
+
+    <div class="modal-footer w-100 text-center">
+      <button
+        type="button"
+        class="btn btn-secondary rounded-pill"
+        data-bs-dismiss="modal"
+      >
+       Close
+      </button>
+      <button type="button" class="btn btn-submit rounded-pill">Submit</button>
+    </div> 
+  </div>
 </app-global-model>
 <!-- /Abonnement Transport Modal -->
 
 <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
 <!-- Formation Modal -->
-<app-global-model [id]="ModalFormation"> 
-    <h1>From Actions A Formation</h1> 
+<app-global-model [id]="ModalFormation">
+  <h1>From Actions A Formation</h1>
 </app-global-model>
 <!-- /Formation Modal -->
 
 <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
 
 <!-- Autre Modal -->
-<app-global-model [id]="ModalAutre"> 
-    <h1>From Actions Autre</h1> 
+<app-global-model [id]="ModalAutre">
+  <h1>From Actions Autre</h1>
 </app-global-model>
 <!-- /Autre Modal -->
 

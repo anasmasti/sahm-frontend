@@ -26,11 +26,11 @@ export class ActionsComponent implements OnInit {
     
   }
 
-  open(id : any , idInput : any) {
+  open(id : any , idInput : any,button :boolean) {
     
     let secondModal = document.getElementById(idInput) as HTMLInputElement
 
-    if (secondModal.checked) {
+    if (secondModal.checked || button ) {
       
       this.ModalService.openModal(id)
 
@@ -48,6 +48,9 @@ export class ActionsComponent implements OnInit {
       // add checked checkbox to array
       this.tableCurrentCheck.push(CurrentCheckBox.value)
 
+      console.log("table  : " , this.tableCurrentCheck);
+      
+
     }
     else{
 
@@ -57,6 +60,7 @@ export class ActionsComponent implements OnInit {
 
         // Remove the existing value 
         this.tableCurrentCheck.splice(this.tableCurrentCheck.indexOf(CurrentCheckBox.value) , 1)
+        console.log("table  : " , this.tableCurrentCheck);
         
       }
       
