@@ -73,6 +73,8 @@ a{
     transition: .25s;
     
 }
+
+
   
 }
 
@@ -80,7 +82,6 @@ a{
   /* Menu Mobile */
   .Mobile{
     display: flex;
-   
   }
 
  /* Button Menu Mobile */
@@ -126,7 +127,78 @@ a{
     left: 0;
   }
 
+  /* ::::::::::::::::::::::::::::::::::::::::::::::::Connected user Mobile:::::::::::::::::::::::::::::::::::::::::: */
 
+  .user-img{
+    width: 15px;
+    margin: auto;
+  }
+  
+  h6{
+    line-height: 25px;
+    font-size: 15;
+    color: gray;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
   
 }
 
+
+/*:::::::::::::::::::::::::::::::::::::::::::::::: Connected User :::::::::::::::::::::::::::::::::::::::::::::::*/
+
+
+/* dropdown profile update */
+.dropdown {
+  position: relative;
+  height: 100%;
+  width: 18%;
+  position: relative;
+  float: right;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 2%;
+  top: 100%;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 20px 1px rgb(227,227,227);
+  padding: 16px 19px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* border green dot */
+.user-circle{
+  border: 3px solid var(--mainBgColor);
+}
+
+
+/* button profile update */
+.btn-modif-profile{
+  color: var(--ColorText) ;
+  background-color: transparent;
+}
+
+.btn-modif-profile:hover{
+  background-color: rgb(243, 243, 243);
+}
+
+
+/* user name */
+h6{
+  line-height: 25px;
+  font-size: 15;
+  color: gray;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}

@@ -1,12 +1,23 @@
 
-<div class="row titleH">
-  <div class="col-md-6">
+<div class="row titleH" *ngIf="afficherRecherch == 0">
+  <div class="col-md-5">
     <h5 style= "color: var(--txtColor);">ALERT   </h5>
   </div> 
-  <div class="col-md-6">
-   
+  <div class="col-md-7 searchDiv">
+    <button *ngIf="afficherRecherch == 0" class="search" (click)="displaySearch()">
+      TRIER PAR
+    </button>
   </div>
  </div>
+ <div class="row grp" *ngIf="afficherRecherch == 1">
+  <div class="btn-group" role="group" aria-label="Basic outlined example">
+    <button type="button" class="btn btn-outline-light btnGrpSearch radiusLeft" (click)="chercherAlert('vétement'); displaySearch()">vétement</button>
+    <button type="button" class="btn btn-outline-light btnGrpSearch" (click)="chercherAlert('abonnement_transport');chercherAlert('abonnement_mobile'); displaySearch()">abonnement</button>
+    <button type="button" class="btn btn-outline-light btnGrpSearch" (click)="chercherAlert('formation'); displaySearch()">formation</button>
+    <button type="button" class="btn btn-outline-light btnGrpSearch" (click)="chercherAlert('autre'); displaySearch()">autre</button>
+    <button type="button" class="btn btn-outline-light btnGrpSearch radiusRight" (click)=" chargerActions(); displaySearch()">tout</button>
+  </div>
+</div>
  <div class="row  p-0 " style="height:180px;">
  
  <div class="alert " style=" display: flex; justify-content: flex-start; flex-wrap: wrap;">
@@ -93,30 +104,30 @@
           <th scope="col" colspan="2">Informations de bénéficiaire</th>
         </tr>
       </thead>
-      <tbody *ngFor="let benif of selectedBenif">
+      <tbody *ngFor="let benif of selectedAlert">
         <tr>
           <td>Nom complet :</td>
-          <td><label>{{ benif.last_name }}  {{ benif.first_name }}</label></td>
+          <td><label>{{ benif.benificier.last_name }}  {{ benif.benificier.first_name }}</label></td>
         </tr>
         <tr>
           <td>sexe :</td>
-          <td><label>{{ benif.gender }} </label></td>
+          <td><label>{{ benif.benificier.gender }} </label></td>
         </tr>
         <tr>
           <td>Age :</td>
-          <td><label>{{ benif.age }}</label></td>
+          <td><label>{{ benif.benificier.age }}</label></td>
         </tr>
         <tr>
           <td>Tél :</td>
-          <td><label>{{ benif.phone }}</label></td>
+          <td><label>{{ benif.benificier.phone }}</label></td>
         </tr>
         <tr>
           <td>Email :</td>
-          <td><label>{{ benif.email }}</label></td>
+          <td><label>{{ benif.benificier.email }}</label></td>
         </tr>
         <tr>
           <td>Adresse :</td>
-          <td><label>{{ benif.adress }}</label></td>
+          <td><label>{{ benif.benificier.adress }}</label></td>
         </tr>
       </tbody>
     </table>
@@ -192,7 +203,7 @@
 
     <div class="autre" *ngIf="selectedAlert[0].autre.selected == 'true'">
        
-      <h6>Autre type  </h6>
+      <h6>  </h6>
    
        <div class="row">
          <div class="col-md-4 alEnd">
@@ -225,3 +236,5 @@
       <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="modal.close('Save click')">Annuler</button>
   </div>
 </ng-template>
+
+

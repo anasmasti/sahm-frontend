@@ -17,7 +17,7 @@ export class AlertComponent implements OnInit {
   listActions:any;
   selectedAlert:any;
   selectedBenif: any;
-
+  afficherRecherch:any = 0;
 
   constructor(
    
@@ -47,8 +47,9 @@ export class AlertComponent implements OnInit {
    this.data.chargerAlert().subscribe((data: any)=> this.listActions = data);
   }
   selectedalert(id:any){
-    this.data.selectedAction(id).subscribe((data: any)=> this.selectedAlert = data);
-    this.data.getbeneficier(id).subscribe((data: any)=> this.selectedBenif = data);
+    // this.data.selectedAction(id).subscribe((data: any)=> this.selectedAlert = data);
+    // this.data.getbeneficier(id).subscribe((data: any)=> this.selectedBenif = data);
+    this.data.getDetailsAction(id).subscribe((data: any)=> this.selectedAlert = data);
   }
 
   contribuer(id:any){
@@ -56,6 +57,20 @@ export class AlertComponent implements OnInit {
   }
   reload(){
     window.location.reload();
+  }
+
+  displaySearch(){
+    if(this.afficherRecherch==0)
+    this.afficherRecherch=1;
+     else{
+       this.afficherRecherch=0;
+     }
+  }
+  async chercherAlert(critaire:any){
+    await this.data.chercherActions(critaire).subscribe((data: any)=> this.listActions = data);
+    setTimeout(() => {
+      this.totalLength = this.listActions.length;
+    }, 1000);
   }
 
 }

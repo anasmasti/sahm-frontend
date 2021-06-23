@@ -18,7 +18,8 @@ export class ActionsComponent implements OnInit {
   text ='';
   selectedAction:any ;
   selectedBenif: any;
-
+  afficherRecherch:any = 0;
+  afficherDetails:any = 'benif';
 
   listActions:any;
   constructor(
@@ -31,16 +32,6 @@ export class ActionsComponent implements OnInit {
     
     this.data.share.subscribe(x => this.text = x);
    this.chargerActions();
-    setTimeout(() => {
-      this.totalLength2 = this.listActions.length;
-    }, 2000);
-    // res.subscribe((data: any)=> console.log(data) );
-    // setTimeout(() => {
-    //   console.log(this.listActions);
-    // }, 3000); 
-   
-    
-    
   }
 
 
@@ -50,20 +41,46 @@ export class ActionsComponent implements OnInit {
     }, 200);
     
   }
-  chargerActions(){
-    this.data.chargerAction().subscribe((data: any)=> this.listActions = data);
+  async chargerActions(){
+     await this.data.chargerAction().subscribe((data: any)=> this.listActions = data);
+     setTimeout(() => {
+      this.totalLength2 = this.listActions.length;
+    }, 500);
    }
    selectedaction(id:any){
-     this.data.selectedAction(id).subscribe((data: any)=> this.selectedAction = data);
-     this.data.getbeneficier(id).subscribe((data: any)=> this.selectedBenif = data);
+    //  this.data.selectedAction(id).subscribe((data: any)=> this.selectedAction = data);
+    //  this.data.getbeneficier(id).subscribe((data: any)=> this.selectedBenif = data);
+    this.data.getDetailsAction(id).subscribe((data: any)=> this.selectedAction = data);
    }
-   contribuer(){
-     let id = this.selectedAction[0]._id;
+   contribuer(id:any){
+    //  let id = this.selectedAction[0]._id;
 
      
      this.data.contribuer(id).subscribe();
      location.reload();
    }
+
+   displaySearch(){
+     if(this.afficherRecherch==0)
+     this.afficherRecherch=1;
+      else{
+        this.afficherRecherch=0;
+      }
+   }
+
+   displayBenifDetails(){
+       this.afficherDetails='benif';
+  }
+  displayActioonDetails(){
+    this.afficherDetails='action';
+}
+  async chercherActions(critaire:any){
+    await this.data.chercherActions(critaire).subscribe((data: any)=> this.listActions = data);
+    setTimeout(() => {
+      this.totalLength2 = this.listActions.length;
+    }, 1000);
+  }
+
  
  
 }

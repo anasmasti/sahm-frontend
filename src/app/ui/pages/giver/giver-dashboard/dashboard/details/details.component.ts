@@ -49,8 +49,9 @@ export class DetailsComponent implements OnInit {
   }
 
   selectedaction(id:any){
-    this.data.selectedAction(id).subscribe((data: any)=> this.selectedAction = data);
-    this.data.getbeneficier(id).subscribe((data: any)=> this.selectedBenif = data);
+    // this.data.selectedAction(id).subscribe((data: any)=> this.selectedAction = data);
+    // this.data.getbeneficier(id).subscribe((data: any)=> this.selectedBenif = data);
+    this.data.getDetailsAction(id).subscribe((data: any)=> this.selectedAction = data);
   }
 
   open(content: any){

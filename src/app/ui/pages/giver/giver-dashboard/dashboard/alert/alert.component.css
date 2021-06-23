@@ -166,3 +166,30 @@ margin: auto;
   color: white;
   border-left: none; border-top-right-radius: 30px; border-bottom-right-radius: 30px;
   }
+
+
+  .btnGrpSearch{
+    background-color: white;
+    color: var(--mainColor);
+    margin-top: 10px;
+  }
+
+  .search{
+    height: 100%;
+    width:40%;
+    float: right; 
+    margin-left: 0px;
+    margin:0px;
+    border-radius: 30px;
+    border:none;
+    background-color: white;
+    color:  var(--mainColor);
+  }
+  .radiusRight{
+    border-top-right-radius: 30px;
+     border-bottom-right-radius: 30px;
+  }
+  .radiusLeft{
+    border-top-left-radius: 30px;
+     border-bottom-left-radius: 30px;
+  }

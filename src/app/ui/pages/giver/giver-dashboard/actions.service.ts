@@ -77,4 +77,11 @@ export class ActionsService {
     return this.http.patch('http://localhost:3000/actions/renitialiser/'+id,{giver:null ,etat:"initié"});
   }
 
+
+  getDetailsAction(id:any){
+    return this.http.get('http://localhost:3000/actions/actionBenif/'+id);
+  }
+  chercherActions(critaire:any){
+    return this.http.get('http://localhost:3000/actions/search/'+critaire);  
+  }
 }

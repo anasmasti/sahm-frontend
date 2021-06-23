@@ -73,6 +73,21 @@ color: white;
 h6{
   font-size: 12px; margin-top: 0px;
 }
+hr{
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+tr{
+  color: var(--ColorText);  
+}
+.text{
+  color: var(--ColorText);
+  /* background-color: #6C63FF;  */
+   padding-bottom: 0px;
+  /*padding-top: 0px;
+  padding-bottom: 0px; */
+  margin-top: 0px;
+}
 
 .shado{
   background-color: var(--mainColor) ;
@@ -140,7 +155,7 @@ h3{
   .my-pagination ::ng-deep .ngx-pagination  {
     /* border: solid 1px white; */
   /* background : white; */
-  color: white;
+  color: var(--authColor);
   float: left;
   /* width: 97%; */
   margin: 0px;
@@ -164,4 +179,60 @@ margin: auto;
   background: var(--authColor);
   color: white;
   border-left: none; border-top-right-radius: 30px; border-bottom-right-radius: 30px;
+  }
+
+  .search{
+    height: 100%;
+    width:50%;
+    float: right; 
+    margin-left: 0px;
+    margin:0px;
+    border-radius: 30px;
+    border:none;
+    background-color:  var(--authColor);
+    color:  white;
+  }
+  .searchDiv{
+    /* background-color: white; */
+    padding-left: 0px;
+    border-radius: 30px;
+  }
+  .search-btn{
+    background-color: whitesmoke;
+    color: var(--mainColor);
+    height: 100%;
+    border-top-right-radius: 30px ;
+    border-bottom-right-radius: 30px ;
+    border:none;
+    margin-left: 0px;
+    float: right;
+  }
+  .btnGrpSearch{
+    background-color: white;
+    color: var(--authColor);
+  }
+  .btnGrpSearchPopUP{
+    
+    background-color: white;
+    color: var(--authColor);
+    width: 50%;
+  }
+  .btnGrpSearchPopUP:focus{
+    
+    background-color:var(--authColor);
+    color: white;
+    width: 50%;
+    outline: none;
+  }
+  .radiusRight{
+    border-top-right-radius: 30px;
+     border-bottom-right-radius: 30px;
+  }
+  .radiusLeft{
+    border-top-left-radius: 30px;
+     border-bottom-left-radius: 30px;
+  }
+
+  .grp{
+    margin-top:10px
   }

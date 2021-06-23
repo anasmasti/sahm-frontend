@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormGroup, FormControl, Validators } from '@angular/forms';
-import { type } from 'jquery';
 import { UsersService } from 'src/app/services/users.service';
+
 
 
 @Component({

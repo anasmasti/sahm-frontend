@@ -21,7 +21,7 @@
      <thead class="thead-dark">
        <tr style="color:var(--ColorText);">
   
-         <th scope="col">objet</th>
+         <th scope="col">username</th>
          <th scope="col">statut</th>
          <th scope="col">date demande</th>
          <th scope="col">etat</th>
@@ -30,18 +30,15 @@
      </thead>
      <tbody>
        <tr *ngFor="let action of Contributions | paginate: { id: 'id3', itemsPerPage: 3, currentPage: page, totalItems: totalLength }" style="color:var(--ColorText);">
-         <td>objet</td>
+         <td>{{action.benificier.username}}</td>
          <td>{{action.statut}}</td>
          <td>{{ action.date_action | date:'dd-MM-yyyy' }}</td>
          <td>{{action.etat}}</td>
           <td>
      
-               <button id="{{action._id}}"  *ngIf="action.etat != 'validé'" type="button" class="main-btn-secondary border-02 btn" (click)="valider(action._id); reload();"  ><i class="fas fa-check-circle"></i></button>
-               <button  id="{{action._id}}"  *ngIf="action.etat != 'validé'"  type="button" (click)="initialiserAction(action._id); reload();" class="main-btn-secondary border-0 mx-2 btn" ><i class="fas fa-ban"></i></button>
-
-        
-           
-           <button type="button" class="main-btn-secondary border-02 btn"(click)="  open(content) ;  selectedaction(action._id);"   ><i class="fas fa-info-circle"></i></button>
+               <button id="{{action._id}}"  *ngIf="action.etat != 'validé'" type="button" class="main-btn-secondary border-02 btn" style="border-radius: 12px; color:  var(--authColor);" (click)="valider(action._id); reload();"  ><i class="fas fa-check-circle"></i></button>
+               <button  id="{{action._id}}"  *ngIf="action.etat != 'validé'"  type="button" (click)="initialiserAction(action._id); reload();" class="main-btn-secondary border-0 mx-2 btn" style="border-radius: 12px; color:  var(--authColor);" ><i class="fas fa-ban"></i></button>
+           <button type="button" class="btn main-btn-secondary" style="border-radius: 12px; color:  var(--authColor);" (click)="  open(content) ;  selectedaction(action._id);"   ><i class="fas fa-info-circle"></i></button>
           </td>
        </tr>
 
@@ -145,30 +142,30 @@
           <th scope="col" colspan="2">Informations de bénéficiaire</th>
         </tr>
       </thead>
-      <tbody *ngFor="let benif of selectedBenif">
+      <tbody *ngFor="let benif of selectedAction">
         <tr>
           <td>Nom complet :</td>
-          <td><label>{{ benif.last_name }}  {{ benif.first_name }}</label></td>
+          <td><label>{{  benif.benificier.last_name }}  {{  benif.benificier.first_name }}</label></td>
         </tr>
         <tr>
           <td>sexe :</td>
-          <td><label>{{ benif.gender }} </label></td>
+          <td><label>{{  benif.benificier.gender }} </label></td>
         </tr>
         <tr>
           <td>Age :</td>
-          <td><label>{{ benif.age }}</label></td>
+          <td><label>{{  benif.benificier.age }}</label></td>
         </tr>
         <tr>
           <td>Tél :</td>
-          <td><label>{{ benif.phone }}</label></td>
+          <td><label>{{  benif.benificier.phone }}</label></td>
         </tr>
         <tr>
           <td>Email :</td>
-          <td><label>{{ benif.email }}</label></td>
+          <td><label>{{  benif.benificier.email }}</label></td>
         </tr>
         <tr>
           <td>Adresse :</td>
-          <td><label>{{ benif.adress }}</label></td>
+          <td><label>{{  benif.benificier.adress }}</label></td>
         </tr>
       </tbody>
     </table>

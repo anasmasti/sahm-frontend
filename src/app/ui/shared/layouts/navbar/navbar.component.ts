@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,7 +9,9 @@ import * as $ from 'jquery';
 })
 export class NavbarComponent implements OnInit {
 
-
+  InsertData! : FormGroup;
+  ModalId : any ;
+  $ : any;
   constructor() { }
 
   ngOnInit(): void {
@@ -25,7 +27,25 @@ export class NavbarComponent implements OnInit {
      console.log( "Oops :(!" );
     }
     })
+
+
+    this.InsertData = new FormGroup({
+      'id' : new FormControl(Validators.required),
+      'email' : new FormControl(Validators.required , Validators.email),
+      'firstName' : new FormControl(Validators.required),
+      'lastName' : new FormControl(Validators.required),
+      'age' : new FormControl(Validators.required),
+      'Phone' : new FormControl(Validators.required),
+      'InputPassword' : new FormControl(Validators.required),
+    });
   }
+
+  open(){
+
+    console.log("params" , this.ModalId);
+    $('#'+this.ModalId).modal('show')
+
+    }
 }
    
    console.log( "ready!" );
