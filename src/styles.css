@@ -21,6 +21,12 @@
 
 }
 
+
+/* *{
+  font-family: 'Poppins', sans-serif;
+
+} */
+
 body{
   background-color: var(--mainBgColor);
   z-index: 1;

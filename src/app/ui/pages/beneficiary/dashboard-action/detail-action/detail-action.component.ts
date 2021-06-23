@@ -17,7 +17,7 @@ export class DetailActionComponent implements OnInit {
   ];
   $ : any ;
   ModalId : any = "DetailActionModal";
-  @ViewChild('ButtonValidate') myDiv!: ElementRef  ;
+  @ViewChild('ButtonValidate') ButtonValidate!: ElementRef  ;
   constructor( private ModalService : GlobalModalService ) { }
 
   ngOnInit(): void {
@@ -32,9 +32,13 @@ export class DetailActionComponent implements OnInit {
   }
 
   changeClass(){
-    $("#"+this.myDiv.nativeElement.id).removeClass("btn-valider");
-    $("#"+this.myDiv.nativeElement.id).addClass("btn-validée");
-    $("#"+this.myDiv.nativeElement.id).attr('title','Validée');
+    $("#"+this.ButtonValidate.nativeElement.id).removeClass("btn-valider");
+    $("#"+this.ButtonValidate.nativeElement.id).addClass("btn-validée");
+    $("#"+this.ButtonValidate.nativeElement.id).attr('title','Validée');
+    // $("#"+this.ButtonValidate.nativeElement.id).class;
+    console.log("list",this.ButtonValidate.nativeElement.classList[0]);
+    
+
 
     // console.log(this.myDiv.nativeElement.id);
     

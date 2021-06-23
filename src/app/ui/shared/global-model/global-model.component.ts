@@ -11,7 +11,7 @@ export class GlobalModelComponent implements OnInit {
 
   // InsertData! : FormGroup;
   ModalId: any;
-  @Input() id : any
+  @Input() id : any;
   constructor( private ModalService : GlobalModalService ) { }
 
   ngOnInit(): void {
