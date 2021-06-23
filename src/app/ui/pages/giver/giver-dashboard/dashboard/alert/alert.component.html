@@ -87,154 +87,150 @@
 
 
 
-
 <!--  ---------------------modal popup ------------------------- -->
 
 <ng-template #content let-modal>
-  <div class="modal-header tittle-model" >
+  <div class="modal-header " style="color: var(--ColorText);" >
     <h4 class="modal-title" id="modal-basic-title">Aider user 1  <i class="fas fa-hands-helping"></i> </h4> 
-    <!-- <button type="button"  class="close btn btn-outline-danger cls" aria-label="Close" (click)="modal.dismiss('Cross click')" style ="outline: none !important;">
-      <span aria-hidden="true">&times;</span>
-    </button> -->
+    <button type="button" class=" close main-btn-secondary border-0 mx-2 btn" aria-label="Close" (click)="modal.close('Save click')">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
   </div>
-  <div class="modal-body" style="height: 500px; overflow-y: scroll;">
-    <table class="table table-sm">
-      <thead>
-        <tr>
-          <th scope="col" colspan="2">Informations de bénéficiaire</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let benif of selectedAlert">
-        <tr>
-          <td>Nom complet :</td>
-          <td><label>{{ benif.benificier.last_name }}  {{ benif.benificier.first_name }}</label></td>
-        </tr>
-        <tr>
-          <td>sexe :</td>
-          <td><label>{{ benif.benificier.gender }} </label></td>
-        </tr>
-        <tr>
-          <td>Age :</td>
-          <td><label>{{ benif.benificier.age }}</label></td>
-        </tr>
-        <tr>
-          <td>Tél :</td>
-          <td><label>{{ benif.benificier.phone }}</label></td>
-        </tr>
-        <tr>
-          <td>Email :</td>
-          <td><label>{{ benif.benificier.email }}</label></td>
-        </tr>
-        <tr>
-          <td>Adresse :</td>
-          <td><label>{{ benif.benificier.adress }}</label></td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-sm">
-      <thead>
-        <tr>
-          <th scope="col" colspan="2">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let action of selectedAlert" >
-          <td>Date de disposition :</td>
-          <td><label>{{ action.date_action | date:'dd-MM-yyyy' }}</label></td>
-        </tr>
-       
-      </tbody>
-    </table>
-       <div class="vetement" *ngIf="selectedAlert[0].vetement.selected == 'true'">
-       
-          <h6>vétement </h6>
-        
-            <div class="row">
-              <div class="col-md-4 alEnd">
-                type :
-              </div>
-              <div class="col-md-8 alCenter">
-                <label>{{ selectedAlert[0].vetement.type }}</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 alEnd">
-                size :
-              </div>
-              <div class="col-md-8 alCenter">
-                <label>{{ selectedAlert[0].vetement.size }}</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 alEnd">
-                sexe :
-              </div>
-              <div class="col-md-8 alCenter">
-                <label>{{ selectedAlert[0].vetement.gender }}</label>
-              </div>
-            </div>
-       <hr>
-       </div>
-      
-       <div class="abonnement"  *ngIf="selectedAlert[0].abonnement_mobile.selected == 'true' || selectedAlert[0].abonnement_transport.selected == 'true' ">
-       
-        <h6>Abonnement </h6>
-      
-          <div class="row" *ngIf="selectedAlert[0].abonnement_transport.selected == 'true'">
-            <div class="col-md-4 alEnd">
-              transport :
-            </div>
-            <div class="col-md-8 alCenter">
-              <label>type : {{selectedAlert[0].abonnement_transport.type_abonnement}} </label>
-            </div>
-          </div>
-          <div class="row" *ngIf="selectedAlert[0].abonnement_mobile.selected == 'true'" >
-            <div class="col-md-4 alEnd">
-              mobile :
-            </div>
-            <div class="col-md-8 alCenter">
-              <label>operateur : {{selectedAlert[0].abonnement_mobile.operateur}}</label>
-            </div>
-          </div>
-    <hr>
-     </div>
-     
-    
+  <div class="modal-body bg-light" style=" display:flex; justify-content: center; flex-wrap: wrap; padding-top: 0px; padding-left: 0px; padding-right: 0px; ">
 
-    <div class="autre" *ngIf="selectedAlert[0].autre.selected == 'true'">
-       
-      <h6>  </h6>
+        <div class="btn-group " role="group" aria-label="Basic outlined example" style="width: 100%; margin-top: 0px;">
+          <button type="button" class="btn btn-outline-light btnGrpSearchPopUP " (click)="displayBenifDetails()">Informations de bénéficiaire</button>
+          <button type="button" class="btn btn-outline-light btnGrpSearchPopUP " (click)="displayActioonDetails()">Informations d'action</button>
+        </div>
+
+
+        <div style="width: 80%; margin-top: 10px; " *ngIf="afficherDetails == 'benif'">
+        <table class="table table-sm" >
+          <thead>
+            <tr>
+              <!-- <th scope="col" colspan="2">Informations de bénéficiaire</th> -->
+            </tr>
+          </thead>
+          <tbody *ngFor="let benif of selectedAlert">
+            <tr>
+              <td>Nom complet :</td>
+              <td><label>{{ benif.benificier.last_name }}  {{ benif.benificier.first_name }}</label></td>
+            </tr>
+            <tr>
+              <td>sexe :</td>
+              <td><label>{{ benif.benificier.gender }} </label></td>
+            </tr>
+            <tr>
+              <td>Age :</td>
+              <td><label>{{ benif.benificier.age }}</label></td>
+            </tr>
+            <tr>
+              <td>Tél :</td>
+              <td><label>{{ benif.benificier.phone }}</label></td>
+            </tr>
+            <tr>
+              <td>Email :</td>
+              <td><label>{{ benif.benificier.email }}</label></td>
+            </tr>
+            <tr>
+              <td>Adresse :</td>
+              <td><label>{{ benif.benificier.adress }}</label></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div style="width: 80%; margin-top: 10px;" *ngIf="afficherDetails == 'action'">
+              
+              <div class="vetement text" *ngIf="selectedAlert[0].vetement.selected == 'true'" >
+                    <label>vétement </label>
+                  
+                      <div class="row">
+                        <div class="col-md-4 alEnd">
+                        <label>type :</label> 
+                        </div>
+                        <div class="col-md-8 alCenter">
+                          <label>{{ selectedAlert[0].vetement.type }}</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4 alEnd">
+                        <label>size :</label> 
+                        </div>
+                        <div class="col-md-8 alCenter">
+                          <label>{{ selectedAlert[0].vetement.size }}</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4 alEnd">
+                        <label>sexe :</label> 
+                        </div>
+                        <div class="col-md-8 alCenter">
+                          <label>{{ selectedAlert[0].vetement.gender }}</label>
+                        </div>
+                      </div>
+                <hr>
+              </div>
+              
+              <div class="abonnement text"   *ngIf="selectedAlert[0].abonnement_mobile.selected == 'true' || selectedAlert[0].abonnement_transport.selected == 'true' ">
+                
+                  <label>Abonnement </label>
+                
+                    <div class="row" *ngIf="selectedAlert[0].abonnement_transport.selected == 'true'">
+                      <div class="col-md-4 alEnd">
+                      <label >transport :</label>  
+                      </div>
+                      <div class="col-md-8 alCenter">
+                        <label>type : {{selectedAlert[0].abonnement_transport.type_abonnement}}</label>
+                      </div>
+                    </div>
+                    <div class="row" *ngIf="selectedAlert[0].abonnement_mobile.selected == 'true'" >
+                      <div class="col-md-4 alEnd">
+                      <label >mobile :</label> 
+                      </div>
+                      <div class="col-md-8 alCenter">
+                        <label>{{  selectedAlert[0].abonnement_mobile.operator }}</label>
+                      </div>
+                    </div>
+              <hr>
+              </div>
+                
+          
+              <div class="autre text" *ngIf="selectedAlert[0].autre.selected == 'true'">  
+                <div class="row text ">
+                  <div class="col-md-4">
+                    <label>Autre type :</label>
+                  </div>
+                  <div class="col-md-8 alCenter">
+                    <label>{{selectedAlert[0].autre.text}}</label>
+                  </div><hr>
+                </div>
+                
+                
+                </div> 
+
+              <div class="row text" *ngFor="let action of selectedAlert">
+          
+                <div class="col-md-4">Annoncé le :</div>
+                <div class="col-md-8"><label>{{ action.date_action | date:'dd-MM-yyyy' }}</label></div>
+                <hr>
+              </div>
+
+              <div class="row text" >
+                <div class="col-md-4">
+                    Plus :
+                </div>
+                <div class="col-md-8" *ngFor="let action of selectedAlert" >
+                    <p>{{ action.details }}</p> 
+                </div>
+                <hr>
+              </div> 
+            
+        </div> 
+  </div>
    
-       <div class="row">
-         <div class="col-md-4 alEnd">
-           autre :
-         </div>
-         <div class="col-md-8 alCenter">
-           <label>{{selectedAlert[0].autre.text}}</label>
-         </div>
-       </div>
-       
-   <hr>
-     </div> 
-
-
-    <div class="row">
-          <div class="col-md-4">
-              Plus de détails :
-          </div>
-          <div class="col-md-8" *ngFor="let action of selectedAlert" >
-              <p>{{ action.details }}</p> 
-          </div>
-    </div> 
-         
-           
-        
-  
-  </div> 
   <div class="modal-footer " >
-      <button type="submit" class="main-btn-secondary border-0 mx-2 btn" (click)="contribuer(selectedAlert[0]._id); modal.close('Save click'); reload();">Contribuer</button>
+      <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="contribuer(selectedAlert[0]._id) ; modal.close('Save click') " >Contribuer</button>
       <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="modal.close('Save click')">Annuler</button>
   </div>
 </ng-template>
-
-

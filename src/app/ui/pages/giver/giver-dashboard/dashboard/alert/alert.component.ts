@@ -18,7 +18,7 @@ export class AlertComponent implements OnInit {
   selectedAlert:any;
   selectedBenif: any;
   afficherRecherch:any = 0;
-
+  afficherDetails:any = 'benif';
   constructor(
    
     private data: ActionsService,
@@ -66,6 +66,13 @@ export class AlertComponent implements OnInit {
        this.afficherRecherch=0;
      }
   }
+  displayBenifDetails(){
+    this.afficherDetails='benif';
+}
+displayActioonDetails(){
+ this.afficherDetails='action';
+}
+  
   async chercherAlert(critaire:any){
     await this.data.chercherActions(critaire).subscribe((data: any)=> this.listActions = data);
     setTimeout(() => {

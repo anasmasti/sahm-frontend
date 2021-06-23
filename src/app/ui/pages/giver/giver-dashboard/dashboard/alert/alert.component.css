@@ -166,12 +166,38 @@ margin: auto;
   color: white;
   border-left: none; border-top-right-radius: 30px; border-bottom-right-radius: 30px;
   }
-
-
+  .btnGrpSearch{
+    background-color: white;
+    color: var(--authColor);
+  }
+  tr{
+    color: var(--ColorText);  
+  }
+  .text{
+    color: var(--ColorText);
+    /* background-color: #6C63FF;  */
+     padding-bottom: 0px;
+    /*padding-top: 0px;
+    padding-bottom: 0px; */
+    margin-top: 0px;
+  }
   .btnGrpSearch{
     background-color: white;
     color: var(--mainColor);
     margin-top: 10px;
+  }
+  .btnGrpSearchPopUP{
+    
+    background-color: white;
+    color: var(--authColor);
+    width: 50%;
+  }
+  .btnGrpSearchPopUP:focus{
+    
+    background-color:var(--authColor);
+    color: white;
+    width: 50%;
+    outline: none;
   }
 
   .search{
