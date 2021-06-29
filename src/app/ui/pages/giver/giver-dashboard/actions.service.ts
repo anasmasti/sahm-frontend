@@ -47,41 +47,45 @@ export class ActionsService {
   }
 
   chargerAlert(){
-    return this.http.get('http://localhost:3000/actions/alert');
+    return this.http.get('http://192.168.11.134:3000/actions/alert');
   }
   chargerAction(){
-    return this.http.get('http://localhost:3000/actions/');
+    return this.http.get('http://192.168.11.134:3000/actions/');
   }
   selectedAction(id:any){
-    return this.http.get('http://localhost:3000/actions/'+id);
+    return this.http.get('http://192.168.11.134:3000/actions/'+id);
   }
 
   getbeneficier(id:any){
-    return this.http.get('http://localhost:3000/users/users/ActionBenef/'+id);
+    return this.http.get('http://192.168.11.134:3000/users/users/ActionBenef/'+id);
   }
 
   contribuer(id:any){
     // console.log(id);
-    return this.http.patch('http://localhost:3000/actions/contribuer/'+id,{giver:"60c7675e8f244f21d45b24b8" ,etat:"selectionée"});
+    return this.http.put('http://192.168.11.134:3000/actions/contribuer/'+id,{giver:"60c7675e8f244f21d45b24b8" ,etat:"selectionée"});
   }
   valider(id:any){
     // console.log(id);
-    return this.http.patch('http://localhost:3000/actions/contribuer/'+id,{giver:"60c7675e8f244f21d45b24b8" ,etat:"validé"});
+    return this.http.put('http://192.168.11.134:3000/actions/contribuer/'+id,{giver:"60c7675e8f244f21d45b24b8" ,etat:"validé"});
   }
 
   getGiverContributions(id:any){
-    return this.http.get('http://localhost:3000/actions/giver/'+id);
+    return this.http.get('http://192.168.11.134:3000/actions/giver/'+id);
   }
   initialiserAction(id:any){
    
-    return this.http.patch('http://localhost:3000/actions/renitialiser/'+id,{giver:null ,etat:"initié"});
+    return this.http.put('http://192.168.11.134:3000/actions/renitialiser/'+id,{giver:null ,etat:"initié"});
   }
 
 
   getDetailsAction(id:any){
-    return this.http.get('http://localhost:3000/actions/actionBenif/'+id);
+    return this.http.get('http://192.168.11.134:3000/actions/actionBenif/'+id);
   }
+
   chercherActions(critaire:any){
-    return this.http.get('http://localhost:3000/actions/search/'+critaire);  
+   
+      return this.http.get('http://192.168.11.134:3000/actions/search/'+critaire);  
+    
+   
   }
 }

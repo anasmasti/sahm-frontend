@@ -73,11 +73,11 @@ displayActioonDetails(){
  this.afficherDetails='action';
 }
   
-  async chercherAlert(critaire:any){
-    await this.data.chercherActions(critaire).subscribe((data: any)=> this.listActions = data);
-    setTimeout(() => {
-      this.totalLength = this.listActions.length;
-    }, 1000);
-  }
+  // async chercherAlert(critaire:any){
+  //   await this.data.chercherActions(critaire,'alert').subscribe((data: any)=> this.listActions = data);
+  //   setTimeout(() => {
+  //     this.totalLength = this.listActions.length;
+  //   }, 1000);
+  // }
 
 }

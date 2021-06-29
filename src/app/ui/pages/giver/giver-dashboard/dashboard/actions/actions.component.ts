@@ -38,19 +38,22 @@ export class ActionsComponent implements OnInit {
   open(content: any){
     setTimeout(() => {
       this.data.open(content, this.closeResult);
-    }, 200);
+    }, 405);
     
   }
   async chargerActions(){
      await this.data.chargerAction().subscribe((data: any)=> this.listActions = data);
      setTimeout(() => {
       this.totalLength2 = this.listActions.length;
+      console.log('selected action ::  '+this.listActions[0]._id);
     }, 500);
+    
    }
-   selectedaction(id:any){
+   async selectedaction(id:any){
     //  this.data.selectedAction(id).subscribe((data: any)=> this.selectedAction = data);
     //  this.data.getbeneficier(id).subscribe((data: any)=> this.selectedBenif = data);
-    this.data.getDetailsAction(id).subscribe((data: any)=> this.selectedAction = data);
+    await this.data.getDetailsAction(id).subscribe((data: any)=> this.selectedAction = data);
+    
    }
    contribuer(id:any){
     //  let id = this.selectedAction[0]._id;

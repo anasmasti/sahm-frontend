@@ -1,23 +1,4 @@
-.card{
-  width: 120px;
-  height: 100px;
-  margin: 12px;
-  padding: 0px;
-  cursor: pointer;
-  text-decoration: none;
-  color: rgb(126, 126, 126);
-  border:0.1 solid transparent ;
-  border-radius: 12px;
-  background-image: url("../../../../../../../assets/help.png");
-}
-.card:hover{
-  box-shadow: 0px 0px 20px 1px rgba(85, 85, 85, 0.7);
-  transition: box-shadow 0.3s ease-in-out;
-  transform: scale(1.1, 1.1);
-}
-.card-container{
-  display: flex; justify-content: space-between; flex-wrap: wrap; 
-}
+
 h3{
   color: var(--authColor);
 }
@@ -72,13 +53,14 @@ color: white;
 }
 h6{
   font-size: 12px; margin-top: 0px;
+  color: var(--ColorText);
 }
 hr{
   margin-bottom: 6px;
   margin-top: 6px;
 }
 tr{
-  color: var(--ColorText);  
+  color: var(--ColorText);   
 }
 .text{
   color: var(--ColorText);
@@ -104,9 +86,21 @@ tr{
   background-color: var(--secondaryColor) ;
   color: var(--mainColor) ;
 }
-
+/* .transitionGrp{
+  width: 10px;
+  transition: width 1s,
+}
+.transitionGrp:hover{
+  width: 100%;
+} */
+.sousTitre{
+  font-size: 14px;
+}
 .ng-md{
   border-radius: 30%;
+}
+.btn:focus{
+  box-shadow: none;
 }
 h6{
   margin-top: 0px;
@@ -119,8 +113,8 @@ h6{
   margin-bottom: 0px;
 }
 .card{
-  width: 116px;
-   height: 120px; 
+  width: 140px;
+   height: 200px; 
   margin: 12px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -133,7 +127,7 @@ h6{
   text-decoration: none;
   color: rgb(126, 126, 126);
   border:0.1 solid transparent ;
-  border-radius: 12px;
+  border-radius: 20px;
   background-color: var(--txtColor) ;
 }
 .card:hover{
@@ -145,17 +139,17 @@ h6{
   display: flex; justify-content: space-between; flex-wrap: wrap; 
 }
 h3{
-  color: var(--authColor);
+  color: var(--mainColor);
 }
 .my-pagination ::ng-deep .ngx-pagination .current {
-  background: var(--mainColor);
+  background: white;
   color: white;
   border: solid 1px white;
   }
   .my-pagination ::ng-deep .ngx-pagination  {
     /* border: solid 1px white; */
   /* background : white; */
-  color: var(--authColor);
+  color: white;
   float: left;
   /* width: 97%; */
   margin: 0px;
@@ -176,21 +170,26 @@ margin: auto;
 }
 .hit{
   height: 100%;
-  background: var(--authColor);
+  background: var(--mainColor);
   color: white;
   border-left: none; border-top-right-radius: 30px; border-bottom-right-radius: 30px;
   }
 
   .search{
     height: 100%;
-    width:50%;
+    width:40%;
     float: right; 
     margin-left: 0px;
     margin:0px;
     border-radius: 30px;
     border:none;
-    background-color:  var(--authColor);
+    background-color:  var(--mainColor);
     color:  white;
+  }
+  .search:hover{
+    /* background-color: white;
+    color:   var(--mainColor); */
+    box-shadow: 0px 0px 20px 1px rgba(85, 85, 85, 0.7);
   }
   .searchDiv{
     /* background-color: white; */
@@ -209,21 +208,32 @@ margin: auto;
   }
   .btnGrpSearch{
     background-color: white;
-    color: var(--authColor);
+    color: var(--mainColor);
   }
+  
   .btnGrpSearchPopUP{
-    
+    cursor: pointer;
     background-color: white;
-    color: var(--authColor);
+    color: var(--mainColor);
     width: 50%;
+    transition: background-color 0.4s ease-in;
   }
-  .btnGrpSearchPopUP:focus{
+  .btnGrpSearchPopUP:active{
     
-    background-color:var(--authColor);
+    background-color:var(--mainColor);
     color: white;
     width: 50%;
     outline: none;
   }
+  .btnGrpSearchPopUP:hover{
+    
+    background-color:var(--mainColor);
+    color: white;
+    width: 50%;
+    outline: none;
+   
+  }
+
   .radiusRight{
     border-top-right-radius: 30px;
      border-bottom-right-radius: 30px;
@@ -235,4 +245,61 @@ margin: auto;
 
   .grp{
     margin-top:10px
+  }
+
+
+
+
+
+
+
+.actions{
+  display: flex; justify-content: space-around;flex-wrap: wrap;
+  /* width: 320px; */
+
+ 
+}
+
+
+.img-cards{
+  height: 100px;
+  margin: auto;
+}
+
+
+.radio{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+  .activeBtn:checked ~ .radio{
+    background-color:var(--mainColor);
+    color: white;
+    width: 100%;
+    outline: none;
+  }
+
+  .icn{
+    height: 50px;
+    width: 50px;
+  }
+
+  .contImg{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+  }
+
+  .alertbarre{
+    transform: rotate(320deg); 
+    width: 89px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left:-18px;
+    color: white;
+    font-size: 11px;
+    border-top-right-radius: 90px;
+    border-top-left-radius: 90px;
   }

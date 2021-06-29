@@ -13,6 +13,8 @@ export class DetailsComponent implements OnInit {
   selectedAction:any;
   selectedBenif: any;
   closeResult!: string;
+  afficherDetails:any = 'benif';
+
   constructor(
     private data: ActionsService,
     private http:HttpClient
@@ -47,7 +49,12 @@ export class DetailsComponent implements OnInit {
   valider(id:any){
     this.data.valider(id).subscribe();
   }
-
+  displayBenifDetails(){
+    this.afficherDetails='benif';
+}
+displayActioonDetails(){
+ this.afficherDetails='action';
+}
   selectedaction(id:any){
     // this.data.selectedAction(id).subscribe((data: any)=> this.selectedAction = data);
     // this.data.getbeneficier(id).subscribe((data: any)=> this.selectedBenif = data);
@@ -57,7 +64,7 @@ export class DetailsComponent implements OnInit {
   open(content: any){
     setTimeout(() => {
       this.data.open(content, this.closeResult);
-    }, 200);
+    }, 400);
     
   }
 

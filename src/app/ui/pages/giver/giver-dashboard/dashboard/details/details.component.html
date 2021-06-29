@@ -11,42 +11,62 @@
     pour aider les demondeurs d'aide veuiller selectionner une des actions situées dans la zone "CONTRIBUER"
   </h6>
   <h6>
-    noté que les actions situées dans la zone "ALERT" est dédié au demandes urgentes !
+    noté que les actions ayant la signe  "ALERT" sont dédié au demandes urgentes !
   </h6>
 </div>
 
-<div *ngIf="Contributions != 0" class="alert" style=" display: flex; justify-content: flex-start;">
+<div *ngIf="Contributions != 0" class="alert mt-2" style=" display: flex; justify-content: center;">
+ <div class="table-responsive " style="width: 90%;  ">
+  <table class="table " >
+    <thead class="thead-dark">
+      <tr style="color:var(--ColorText);">
  
-  <table class="table">
-     <thead class="thead-dark">
-       <tr style="color:var(--ColorText);">
-  
-         <th scope="col">username</th>
-         <th scope="col">statut</th>
-         <th scope="col">date demande</th>
-         <th scope="col">etat</th>
-         <th scope="col"  style="text-align: center;"></th>
-       </tr>
-     </thead>
-     <tbody>
-       <tr *ngFor="let action of Contributions | paginate: { id: 'id3', itemsPerPage: 3, currentPage: page, totalItems: totalLength }" style="color:var(--ColorText);">
-         <td>{{action.benificier.username}}</td>
-         <td>{{action.statut}}</td>
-         <td>{{ action.date_action | date:'dd-MM-yyyy' }}</td>
-         <td>{{action.etat}}</td>
-          <td>
-     
-               <button id="{{action._id}}"  *ngIf="action.etat != 'validé'" type="button" class="main-btn-secondary border-02 btn" style="border-radius: 12px; color:  var(--authColor);" (click)="valider(action._id); reload();"  ><i class="fas fa-check-circle"></i></button>
-               <button  id="{{action._id}}"  *ngIf="action.etat != 'validé'"  type="button" (click)="initialiserAction(action._id); reload();" class="main-btn-secondary border-0 mx-2 btn" style="border-radius: 12px; color:  var(--authColor);" ><i class="fas fa-ban"></i></button>
-           <button type="button" class="btn main-btn-secondary" style="border-radius: 12px; color:  var(--authColor);" (click)="  open(content) ;  selectedaction(action._id);"   ><i class="fas fa-info-circle"></i></button>
-          </td>
-       </tr>
+        <th scope="col">username</th>
+        <th scope="col">statut</th>
+        <th class="dateD" scope="col" >date demande</th>
+        <th scope="col">etat</th>
+        <th scope="col" > </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let action of Contributions | paginate: { id: 'id3', itemsPerPage: 3, currentPage: page, totalItems: totalLength }" style="color:var(--ColorText); ">
+        <td>{{action.benificier.username}}</td>
+        <td>{{action.statut}}</td>
+        <td>{{ action.date_action | date:'dd-MM-yyyy' }}</td>
+        <td>{{action.etat}}</td>
+         <td>
+           <div style=" display: flex; justify-content: center; " >
+            <button id="{{action._id}}" 
+             *ngIf="action.etat != 'validé'"
+              type="button"
+               class="btn search "
+                 (click)="valider(action._id); reload();"  >
+                 <i class="fas fa-check-circle"></i>
+                </button>
+            <button  id="{{action._id}}" 
+             *ngIf="action.etat != 'validé'" 
+              type="button"
+               (click)="initialiserAction(action._id); reload();"
+                class="btn  search "  >
+                <i class="fas fa-ban"></i>
+              </button>
+            <button type="button"
+             class="btn search " (click)=" 
+              open(content) ;  selectedaction(action._id);"   >
+              <i class="fas fa-info-circle"></i>
+            </button>
+          </div>
+              
+         </td>
+      </tr>
 
-     
-       
-     </tbody>
-   </table>
-     
+    
+      
+    </tbody>
+  </table>
+    
+ </div>
+ 
   
 </div>
 <div  *ngIf="Contributions != 0 " class="row">
@@ -129,165 +149,167 @@
 <!--  ---------------------modal popup ------------------------- -->
 
 <ng-template #content let-modal>
-  <div class="modal-header tittle-model" >
-    <h4 class="modal-title" id="modal-basic-title">Aider user 1  <i class="fas fa-hands-helping"></i> </h4> 
-    <!-- <button type="button"  class="close btn btn-outline-danger cls" aria-label="Close" (click)="modal.dismiss('Cross click')" style ="outline: none !important;">
-      <span aria-hidden="true">&times;</span>
-    </button> -->
-  </div>
-  <div class="modal-body" style="height: 500px; overflow-y: scroll;">
-    <table class="table table-sm">
-      <thead>
-        <tr>
-          <th scope="col" colspan="2">Informations de bénéficiaire</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let benif of selectedAction">
-        <tr>
-          <td>Nom complet :</td>
-          <td><label>{{  benif.benificier.last_name }}  {{  benif.benificier.first_name }}</label></td>
-        </tr>
-        <tr>
-          <td>sexe :</td>
-          <td><label>{{  benif.benificier.gender }} </label></td>
-        </tr>
-        <tr>
-          <td>Age :</td>
-          <td><label>{{  benif.benificier.age }}</label></td>
-        </tr>
-        <tr>
-          <td>Tél :</td>
-          <td><label>{{  benif.benificier.phone }}</label></td>
-        </tr>
-        <tr>
-          <td>Email :</td>
-          <td><label>{{  benif.benificier.email }}</label></td>
-        </tr>
-        <tr>
-          <td>Adresse :</td>
-          <td><label>{{  benif.benificier.adress }}</label></td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="table table-sm">
-      <thead>
-        <tr>
-          <th scope="col" colspan="2">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let action of selectedAction" >
-          <td>Date de disposition :</td>
-          <td><label>{{ action.date_action | date:'dd-MM-yyyy' }}</label></td>
-        </tr>
-       
-      </tbody>
-    </table>
-       <div class="vetement" *ngIf="selectedAction[0].vetement.selected == 'true'">
-       
-          <h6>vétement </h6>
-        
-            <div class="row">
-              <div class="col-md-4 alEnd">
-                type :
-              </div>
-              <div class="col-md-8 alCenter">
-                <label>{{ selectedAction[0].vetement.type }}</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 alEnd">
-                size :
-              </div>
-              <div class="col-md-8 alCenter">
-                <label>{{ selectedAction[0].vetement.size }}</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 alEnd">
-                sexe :
-              </div>
-              <div class="col-md-8 alCenter">
-                <label>{{ selectedAction[0].vetement.gender }}</label>
-              </div>
-            </div>
-       <hr>
-       </div>
-      
-       <div class="abonnement">
-       
-        <h6>Abonnement </h6>
-      
-          <div class="row" *ngIf="selectedAction[0].abonnement_transport.selected == 'true'">
-            <div class="col-md-4 alEnd">
-              transport :
-            </div>
-            <div class="col-md-8 alCenter">
-              <label>type : {{selectedAction[0].abonnement_transport.type_abonnement}}</label>
-            </div>
-          </div>
-          <div class="row" *ngIf="selectedAction[0].abonnement_mobile.selected == 'true'" >
-            <div class="col-md-4 alEnd">
-              mobile :
-            </div>
-            <div class="col-md-8 alCenter">
-              <label>{{  selectedAction[0].abonnement_mobile.operator }}</label>
-            </div>
-          </div>
-    
+
+  <!-- header de modal -->
+<div class="modal-header " style="color: var(--ColorText);" >
+<h4 class="modal-title" id="modal-basic-title">{{ selectedAction[0].benificier.username  }} <i class="fas fa-hands-helping"></i> </h4> 
+<button type="button" class="btn search" style="width: 40px;" aria-label="Close" (click)="modal.close('Save click'); displayBenifDetails()">
+ <i class="fa fa-times" aria-hidden="true"></i>
+</button>
+</div>
+
+   <!-- body de modal -->
+<div class="modal-body bg-light" style=" display:flex; justify-content: center; flex-wrap: wrap; padding-top: 0px; padding-left: 0px; padding-right: 0px; ">
+
+   <div class="btn-group " role="group" aria-label="Basic outlined example" style="width: 100%; height: 35px; margin-top: 0px;">
+    <div class="btnGrpSearchPopUP ">
+          <label for="rdb" class="w-100 h-100  text-center " >
+          <input name="test" type="radio" checked style="display: none;" id="rdb" class="activeBtn" (click)="displayBenifDetails()" >
+         <div class="radio w-100  d-flex flex-column justify-content-center ">
+          Informations de bénéficiaire
+         </div>
+         </label>
+   </div>
+     <div class="btnGrpSearchPopUP " >
+       <label for="rdb2" class="w-100 h-100 text-center" >
+         <input name="test" type="radio" style="display: none;" id="rdb2" class="activeBtn" (click)="displayActioonDetails()" >
+         <div class="radio d-flex flex-column justify-content-center">
+           Informations d'action
+         </div>
+       </label>
      </div>
-     <hr>
-    
-
-    <div class="autre" *ngIf="selectedAction[0].selected == 'true'">
-       
-      <h6>Autre type  </h6>
    
-       <div class="row">
-         <div class="col-md-4 alEnd">
-           autre :
-         </div>
-         <div class="col-md-8 alCenter">
-           <label>téléphone portable</label>
-         </div>
-       </div>
-       
-   <hr>
-     </div> 
+   </div>
 
 
-    <div class="row">
-          <div class="col-md-4">
-              Plus de détails :
-          </div>
-          <div class="col-md-8" *ngFor="let action of selectedAction" >
-              <p>{{ action.details }}</p> 
-          </div>
-    </div> 
+   <div style="width: 80%; margin-top: 10px; " *ngIf="afficherDetails == 'benif'">
+   <table class="table table-sm" >
+     <thead>
+       <tr>
+         <!-- <th scope="col" colspan="2">Informations de bénéficiaire</th> -->
+       </tr>
+     </thead>
+     <tbody *ngFor="let benif of selectedAction">
+       <tr>
+         <td>Nom complet :</td>
+         <td><label>{{ benif.benificier.last_name }}  {{ benif.benificier.first_name }}</label></td>
+       </tr>
+       <tr>
+         <td>sexe :</td>
+         <td><label>{{ benif.benificier.gender }} </label></td>
+       </tr>
+       <tr>
+         <td>Age :</td>
+         <td><label>{{ benif.benificier.age }}</label></td>
+       </tr>
+       <tr>
+         <td>Tél :</td>
+         <td><label>{{ benif.benificier.phone }}</label></td>
+       </tr>
+       <tr>
+         <td>Email :</td>
+         <td><label>{{ benif.benificier.email }}</label></td>
+       </tr>
+       <tr>
+         <td>Adresse :</td>
+         <td><label>{{ benif.benificier.adress }}</label></td>
+       </tr>
+     </tbody>
+   </table>
+   </div>
+
+   <div style="width: 80%; margin-top: 10px;" *ngIf="afficherDetails == 'action'">
          
+         <div class="vetement text" *ngIf="selectedAction[0].vetement.selected == 'true'" >
+               <label>vétement </label>
+             
+                 <div class="row">
+                   <div class="col-md-4 alEnd">
+                   <label class="sousTitre">type :</label> 
+                   </div>
+                   <div class="col-md-8 alCenter">
+                     <label class="sousTitre">{{ selectedAction[0].vetement.type }}</label>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col-md-4 alEnd">
+                   <label class="sousTitre">size :</label> 
+                   </div>
+                   <div class="col-md-8 alCenter">
+                     <label class="sousTitre">{{ selectedAction[0].vetement.size }}</label>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col-md-4 alEnd">
+                   <label class="sousTitre">sexe :</label> 
+                   </div>
+                   <div class="col-md-8 alCenter">
+                     <label class="sousTitre">{{ selectedAction[0].vetement.gender }}</label>
+                   </div>
+                 </div>
+           <hr>
+         </div>
+         
+         <div class="abonnement text"   *ngIf="selectedAction[0].abonnement_mobile.selected == 'true' || selectedAction[0].abonnement_transport.selected == 'true' ">
            
-        
+             <label>Abonnement </label>
+           
+               <div class="row" *ngIf="selectedAction[0].abonnement_transport.selected == 'true'">
+                 <div class="col-md-4 alEnd">
+                 <label class="sousTitre">transport :</label>  
+                 </div>
+                 <div class="col-md-8 alCenter">
+                   <label class="sousTitre">type : {{selectedAction[0].abonnement_transport.type_abonnement}}</label>
+                 </div>
+               </div>
+               <div class="row" *ngIf="selectedAction[0].abonnement_mobile.selected == 'true'" >
+                 <div class="col-md-4 alEnd">
+                 <label class="sousTitre">mobile :</label> 
+                 </div>
+                 <div class="col-md-8 alCenter">
+                   <label class="sousTitre">{{  selectedAction[0].abonnement_mobile.operator }}</label>
+                 </div>
+               </div>
+         <hr>
+         </div>
+           
      
-      <!-- <div class="row" class="row">
-          <div class="col-md-6">
-              Nom complet : <br>
-              sexe : <label>M</label> <br>
-              Age : <label>20</label><br>
-              Tél : <label>0604060406</label><br>
-              Email : <label>user@mail.com</label><br>
-              Adresse : <label>33 rue  </label>
-          </div>
-          <div class="col-md-6"><br>
-            <img style="height: 100px; width: 100px; margin-left: 20%;" src="../../../../../../assets/user.png" alt="">
-          </div>
-      </div>
-      <hr>
-      <div>
-          Objet/Service : <label>Abonnement tram</label><br>
-          Plus de détails : <label>j'ai besoins d'une carte abonnemenet tram pour aller au centre de formation</label>
-      </div>-->
-  </div> 
-  <div class="modal-footer " >
-      <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="modal.close('Save click')">fermer</button>
-  </div>
+         <div class="autre text" *ngIf="selectedAction[0].autre.selected == 'true'">  
+           <div class="row text ">
+             <div class="col-md-4">
+               <label>Autre type :</label>
+             </div>
+             <div class="col-md-8 alCenter">
+               <label>{{selectedAction[0].autre.text}}</label>
+             </div><hr>
+           </div>
+           
+           
+           </div> 
+
+         <div class="row text" *ngFor="let action of selectedAction">
+     
+           <div class="col-md-4">Annoncé le :</div>
+           <div class="col-md-8"><label>{{ action.date_action | date:'dd-MM-yyyy' }}</label></div>
+           <hr>
+         </div>
+
+         <div class="row text" >
+           <div class="col-md-4">
+               Plus :
+           </div>
+           <div class="col-md-8" *ngFor="let action of selectedAction" >
+               <p>{{ action.details }}</p> 
+           </div>
+           <hr>
+         </div> 
+       
+   </div> 
+</div>
+
+
+   <!-- footer de modal -->
+ 
+
+
 </ng-template>
