@@ -1,0 +1,80 @@
+.container {
+  background-color: transparent; 
+  padding: 4rem;
+  color: #fff;
+  text-align: center;
+  position: fixed; 
+  top: 0;
+  width: 100%; 
+  transition: 0.5s;
+  z-index: 999999999999 !important;
+}
+.containerActive {
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+  position: fixed; 
+  top: 0;
+  width: 100%;
+  transition: 0.5s;
+  background-color: #0099ff;
+  z-index: 999999999999 !important;
+
+}
+
+.logo {
+  color: #0099ff;
+  float: left;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.active{
+  color: #fff;
+  float: left;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.menu li,
+.account li {
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.menu li:hover,
+.account li:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.Table {
+  margin-top: 20rem;
+}
+
+.account {
+  list-style-type: none;
+  text-align: center;
+}
+
+.wave {
+  transform: rotate(270deg);
+  height: 100%;
+}
+
+
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+.SeConnecter{
+  border: 2px solid #fff;
+  border-radius: 12px;
+  width: 7rem;
+}

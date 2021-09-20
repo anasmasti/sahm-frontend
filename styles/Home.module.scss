@@ -1,0 +1,180 @@
+/* ::::::::::: Home Body ::::::::::: */
+
+.HomeBody {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.home__img {
+  width: 50%;
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.home__data {
+  width: 50%;
+  height: 40%;
+  padding: 3rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+}
+
+.home__title {
+  width: 100%;
+  
+}
+
+.home__button{
+  display: inline-block;
+  background-color: #0099ff;
+  color: white;
+  padding: 1.125rem 2rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  transition: .5s;
+}
+
+.home__button:hover{
+  background-color: #40b3ff;
+  color: white;
+}
+
+.Home {
+  padding: 0;
+  margin: 0;
+}
+
+/* ::::::::::: Circle ::::::::::: */
+
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0099ff;
+  clip-path: circle(800px at right);
+}
+
+/* ::::::::::: About Us ::::::::::: */
+
+.AboutUs{
+  margin-top: 7rem;
+}
+
+.AboutUs h2{
+  width: 15%;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: #0099ff;
+  border-bottom: 2px solid #0099ff;
+}
+
+.AboutBody{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.AboutImg{
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 12px;
+}
+
+.AboutDescription{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.AboutSubtitle{
+
+}
+
+.AboutText{
+
+}
+
+/* ::::::::::::: User Type :::::::::::  */
+
+.UserType{
+  margin-top: 5rem;
+}
+
+.UserType h2{
+  width: 15%;
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: #0099ff;
+  border-bottom: 2px solid #0099ff;
+}
+
+.UserTypeBtn{
+  padding:3rem;
+  text-align: center;
+  border: 4px solid #0099ff;
+  border-radius: 12px;
+  margin-top: 4rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.UserTypeBtn:hover{
+  color: #fff;
+  background-color: #0099ff;
+  transition: .5s;
+}
+
+.UserTypeBtn h3{
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* ::::::::::: Footer :::::::::::  */
+
+.footer{
+  background-color: #0099ff;
+  padding: 2rem ;
+  margin-top: 5rem;
+}
+
+.footer h3{
+  color: #fff;
+}
+
+.FooterTitle{
+  display: flex ;
+  flex-direction: row ;
+  justify-content: center ;
+}
+
+.FooterIcon{
+  color: #fff;
+  width: 120px ;
+}
+
+.FooterIcon:hover{
+  color: #fff;
+  width: 1rem;
+}
+
+.photoSvg{
+  z-index: 0;
+}

@@ -1,0 +1,14 @@
+@use "./variables";
+@use "./functions" as *;
+
+// Launch mobile media dynamicly
+@mixin mobile($min-screen, $max-screen) {
+    @media only screen and (min-width: $min-screen) and (max-width: $max-screen) {
+        @content;
+    }
+}
+
+// Global transition
+@mixin global-transition {
+    @apply transition delay-300;
+}
