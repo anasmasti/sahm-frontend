@@ -24,39 +24,7 @@ const Header = (props) => {
   });
 
   return (
-    <div>
-      {/*<div className={active ? style.navActive : style.nav}>
-        <div className={"row bg-danger "}>
-          <div className={"col-sm-5  " + (active ? style.active : style.logo)}>
-            <Link href="/">
-              <h5 className={" my-auto d-flex text-left "}>
-                <strong>SAHEM</strong>association
-              </h5>
-            </Link>
-          </div>
-          <div className={"col-sm-7  " + (active ? style.active : style.logo)}>
-          <a href="#" className={style.FooterIcon}>
-            <FontAwesomeIcon
-              icon={faBars}
-              className={"mx-3 fa-2x"}
-            ></FontAwesomeIcon>
-          </a>
-          </div>
-           <div className={"col-sm-7"}>
-            <ul className={"my-auto " + style.menu}>
-              <Link href="/">
-                <li>Home</li>
-              </Link>
-              <Link href="#AboutUs">
-                <li>About us</li>
-              </Link>
-              <Link href="#UserType">
-                <li className={style.Login}>Log in</li>
-              </Link>
-            </ul>
-          </div> 
-        </div>
-      </div>*/}
+    <header>
       <div className={active ? style.navOnScroll : style.navContainer}>
         <nav className={style.nav + " text-center " + style.bd_grid}>
           <div>
@@ -116,10 +84,15 @@ const Header = (props) => {
                   </a>
                 </Link>
               </li>
-              <li className={" " + style.nav__item}>
+              <li className={[style.nav__item].join(' ')}>
                 <Link href="/login">
-                  <a className={[style.hover_line].join(' ')} >
-                    Login
+                  <a className={['seconde-btn p-2 me-2'].join(' ')} >
+                  Se connecter
+                  </a>
+                </Link>
+                <Link href="/login">
+                  <a className={['seconde-btn p-2'].join(' ')} >
+                  s'Inscrire
                   </a>
                 </Link>
               </li>
@@ -127,7 +100,7 @@ const Header = (props) => {
           </div>
         </nav>
       </div>
-    </div>
+    </header>
   );
 };
 

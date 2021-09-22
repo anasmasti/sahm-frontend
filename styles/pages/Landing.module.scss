@@ -8,16 +8,17 @@
 }
 
 .left_section {
-  width: 50%;
   height: 40%;
   padding: 3rem;
   margin-top: auto;
   margin-bottom: auto;
   text-align: left;
-}
 
-.title {
-  width: 100%;
+  @include mobile($mobile-min-screen, $mobile-max-screen) {
+    & {
+      width: 100%;
+    }
+ }
 }
 
 /* ::::::::::: Circle ::::::::::: */
@@ -30,13 +31,12 @@
   height: 100%;
   background-image: linear-gradient(-45deg, color('seconde-color') 0%, color('main-color') 100%);
   clip-path: circle(60% at right);
-  // z-index: 10;
-}
 
-
-@media screen and (max-width: 768px) {
-  .circle,
-  .home__data {
-    width: 100%;
+  @include mobile($mobile-min-screen, $mobile-max-screen) {
+     & {
+       display: none;
+     }
   }
 }
+
+

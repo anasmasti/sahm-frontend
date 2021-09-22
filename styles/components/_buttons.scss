@@ -1,35 +1,34 @@
-@use '../helpers' as *;
+@use "../helpers" as *;
 
-
-//  Main button 
+//  Main button
 .main-btn {
-    background: color(light);
+    background: color(main-color);
+    box-shadow: $btn-box-shadow;
+    color: color(light);
+    border-radius: $main-border-radius !important;
+    border: 0.1em solid color(main-color);
+    text-decoration: none;
+
+    &:hover {
+        background: color(seconde-color);
+        color: color(light) !important;
+    }
+}
+
+// Second button
+.seconde-btn {
+    background: color(seconde-color);
     box-shadow: $btn-box-shadow;
     color: color(dark);
     border-radius: $main-border-radius !important;
-    border: 0.1em solid color(light) ;
+    border: 0.1em solid color(seconde-color);
+    text-decoration: none;
 
     &:hover {
         background: color(main-color);
         color: color(light) !important;
     }
 }
-
-// Second button
-.second-btn {
-    background: color(main-color) !important;
-    box-shadow: $btn-box-shadow;
-    color: color(light) !important;
-    border-radius: $main-border-radius !important;
-    border: 0.1em solid color(main-color) !important;
-
-    &:hover {
-        background: color(light) !important;
-        color: color(dark) !important;
-        border: 0.1em solid color(main-color);
-    }
-}
-
 
 // Costumize the danger button
 .danger-btn {
@@ -55,7 +54,6 @@
         color: color(light) !important;
     }
 }
-
 
 // Costumize the info button
 .info-btn {
