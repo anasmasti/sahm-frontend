@@ -6,18 +6,18 @@ $colors: (
     "third-color": #c8d6f5,
     "body-color": #fefefe,
     "transparent-color": transparent,
-    "danger": #ffa2a2,
-    "success": #25e6bf,
-    "dark": #525252,
+    "danger": #fd8181,
+    "success": #25e69c,
+    "dark": #333333,
     "light": #ffffff,
-    "info": #0099ff,
+    "info": #00aeff,
 );
 
 // Global border size
 $main-border: 2px solid ; 
 
 // Global border radius
-$main-border-radius: 12px;
+$main-border-radius: 22px;
 
 // Global box shadow
 $btn-box-shadow: 1px 6px 14px rgb(142 142 142 / 5%);
@@ -36,7 +36,11 @@ $font-sizes: (
     "large": 20px,
 );
 
-// Mobile screens 
-$min-screen : 320px;
-$max-screen : 490px;
+// Breakpoints 
+// Mobile
+$mobile-min-screen : 320px;
+$mobile-max-screen : 490px;
+// Tablet
+$tablet-min-screen : 520px;
+$tablet-max-screen : 768px;
 

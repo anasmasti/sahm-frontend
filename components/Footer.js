@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className={style.Home}>
+    <footer className={style.Home}>
 
       <div className={style.footer}>
         <h3 className={" my-4  text-center " + style.FooterTitle}>
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
 
-    </div>
+    </footer>
   );
 };
 
