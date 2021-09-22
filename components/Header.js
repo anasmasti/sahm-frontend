@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import style from "../styles/shared/Header.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-const Header = (  props  ) => {
+const Header = (props) => {
   const [active, setActive] = useState(false);
+
+  const [show, setShow] = useState(false);
 
   useEffect(function mount() {
     function onScroll() {
@@ -13,16 +17,15 @@ const Header = (  props  ) => {
         setActive(false);
       }
       // console.log(text);
-      
     }
 
     window.addEventListener("scroll", onScroll);
   });
 
   return (
-    <div className={style.Home}>
-      <div className={active ? style.containerActive : style.container}>
-        <div className={"row "}>
+    <div>
+      {/*<div className={active ? style.navActive : style.nav}>
+        <div className={"row bg-danger "}>
           <div className={"col-sm-5  " + (active ? style.active : style.logo)}>
             <Link href="/">
               <h5 className={" my-auto d-flex text-left "}>
@@ -30,7 +33,15 @@ const Header = (  props  ) => {
               </h5>
             </Link>
           </div>
-          <div className={"col-sm-7"}>
+          <div className={"col-sm-7  " + (active ? style.active : style.logo)}>
+          <a href="#" className={style.FooterIcon}>
+            <FontAwesomeIcon
+              icon={faBars}
+              className={"mx-3 fa-2x"}
+            ></FontAwesomeIcon>
+          </a>
+          </div>
+           <div className={"col-sm-7"}>
             <ul className={"my-auto " + style.menu}>
               <Link href="/">
                 <li>Home</li>
@@ -39,12 +50,78 @@ const Header = (  props  ) => {
                 <li>About us</li>
               </Link>
               <Link href="#UserType">
-                <li className={style.SeConnecter}>Log in</li>
+                <li className={style.Login}>Log in</li>
               </Link>
-              {/* <li >Log in</li> */}
+            </ul>
+          </div> 
+        </div>
+      </div>*/}
+      <div className={active ? style.navOnScroll : style.navContainer}>
+        <nav className={style.nav + " text-center " + style.bd_grid}>
+          <div>
+            <Link href="/">
+              <h5 className={" my-auto d-flex text-left " +  (active ? style.logoOnScroll : style.nav__logo) }>
+                <strong>SAHEM</strong>association
+              </h5>
+            </Link>
+          </div>
+
+          <div className={" " + style.nav__toggle} id="nav-toggle">
+            {/* <i className={style.bx + " " + style.bx_menu}></i> */}
+            <FontAwesomeIcon
+              icon={faBars}
+              className={"mx-1 fa-1x " + (active ? "   text-light " : " ") }
+              onClick={() => {
+                setShow(true);
+                console.log(show);
+              }}
+            ></FontAwesomeIcon>
+          </div>
+
+          <div
+            className={
+              show ? style.nav__menu + " " + style.show : style.nav__menu
+            }
+            id="nav-menu"
+          >
+            <div className={" " + style.nav__close} id="nav-close">
+              <FontAwesomeIcon
+                icon={faTimes}
+                className={"mx-1 fa-1x "}
+                onClick={() => {
+                  setShow(false);
+                  console.log(show);
+                }}
+              ></FontAwesomeIcon>
+            </div>
+
+            <ul className={" my-auto " + style.nav__list}>
+              <li className={" " + style.nav__item}>
+                <a
+                  href="#home"
+                  className={style.active + " " + style.nav__link}
+                >
+                  Home
+                </a>
+              </li>
+              <li className={" " + style.nav__item}>
+                <a href="#about" className={" " + style.nav__link}>
+                  About
+                </a>
+              </li>
+              <li className={" " + style.nav__item}>
+                <a href="#skills" className={" " + style.nav__link}>
+                  Contact
+                </a>
+              </li>
+              <li className={ " " + style.nav__item}>
+                <a href="#contact" className={style.Login + " " + style.nav__link}>
+                  Login
+                </a>
+              </li>
             </ul>
           </div>
-        </div>
+        </nav>
       </div>
     </div>
   );

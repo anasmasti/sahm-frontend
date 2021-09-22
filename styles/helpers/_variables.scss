@@ -2,7 +2,7 @@
 $colors: (
     "main-color": #0099ff,
     "blur-color": #40b3ff,
-    "body-color": #fff,
+    "body-color": rgb(250, 250, 250),
     "transparent-color": transparent,
     "danger": #ffa2a2,
     "success": #25e6bf,
@@ -10,6 +10,9 @@ $colors: (
     "light": #ffffff,
     "info": #0099ff,
 );
+
+// Global border size
+$main-border: 2px solid ; 
 
 // Global border radius
 $main-border-radius: 12px;

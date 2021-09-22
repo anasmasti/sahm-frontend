@@ -1,4 +1,4 @@
-/* ::::::::::: Home Body ::::::::::: */
+@use './helpers' as *;
 
 .HomeBody {
   height: 100vh;
@@ -28,22 +28,21 @@
 
 .home__title {
   width: 100%;
-  
 }
 
-.home__button{
+.home__button {
   display: inline-block;
-  background-color: #0099ff;
-  color: white;
+  background-color: color('main-color');
+  color: color('light');
   padding: 1.125rem 2rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   text-decoration: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.home__button:hover{
+.home__button:hover {
   background-color: #40b3ff;
-  color: white;
+  color: color('light');
 }
 
 .Home {
@@ -59,122 +58,149 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0099ff;
-  clip-path: circle(800px at right);
+  background-color: color('main-color');
+  clip-path: circle(750px at right);
+  // z-index: 10;
 }
 
 /* ::::::::::: About Us ::::::::::: */
 
-.AboutUs{
+.AboutUs {
   margin-top: 7rem;
+
+  & h2 {
+    width: 15%;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    color: color('main-color');
+    border-bottom: 2px solid color('main-color');
+  }
 }
 
-.AboutUs h2{
-  width: 15%;
-  text-align: center;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  color: #0099ff;
-  border-bottom: 2px solid #0099ff;
-}
-
-.AboutBody{
+.AboutBody {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
-
 }
 
-.AboutImg{
+.AboutImg {
   text-align: center;
   border: 2px solid transparent;
   border-radius: 12px;
 }
 
-.AboutDescription{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.AboutSubtitle{
-
-}
-
-.AboutText{
-
-}
-
 /* ::::::::::::: User Type :::::::::::  */
 
-.UserType{
+.UserType {
   margin-top: 5rem;
+
+  & h2 {
+    width: 50%;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    color: color('main-color');
+    border-bottom: 2px solid color('main-color');
+  }
 }
 
-.UserType h2{
-  width: 15%;
+.UserTypeBtn {
+  padding: 3rem;
   text-align: center;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  color: #0099ff;
-  border-bottom: 2px solid #0099ff;
-}
-
-.UserTypeBtn{
-  padding:3rem;
-  text-align: center;
-  border: 4px solid #0099ff;
+  border: 4px solid color('main-color');
   border-radius: 12px;
   margin-top: 4rem;
   margin-right: 2rem;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+
+  & h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
-.UserTypeBtn:hover{
-  color: #fff;
-  background-color: #0099ff;
-  transition: .5s;
+.UserTypeBtn:hover {
+  color: color('light');
+  background-color: color('main-color');
+  transition: 0.5s;
 }
-
-.UserTypeBtn h3{
-  /* background-color: red; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 
 /* ::::::::::: Footer :::::::::::  */
 
-.footer{
-  background-color: #0099ff;
-  padding: 2rem ;
+.footer {
+  background-color: color('main-color');
+  padding: 2rem;
   margin-top: 5rem;
 }
 
-.footer h3{
-  color: #fff;
+.footer h3 {
+  color: color('light');
 }
 
-.FooterTitle{
-  display: flex ;
-  flex-direction: row ;
-  justify-content: center ;
+.FooterTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.FooterIcon{
-  color: #fff;
-  width: 120px ;
+.FooterIcon {
+  color: color('light');
+  width: 120px;
 }
 
-.FooterIcon:hover{
-  color: #fff;
+.FooterIcon:hover {
+  color: color('light');
   width: 1rem;
 }
 
-.photoSvg{
+.photoSvg {
   z-index: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .circle,
+  .home__img {
+    display: none;
+  }
+  .home__data {
+    width: 100%;
+    // background-color: red;
+    // margin-top: 10rem;
+    // margin-bottom: 0;
+  }
+  .AboutUs {
+    margin-top: 0;
+    & h2 {
+      width: 50%;
+    }
+    &.title {
+      width: 100%;
+    }
+  }
+  .AboutImg {
+    width: 250px;
+  }
+  .AboutDescription {
+    text-align: center;
+  }
+  .UserType {
+    & h2 {
+      width: 80%;
+    }
+    
+  }
+  .UserTypeBtn{
+    padding: 0;
+    // background-color: black;
+    margin-left: auto ;
+    margin-right: auto ;
+    &.photoSvg{
+      width: 100px;
+    }
+  }
 }

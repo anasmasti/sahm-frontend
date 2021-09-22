@@ -12,3 +12,10 @@
 @mixin global-transition {
     @apply transition delay-300;
 }
+
+// Global center 
+@mixin global-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
