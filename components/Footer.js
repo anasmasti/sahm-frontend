@@ -1,7 +1,7 @@
 import React from "react";
 import style from "../styles/shared/Footer.module.scss";
 import {
-  FaFacebook,
+  FaFacebookF,
   FaInstagram,
   FaTwitter,
 } from 'react-icons/fa';
@@ -21,17 +21,17 @@ const Footer = () => {
         </div>
         <div className="">
           <Link href="#">
-            <a className={['seconde-btn p-1', style.icon].join(' ')}>
-              <FaFacebook />
+            <a className={['', style.icon].join(' ')}>
+              <FaFacebookF />
             </a>
           </Link>
           <Link href="#">
-            <a className={['seconde-btn p-1 mx-3', style.icon].join(' ')}>
+            <a className={['mx-3', style.icon].join(' ')}>
               <FaInstagram />
             </a>
           </Link>
           <Link href="#">
-            <a className={['seconde-btn p-1', style.icon].join(' ')}>
+            <a className={['', style.icon].join(' ')}>
               <FaTwitter />
             </a>
           </Link>

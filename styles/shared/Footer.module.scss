@@ -16,7 +16,8 @@
 
 .icon {
     color: color(light);
-    font-size: large;
+    font-size:1.5rem;
+    font-weight: 700;
     &:hover {
         color: color(third-color);
     }
