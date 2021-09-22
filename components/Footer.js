@@ -5,30 +5,39 @@ import {
   FaInstagram,
   FaTwitter,
 } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer>
-      <div className={style.footer}>
-        <h3 className={" my-4  text-center " + style.FooterTitle}>
-          <b>
-            <strong>SAHEM</strong>
-          </b>
-          association
-        </h3>
-        <div className="footer__social  text-center pb-4">
-          <a href="#" className={style.FooterIcon}>
-            <FaFacebook />
-          </a>
-          <a href="#" className={style.FooterIcon}>
-            <FaInstagram className='mx-3' />
-          </a>
-          <a href="#" className={style.FooterIcon}>
-            <FaTwitter />
-          </a>
+    <footer className='mt-0'>
+      <div className={["d-flex flex-column align-items-center gap-2", style.section].join(' ')}>
+        <div>
+          <h3 className={"text-white" + style.logo}>
+            <strong>
+              SAHEM
+            </strong>
+            association
+          </h3>
         </div>
-        <div className="footer__social  text-center text-white">
-          <p>&#169; 2021 copyright all right reserved</p>
+        <div className="">
+          <Link href="#">
+            <a className={['seconde-btn p-1', style.icon].join(' ')}>
+              <FaFacebook />
+            </a>
+          </Link>
+          <Link href="#">
+            <a className={['seconde-btn p-1 mx-3', style.icon].join(' ')}>
+              <FaInstagram />
+            </a>
+          </Link>
+          <Link href="#">
+            <a className={['seconde-btn p-1', style.icon].join(' ')}>
+              <FaTwitter />
+            </a>
+          </Link>
+        </div>
+        <div className="text-white">
+          <p>&copy; 2021 copyright all right reserved</p>
         </div>
       </div>
 
