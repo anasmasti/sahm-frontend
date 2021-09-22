@@ -175,7 +175,7 @@
 }
 
 .navOnScroll {
-  padding: 2rem;
+  padding: 1rem;
   color: color('light');
   text-align: center;
   position: fixed;
@@ -198,6 +198,44 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+// Style of nav bar
+.navbar_items {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  font-weight: 700;
+
+  & li {
+      list-style: none;
+  }
+
+  & a {
+      color: color(light);
+      text-decoration: none;
+      @include global-transition;
+      &:hover {
+          color: #f5f5f5;
+      }
+  }
+}
+
+// Style of hover line
+.hover_line {
+  &::after {
+      content: "";
+      display: flex;
+      width: 35%;
+      height: 0.2rem;
+      border-radius: $main-border-radius;
+      background-color: color(light);
+      @include global-transition;
+  }
+
+  &:hover::after {
+      width: 100%;
+  }
 }
 
 // .nav__list {

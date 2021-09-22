@@ -10,7 +10,7 @@
 
 // Global transition
 @mixin global-transition {
-    @apply transition delay-300;
+    transition: 0.3s all;
 }
 
 // Global center 

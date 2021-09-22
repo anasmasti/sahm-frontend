@@ -1,16 +1,15 @@
 import React from "react";
 import style from "../styles/Home.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+} from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <div className={style.Home}>
-        
+
       <div className={style.footer}>
         <h3 className={" my-4  text-center " + style.FooterTitle}>
           <b>
@@ -20,22 +19,13 @@ const Footer = () => {
         </h3>
         <div className="footer__social  text-center pb-4">
           <a href="#" className={style.FooterIcon}>
-            <FontAwesomeIcon
-              icon={faFacebook}
-              className={"mx-3 fa-2x"}
-            ></FontAwesomeIcon>
+            <FaFacebook />
           </a>
           <a href="#" className={style.FooterIcon}>
-            <FontAwesomeIcon
-              icon={faInstagram}
-              className={"mx-3 fa-2x"}
-            ></FontAwesomeIcon>
+            <FaInstagram className='mx-3' />
           </a>
           <a href="#" className={style.FooterIcon}>
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className={"mx-3 fa-2x"}
-            ></FontAwesomeIcon>
+            <FaTwitter />
           </a>
         </div>
         <div className="footer__social  text-center text-white">

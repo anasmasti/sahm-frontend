@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import style from "../styles/shared/Header.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars, faTimes
+} from 'react-icons/fa';
 
 const Header = (props) => {
   const [active, setActive] = useState(false);
@@ -60,22 +61,21 @@ const Header = (props) => {
         <nav className={style.nav + " text-center " + style.bd_grid}>
           <div>
             <Link href="/">
-              <h5 className={" my-auto d-flex text-left " +  (active ? style.logoOnScroll : style.nav__logo) }>
+              <h5 className={" my-auto d-flex text-left " + (active ? style.logoOnScroll : style.nav__logo)}>
                 <strong>SAHEM</strong>association
               </h5>
             </Link>
           </div>
 
-          <div className={" " + style.nav__toggle} id="nav-toggle">
+          <div className={["d-flex justify-conte", style.nav__toggle].join(' ')} id="nav-toggle">
             {/* <i className={style.bx + " " + style.bx_menu}></i> */}
-            <FontAwesomeIcon
-              icon={faBars}
-              className={"mx-1 fa-1x " + (active ? "   text-light " : " ") }
-              onClick={() => {
-                setShow(true);
-                console.log(show);
-              }}
-            ></FontAwesomeIcon>
+            <a className={"mx-1 fa-1x " + (active ? "   text-light " : " ")} onClick={() => {
+              setShow(true);
+              console.log(show);
+            }}>
+              <faBars />
+            </a>
+
           </div>
 
           <div
@@ -85,39 +85,43 @@ const Header = (props) => {
             id="nav-menu"
           >
             <div className={" " + style.nav__close} id="nav-close">
-              <FontAwesomeIcon
-                icon={faTimes}
+              <faTimes
                 className={"mx-1 fa-1x "}
                 onClick={() => {
                   setShow(false);
                   console.log(show);
                 }}
-              ></FontAwesomeIcon>
+              />
             </div>
 
-            <ul className={" my-auto " + style.nav__list}>
-              <li className={" " + style.nav__item}>
-                <a
-                  href="#home"
-                  className={style.active + " " + style.nav__link}
-                >
-                  Home
-                </a>
+            <ul className={"" + style.navbar_items}>
+              <li >
+                <Link href="/">
+                  <a className={[style.hover_line].join(' ')}>
+                    Home
+                  </a>
+                </Link>
               </li>
               <li className={" " + style.nav__item}>
-                <a href="#about" className={" " + style.nav__link}>
-                  About
-                </a>
+                <Link href="/about">
+                  <a className={[style.hover_line].join(' ')} >
+                    About
+                  </a>
+                </Link>
               </li>
               <li className={" " + style.nav__item}>
-                <a href="#skills" className={" " + style.nav__link}>
-                  Contact
-                </a>
+                <Link href="/contact">
+                  <a className={[style.hover_line].join(' ')} >
+                    Contact
+                  </a>
+                </Link>
               </li>
-              <li className={ " " + style.nav__item}>
-                <a href="#contact" className={style.Login + " " + style.nav__link}>
-                  Login
-                </a>
+              <li className={" " + style.nav__item}>
+                <Link href="/login">
+                  <a className={[style.hover_line].join(' ')} >
+                    Login
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>

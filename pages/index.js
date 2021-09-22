@@ -18,8 +18,9 @@ export default function Home() {
             <b>Welcome To Sahem Association</b>
           </h1>
           <p className={"my-4 " + style.home__description}>
-            We cannot build our own future without helping <br /> others to
-            build theirs
+            Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à 
+            titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est
+            prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum.
           </p>
           <a href="#UserType" className={" " + style.home__button}>
             Get Started
@@ -38,7 +39,7 @@ export default function Home() {
 
       {/* :::::::::: About Us :::::::::: */}
       <div className={" " + style.AboutUs} id="AboutUs">
-        <div className={ style.title }>
+        <div className={style.title}>
           <h2 className={" mx-auto "}>
             <b>About Us</b>
           </h2>
