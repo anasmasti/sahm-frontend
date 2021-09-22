@@ -19,7 +19,7 @@ const About = () => {
         <h3 className={"my-4 text-center"}>
           <strong>Our Story</strong>
         </h3>
-        <p className={"ms-4 px-4 text-center w-50"} >
+        <p className={"text-center w-50"} >
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
           cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates
           soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias
