@@ -1,0 +1,8 @@
+@use '../helpers' as *;
+
+
+// Main card
+.main-card {
+    border-radius: $main-border-radius !important;
+    box-shadow: $card-box-shadow;
+}

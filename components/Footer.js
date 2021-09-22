@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../styles/Home.module.scss";
+import style from "../styles/shared/Footer.module.scss";
 import {
   FaFacebook,
   FaInstagram,
@@ -8,8 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className={style.Home}>
-
+    <footer>
       <div className={style.footer}>
         <h3 className={" my-4  text-center " + style.FooterTitle}>
           <b>

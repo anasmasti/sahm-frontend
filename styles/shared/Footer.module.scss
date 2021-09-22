@@ -1,0 +1,25 @@
+.footer {
+    background-color: color('main-color');
+    padding: 2rem;
+    margin-top: 5rem;
+  }
+  
+  .footer h3 {
+    color: color('light');
+  }
+  
+  .FooterTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .FooterIcon {
+    color: color('light');
+    width: 120px;
+  }
+  
+  .FooterIcon:hover {
+    color: color('light');
+    width: 1rem;
+  }
