@@ -1,11 +1,7 @@
 import React from "react";
 import style from "../styles/shared/layout/Footer.module.scss";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-} from 'react-icons/fa';
-import Link from 'next/link';
+import SocialNetworks from "./SocialNetworks";
+
 
 const Footer = () => {
   return (
@@ -20,21 +16,7 @@ const Footer = () => {
           </h3>
         </div>
         <div className="">
-          <Link href="#">
-            <a className={['', style.icon].join(' ')}>
-              <FaFacebookF />
-            </a>
-          </Link>
-          <Link href="#">
-            <a className={['mx-3', style.icon].join(' ')}>
-              <FaInstagram />
-            </a>
-          </Link>
-          <Link href="#">
-            <a className={['', style.icon].join(' ')}>
-              <FaTwitter />
-            </a>
-          </Link>
+          <SocialNetworks />
         </div>
         <div className="text-white">
           <p>&copy; 2021 copyright all right reserved</p>
