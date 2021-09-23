@@ -3,6 +3,7 @@ import contactStyle from "../../styles/pages/Contact.module.scss";
 import containerStyle from "../../styles/pages/auth/login.module.scss";
 import { FiPhoneCall } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
+import SocialNetworks from "../../components/SocialNetworks";
 
 function Contact() {
   return (
@@ -76,19 +77,20 @@ function Contact() {
           </p>
           <ul className={"list-unstyled"}>
             <li className={"py-2"}>
-            <span className={[contactStyle.list_color,'px-2 rounded-pill'].join(" ")}> <HiOutlineMail />  Email:{" "}
-              <strong>contact@sahemassociation.com</strong></span>
+            <span className={[contactStyle.list_color,'px-2 py-1 rounded-pill'].join(" ")}> <HiOutlineMail />  Email:{" "}
+              contact@sahemassociation.com</span>
             </li>
             <li className={"py-2"}>
-            <span className={[contactStyle.list_color,'px-2 rounded-pill'].join(" ")}><FiPhoneCall /> Telephone 1: <strong>0641589632</strong></span>
+            <span className={[contactStyle.list_color,'px-2 py-1 rounded-pill'].join(" ")}><FiPhoneCall /> Telephone 1: 0641589632</span>
             </li>
             <li className={"py-2"}>
-            <span className={[contactStyle.list_color,'px-2 rounded-pill'].join(" ")}> <FiPhoneCall />   Telephone 2: <strong>0655412348</strong></span>
+            <span className={[contactStyle.list_color,'px-2 py-1 rounded-pill'].join(" ")}> <FiPhoneCall />   Telephone 2: 0655412348</span>
             </li>
             <li className={"py-2"}>
-            <span className={[contactStyle.list_color,'px-2 rounded-pill'].join(" ")}> <FiPhoneCall />  Fix: <strong>0511456259</strong></span>
+            <span className={[contactStyle.list_color,'px-2 py-1 rounded-pill'].join(" ")}> <FiPhoneCall />  Fix: 0511456259</span>
             </li>
           </ul>
+          <SocialNetworks />
         </div>
         <div></div>
       </div>
