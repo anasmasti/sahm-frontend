@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import style from "../styles/shared/Header.module.scss";
+import style from "../styles/shared/layout/Header.module.scss";
 import {
-  faBars, faTimes
+  FaBars, FaTimes
 } from 'react-icons/fa';
 import { useSelector } from 'react-redux'
 
 
 const Header = () => {
 
-  const darkNavbar = useSelector((state) => state.shared.darkNavbar)
+  let darkNavbar = useSelector((state) => state.shared.darkNavbar)
   const [active, setActive] = useState(false);
   const [show, setShow] = useState(false);
   const [navTheme, setnavTheme] = useState('');
@@ -20,7 +20,8 @@ const Header = () => {
 
   useEffect(() => {
     darkNavbar ? setnavTheme("text-dark") : setnavTheme("text-light")
-  }, [darkNavbar]);
+    if (active) setnavTheme("text-light")
+  }, [darkNavbar, active]);
 
   function onScroll() {
     if (window.scrollY > 50) {
@@ -37,42 +38,18 @@ const Header = () => {
 
   return (
     <header>
-      <div className={active ? style.navOnScroll : style.navContainer}>
-        <nav className={[style.nav, "text-center", style.bd_grid].join(' ')}>
+      <div className={active ? style.navOnScroll : style.section}>
+        <nav className={[style.nav, "text-center"].join(' ')}>
           <div>
             <Link href="/">
-              <h5 className={" my-auto d-flex text-left " + (active ? style.logoOnScroll : style.nav__logo)}>
+              <h5 className={" my-auto d-flex text-left " + (active ? style.logoOnScroll : style.logo)}>
                 <strong>SAHEM</strong>association
               </h5>
             </Link>
           </div>
 
-          <div className={["d-flex justify-conte", style.nav__toggle].join(' ')} id="nav-toggle">
-            {/* <i className={style.bx + " " + style.bx_menu}></i> */}
-            <a className={"mx-1 fa-1x " + (active ? "   text-light " : " ")} onClick={() => {
-              setShow(true);
-            }}>
-              <faBars />
-            </a>
-
-          </div>
-
-          <div
-            className={
-              show ? style.nav__menu + " " + style.show : style.nav__menu
-            }
-            id="nav-menu"
-          >
-            <div className={" " + style.nav__close} id="nav-close">
-              <faTimes
-                className={"mx-1 fa-1x "}
-                onClick={() => {
-                  setShow(false);
-                }}
-              />
-            </div>
-
-            <ul className={"" + style.navbar_items}>
+          <div>
+            <ul className={["my-auto", style.navbar_items].join(' ')}>
               <li >
                 <Link href="/">
                   <a className={[style.hover_line, navTheme].join(' ')}>
@@ -80,27 +57,27 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              <li className={" " + style.nav__item}>
+              <li className='mx-lg-4' >
                 <Link href="/about">
                   <a className={[style.hover_line, navTheme].join(' ')} >
                     About
                   </a>
                 </Link>
               </li>
-              <li className={" " + style.nav__item}>
+              <li>
                 <Link href="/contact">
                   <a className={[style.hover_line, navTheme].join(' ')} >
                     Contact
                   </a>
                 </Link>
               </li>
-              <li className={[style.nav__item].join(' ')}>
-                <Link href="/login">
+              <li className='ms-lg-4'>
+                <Link href="/auth/login">
                   <a className={['main-btn p-2 me-2'].join(' ')} >
                     Se connecter
                   </a>
                 </Link>
-                <Link href="/login">
+                <Link href="/auth/signup">
                   <a className={['main-btn p-2'].join(' ')} >
                     s'Inscrire
                   </a>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
-import Style from "../../../styles/pages/Beneficiary/login.module.scss";
+import Style from "../../../styles/pages/auth/login.module.scss";
 
 const Login = () => {
   const [SignUp, setSignUp] = useState(true);
