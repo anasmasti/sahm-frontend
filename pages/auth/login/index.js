@@ -16,7 +16,7 @@ const Login = () => {
             : Style.container + " "
         }
       >
-        <Header />
+    
 
         <div className={" " + Style.FormContainer}>
           <div className={" " + Style.SigninSignup}>
@@ -145,7 +145,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
+     
     </div>
   );
 };
