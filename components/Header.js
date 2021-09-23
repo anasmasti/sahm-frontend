@@ -77,11 +77,7 @@ const Header = () => {
                     Se connecter
                   </a>
                 </Link>
-                <Link href="/auth/signup">
-                  <a className={['main-btn p-2'].join(' ')} >
-                    s'Inscrire
-                  </a>
-                </Link>
+               
               </li>
             </ul>
           </div>

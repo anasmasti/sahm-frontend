@@ -32,7 +32,7 @@
 
 .list_color{
     color: #fff !important;
-    background: color('seconde-color');
+    background: color('seconde-color') !important;
 }
 
 .input_field {
@@ -55,6 +55,7 @@
     font-size: 1.1rem;
     color: #333;
   }
+
   & i {
     text-align: center;
     line-height: 55px;
