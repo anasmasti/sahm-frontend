@@ -106,7 +106,6 @@ const Login = () => {
                 id="sign-up-btn"
                 onClick={() => {
                   setSignUp(true);
-                  console.log(SignUp);
                 }}
               >
                 Sign up
@@ -132,7 +131,6 @@ const Login = () => {
                 id="sign-in-btn"
                 onClick={() => {
                   setSignUp(false);
-                  console.log(SignUp);
                 }}
               >
                 Sign in
@@ -144,7 +142,6 @@ const Login = () => {
               width={300}
               height={300}
             ></Image>
-            {/* <img src="../../public/img/undraw_Gift_card_re_5dyy.svg" className={" " + Style.image} alt="" /> */}
           </div>
         </div>
       </div>

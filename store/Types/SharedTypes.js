@@ -1,0 +1,2 @@
+// ACTION TYPES
+export const SETNAVTHEME = "SETNAVTHEME";

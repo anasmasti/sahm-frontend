@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { incrementCount } from "../store/actions";
+import React, { useEffect } from "react";
 import Landing from "./landing";
+import { useDispatch } from 'react-redux'
+import { SetNavbarTheme } from "../store/Actions/SharedActions";
 
 export default function Home() {
-  const dispatch = useDispatch();
-  const count = useSelector((state) => state.counter.count);
-  
-  const getCount = () => {
-    dispatch(incrementCount());
-    console.log(count);
-  }
-  return ( <> 
-     <Landing />
-     </>
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(SetNavbarTheme(false))
+  }, [])
+
+  return (
+    <Landing />
   );
 }

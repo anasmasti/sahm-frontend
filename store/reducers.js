@@ -1,26 +1,10 @@
 import { combineReducers } from "redux";
-import * as types from "./types";
+import SharedReducer from "./Reducers/SharedReducer";
 
-// INITIAL COUNTER STATE
-const initialCounterState = {
-  count: 0,
-};
-
-// COUNTER REDUCER
-const counterReducer = (state = initialCounterState, { type, payload }) => {
-  switch (type) {
-    case types.INCREMENT:
-      return {
-        count: payload.count,
-      };
-    default:
-      return state;
-  }
-};
 
 // COMBINED REDUCERS
-const reducers = {
-  counter: counterReducer,
+const Reducers = {
+    shared: SharedReducer,
 };
 
-export default combineReducers(reducers);
+export default combineReducers(Reducers);
