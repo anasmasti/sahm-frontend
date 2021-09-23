@@ -38,13 +38,7 @@ const About = () => {
       </div>
 
       <div className={" row " + aboutStyle.content}>
-        <div className={" col-lg-12 " + aboutStyle.AboutImg}>
-          {/* <Image
-            src="/img/pexels-max-fischer-5212357.jpg"
-            width={1500}
-            height={900}
-          ></Image> */}
-        </div>
+       
       </div>
     </section>
   );

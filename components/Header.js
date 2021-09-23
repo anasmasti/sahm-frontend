@@ -10,6 +10,7 @@ const Header = (props) => {
 
   const [show, setShow] = useState(false);
 
+  
   useEffect(function mount() {
     function onScroll() {
       if (window.scrollY > 50) {
