@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
-import Style from "../../../styles/pages/Beneficiary/login.module.scss";
+import Style from "../../../styles/pages/auth/login.module.scss";
 
 const Login = () => {
   const [SignUp, setSignUp] = useState(true);
@@ -16,7 +16,7 @@ const Login = () => {
             : Style.container + " "
         }
       >
-        <Header />
+    
 
         <div className={" " + Style.FormContainer}>
           <div className={" " + Style.SigninSignup}>
@@ -79,7 +79,6 @@ const Login = () => {
                 id="sign-up-btn"
                 onClick={() => {
                   setSignUp(true);
-                  console.log(SignUp);
                 }}
               >
                 Sign up
@@ -105,7 +104,6 @@ const Login = () => {
                 id="sign-in-btn"
                 onClick={() => {
                   setSignUp(false);
-                  console.log(SignUp);
                 }}
               >
                 Sign in
@@ -117,11 +115,10 @@ const Login = () => {
               width={300}
               height={300}
             ></Image>
-            {/* <img src="../../public/img/undraw_Gift_card_re_5dyy.svg" className={" " + Style.image} alt="" /> */}
           </div>
         </div>
       </div>
-      <Footer />
+     
     </div>
   );
 };

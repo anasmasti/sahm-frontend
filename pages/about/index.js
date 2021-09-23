@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import aboutStyle from "../../styles/pages/About.module.scss";
-import Image from "next/image";
+import { useDispatch } from 'react-redux'
+import { SetNavbarTheme } from '../../store/Actions/SharedActions'
+
 
 const About = () => {
+
+  let dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(SetNavbarTheme(true))
+  },[])
+
   return (
     <section className={[aboutStyle.about_us].join(' ')}>
-      <div className={[aboutStyle.header , 'py-5','px-5'].join(' ')}>
-        <h1 className={['mx-auto','text-uppercase text-light'].join(' ')} align="center">
+      <div className={[aboutStyle.header, 'py-5', 'px-5'].join(' ')}>
+        <h1 className={['mx-auto', 'text-uppercase text-light'].join(' ')} align="center">
           About Us
         </h1>
         <h2 className={" mx-auto w-50 text-uppercase"}>
-         <strong> SAHEMassociation la platform bénévole </strong>
+          <strong> SAHEMassociation la platform bénévole </strong>
         </h2>
       </div>
 
@@ -19,7 +28,7 @@ const About = () => {
         <h3 className={"my-4 text-center"}>
           <strong>Our Story</strong>
         </h3>
-        <p className={"ms-4 px-4 text-center w-50"} >
+        <p className={"text-center w-50"} >
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
           cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates
           soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias
@@ -39,11 +48,7 @@ const About = () => {
 
       <div className={" row " + aboutStyle.content}>
         <div className={" col-lg-12 " + aboutStyle.AboutImg}>
-          {/* <Image
-            src="/img/pexels-max-fischer-5212357.jpg"
-            width={1500}
-            height={900}
-          ></Image> */}
+         
         </div>
       </div>
     </section>

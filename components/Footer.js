@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../styles/shared/Footer.module.scss";
+import style from "../styles/shared/layout/Footer.module.scss";
 import {
   FaFacebookF,
   FaInstagram,

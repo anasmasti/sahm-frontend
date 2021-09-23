@@ -1,13 +1,10 @@
 import React from "react";
-import style from "../styles/Home.module.scss";
 
 const SignUp = () => {
 
   return (
-    <div className={style.Home}>
-
+    <div>
         <h1>Sign Up</h1>
-
     </div>
   );
 };
