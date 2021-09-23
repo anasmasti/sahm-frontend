@@ -1,28 +1,14 @@
 @use '../../helpers' as *;
 
-
-.container {
+.section {
   position: relative;
   width: 100%;
   background-color: color('light');
   height: 100vh;
   overflow: hidden;
-  &:before {
-    content: '';
-    position: absolute;
-    height: 2000px;
-    width: 2000px;
-    top: -10%;
-    right: 48%;
-    transform: translateY(-50%);
-    background-image: linear-gradient(-45deg, color('seconde-color') 0%, color('main-color') 100%);
-    transition: 1.8s ease-in-out;
-    border-radius: 50%;
-    z-index: 0;
-  }
 }
 
-.FormsContainer {
+.form_container {
   position: relative;
   width: 100%;
   height: 100%;
@@ -30,7 +16,7 @@
   left: 0;
 }
 
-.SigninSignup {
+.signin_signup_forms {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -53,12 +39,12 @@
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 
-  &.SignUpForm {
+  &.sign_up_form {
     opacity: 0;
     z-index: 1;
   }
 
-  &.SignInForm {
+  &.sign_in_form {
     z-index: 2;
   }
 }
@@ -69,7 +55,7 @@
   margin-bottom: 10px;
 }
 
-.InputField {
+.input_field {
   max-width: 380px;
   width: 100%;
   background-color: #f0f0f0;
@@ -102,10 +88,6 @@
   }
 }
 
-.btn:hover {
-  background-color: color('seconde-color');
-}
-
 .btn {
   width: 150px;
   background-color: color('main-color');
@@ -129,10 +111,13 @@
     font-weight: 600;
     font-size: 0.8rem;
   }
+
+  &:hover {
+    background-color: color('seconde-color');
+  }
 }
 
-
-.PanelsContainer {
+.panels_container {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -140,6 +125,24 @@
   left: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.section:before {
+  content: '';
+  position: absolute;
+  height: 2000px;
+  width: 2000px;
+  top: -10%;
+  right: 48%;
+  transform: translateY(-50%);
+  background-image: linear-gradient(
+    -45deg,
+    color('seconde-color') 0%,
+    color('main-color') 100%
+  );
+  transition: 1.8s ease-in-out;
+  border-radius: 50%;
+  z-index: 6;
 }
 
 .image {
@@ -168,63 +171,67 @@
     line-height: 1;
     font-size: 1.5rem;
   }
-  
+
   & p {
     font-size: 0.95rem;
     padding: 0.7rem 0;
   }
 }
 
-.LeftPanel {
+.left_panel {
   pointer-events: all;
   padding: 3rem 17% 2rem 12%;
 }
 
-.RightPanel {
+.right_panel {
   pointer-events: none;
   padding: 3rem 12% 2rem 17%;
+
+  & .image {
+    transform: translateX(800px);
+  }
+
+  & .content{
+    transform: translateX(800px);
+  }
 }
 
-.RightPanel .image,
-.RightPanel .content {
-  transform: translateX(800px);
-}
 
 /* ANIMATION */
 
-.container.SignUpMode:before {
+.section.SignUpMode:before {
   transform: translate(100%, -50%);
   right: 52%;
 }
 
-.container.SignUpMode .LeftPanel .image,
-.container.SignUpMode .LeftPanel .content {
+.section.SignUpMode .left_panel .image,
+.section.SignUpMode .left_panel .content {
   transform: translateX(-800px);
 }
 
-.container.SignUpMode .SigninSignup {
+.section.SignUpMode .signin_signup_forms {
   left: 25%;
 }
 
-.container.SignUpMode .form.SignUpForm {
+.section.SignUpMode .form.sign_up_form {
   opacity: 1;
   z-index: 2;
 }
 
-.container.SignUpMode .form.SignInForm {
+.section.SignUpMode .form.sign_in_form {
   opacity: 0;
   z-index: 1;
 }
 
-.container.SignUpMode .RightPanel .image,
-.container.SignUpMode .RightPanel .content {
+.section.SignUpMode .right_panel .image,
+.section.SignUpMode .right_panel .content {
   transform: translateX(0%);
 }
 
-.container.SignUpMode .LeftPanel {
+.section.SignUpMode .left_panel {
   pointer-events: none;
 }
 
-.container.SignUpMode .RightPanel {
+.section.SignUpMode .right_panel {
   pointer-events: all;
 }

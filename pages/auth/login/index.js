@@ -1,111 +1,83 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
 import Style from "../../../styles/pages/auth/login.module.scss";
 
 const Login = () => {
-  const [SignUp, setSignUp] = useState(true);
+  const [onSignUpMode, setOnSignUpMode] = useState(true);
+
+  function SwitchAuth(){
+   if(onSignUpMode) 
+      return (Style.SignUpMode + " " + Style.section);
+    else 
+      return (Style.section + " ")
+  }
 
   return (
-    <div>
-      <div
+    <main>
+      <section
         className={
-          SignUp
-            ? Style.SignUpMode + " " + Style.container
-            : Style.container + " "
+          SwitchAuth()
         }
       >
-    
 
-        <div className={" " + Style.FormContainer}>
-          <div className={" " + Style.SigninSignup}>
-            <form action="#" className={Style.form + " " + Style.SignInForm}>
-              <h2 className={" " + Style.title}>Sign in</h2>
-              <div className={" " + Style.InputField}>
+        <div className={[Style.form_container].join(" ")}>
+          <div className={[Style.signin_signup_forms].join(" ")}>
+            <form action="#" className={[Style.form , Style.sign_in_form].join(" ")}>
+              <h2 className={[Style.title].join(" ")}>Sign in</h2>
+              <div className={[Style.input_field].join(" ")}>
                 <i className="fas fa-user"></i>
                 <input type="text" placeholder="Username" />
               </div>
-              <div className={" " + Style.InputField}>
+              <div className={[Style.input_field].join(" ")}>
                 <i className="fas fa-lock"></i>
                 <input type="password" placeholder="Password" />
               </div>
               <input
                 type="submit"
                 value="Login"
-                className={" solid " + Style.btn}
+                className={["solid" , Style.btn].join(" ")}
               />
-              <p className={" " + Style.SocialText}>
-                Or Sign in with social platforms
-              </p>
-              {/* <div className="social-media">
-        <a href="#" className="social-icon">
-          <i className="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" className="social-icon">
-          <i className="fab fa-twitter"></i>
-        </a>
-        <a href="#" className="social-icon">
-          <i className="fab fa-google"></i>
-        </a>
-        <a href="#" className="social-icon">
-          <i className="fab fa-linkedin-in"></i>
-        </a>
-      </div>  */}
             </form>
-            <form action="#" className={Style.form + " " + Style.SignUpForm}>
-              <h2 className={" " + Style.title}>Sign up</h2>
-              <div className={" " + Style.InputField}>
+            <form action="#" className={Style.form + " " + Style.sign_up_form}>
+              <h2 className={[Style.title].join(" ")}>Sign up</h2>
+              <div className={[Style.input_field].join(" ")}>
                 <i className="fas fa-user"></i>
                 <input type="text" placeholder="Username" />
               </div>
-              <div className={" " + Style.InputField}>
+              <div className={[Style.input_field].join(" ")}>
                 <i className="fas fa-envelope"></i>
                 <input type="email" placeholder="Email" />
               </div>
-              <div className={" " + Style.InputField}>
+              <div className={[Style.input_field].join(" ")}>
                 <i className="fas fa-lock"></i>
                 <input type="password" placeholder="Password" />
               </div>
               <input
                 type="submit"
-                className={" " + Style.btn}
+                className={[Style.btn].join(" ")}
                 value="Sign up"
               />
-              <p className={" " + Style.SocialText}>
+              <p>
                 Or Sign up with social platforms
               </p>
-              {/* <div className="social-media">
-        <a href="#" className="social-icon">
-          <i className="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" className="social-icon">
-          <i className="fab fa-twitter"></i>
-        </a>
-        <a href="#" className="social-icon">
-          <i className="fab fa-google"></i>
-        </a>
-        <a href="#" className="social-icon">
-          <i className="fab fa-linkedin-in"></i>
-        </a>
-      </div>  */}
+              
             </form>
           </div>
         </div>
 
-        <div className={" " + Style.PanelsContainer}>
-          <div className={Style.panel + " " + Style.LeftPanel}>
-            <div className={" " + Style.content}>
+        <div className={[Style.panels_container].join(" ")}>
+          <div className={[Style.panel , Style.left_panel].join(" ")}>
+            <div className={[Style.content].join(" ")}>
               <h3>New here ?</h3>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Debitis, ex ratione. Aliquid!
               </p>
               <button
-                className={Style.btn + " " + Style.transparent}
+                className={[Style.btn , Style.transparent].join(" ")}
                 id="sign-up-btn"
                 onClick={() => {
-                  setSignUp(true);
+                  setOnSignUpMode(true);
                 }}
               >
                 Sign up
@@ -113,24 +85,23 @@ const Login = () => {
             </div>
             <Image
               src={"/img/undraw_authentication_fsn5.svg"}
-              className={" " + Style.image}
+              className={[Style.image].join(" ")}
               width={300}
               height={300}
             ></Image>
-            {/* <img src="img/log.svg" className={" " + Style.image} alt="" /> */}
           </div>
-          <div className={Style.panel + " " + Style.RightPanel}>
-            <div className={" " + Style.content}>
+          <div className={[Style.panel , Style.right_panel].join(" ")}>
+            <div className={[Style.content].join(" ")}>
               <h3>One of us ?</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
                 laboriosam ad deleniti.
               </p>
               <button
-                className={Style.btn + " " + Style.transparent}
+                className={[Style.btn , Style.transparent].join(" ")}
                 id="sign-in-btn"
                 onClick={() => {
-                  setSignUp(false);
+                  setOnSignUpMode(false);
                 }}
               >
                 Sign in
@@ -138,15 +109,14 @@ const Login = () => {
             </div>
             <Image
               src={"/img/undraw_online_ad_re_ol62.svg"}
-              className={" " + Style.image}
+              className={[Style.image].join(" ")}
               width={300}
               height={300}
             ></Image>
           </div>
         </div>
-      </div>
-     
-    </div>
+      </section>
+    </main>
   );
 };
 
