@@ -8,6 +8,7 @@
     border-radius: $main-border-radius !important;
     border: 0.1em solid color(main-color);
     text-decoration: none;
+    transition: 0.5s;
 
     &:hover {
         background: color(seconde-color);
@@ -23,6 +24,7 @@
     border-radius: $main-border-radius !important;
     border: 0.1em solid color(seconde-color);
     text-decoration: none;
+    transition: 0.5s;
 
     &:hover {
         background: color(main-color);
@@ -36,6 +38,8 @@
     box-shadow: $btn-box-shadow;
     color: color(light) !important;
     border-radius: $main-border-radius !important;
+    transition: 0.5s;
+
     &:hover {
         background: color(dark);
         color: color(light) !important;
@@ -48,6 +52,7 @@
     box-shadow: $btn-box-shadow;
     color: color(light) !important;
     border-radius: $main-border-radius !important;
+    transition: 0.5s;
 
     &:hover {
         background: color(dark) !important;

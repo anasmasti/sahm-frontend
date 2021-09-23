@@ -1,58 +1,98 @@
 import React from "react";
 import contactStyle from "../../styles/pages/Contact.module.scss";
-import Image from "next/image";
+import containerStyle from "../../styles/pages/auth/login.module.scss";
+import { FiPhoneCall } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+
 function Contact() {
   return (
-    <div className={""}>
+    <section
+      className={[
+        contactStyle.container,
+        "d-flex justify-content-center align-items-center",
+      ].join(" ")}
+    >
       <div
         className={[
-          contactStyle.container,
-          contactStyle.containerform,
-          "mx-5 py-3 px-5 d-flex",
+          contactStyle.container_form,
+          "d-flex justify-content-center",
         ].join(" ")}
       >
         <div
-          className={[contactStyle.formBox, "col-12 col-lg-7 p-5"].join(" ")}
+          className={[contactStyle.form_box, "col-12 col-lg-6 p-5"].join(" ")}
         >
           <form action="#" className={""}>
-            <h2 className={""}>Contact Us</h2>
-            <div className={[contactStyle.inputField].join(" ")}>
+            <h2 className={""}>Get in touch</h2>
+            <p className={""}>
+              Fill up the form and our team will get back to you within 24
+              hours.
+            </p>
+            <div className={[contactStyle.input_field].join(" ")}>
               <i className="fas fa-user"></i>
               <input type="text" placeholder="Email" />
             </div>
-            <div className={[contactStyle.inputField].join(" ")}>
+            <div className={[contactStyle.input_field].join(" ")}>
               <i className="fas fa-lock"></i>
               <input type="text" placeholder="First name" />
             </div>
-            <div className={[contactStyle.inputField].join(" ")}>
+            <div className={[contactStyle.input_field].join(" ")}>
               <i className="fas fa-lock"></i>
               <input type="text" placeholder="Last name" />
             </div>
-            <div className={[contactStyle.inputField].join(" ")}>
+            <div className={[contactStyle.input_field].join(" ")}>
               <i className="fas fa-lock"></i>
               <input type="textarea" placeholder="Message" />
             </div>
-            <input
+            <button
               type="submit"
-              value="Login"
-              className={[contactStyle.btn].join(" ")}
-            />
-            <p className={""}>Or Sign in with social platforms</p>
+              className={["seconde-btn", "p-2 text-light mt-3"].join(" ")}
+            >
+              Send message
+            </button>
           </form>
         </div>
-        
-        <div className={[contactStyle.content, "col-lg-5 p-5"].join(" ")}>
-          <Image
-            className={""}
-            src="/img/ContactUs.png"
-            width={600}
-            height={400}
-          ></Image>
+
+        <div
+          className={[
+            contactStyle.content,
+            contactStyle.text_info,
+            "text-light col-lg-5 p-5",
+          ].join(" ")}
+        >
+          <h2 className={"text-uppercase letter-spacing"}>
+            <strong>Contact Us</strong>
+          </h2>
+          <p className={["text-light"].join(" ")}>
+            If you have any question or queries or queries a member of staff
+            will always be happy to help. Feel free to contact us by telephone
+            or email and we will be sure to get back to you as soon as possible.
+          </p>
+          <p>
+            Le lorem ipsum est, en imprimerie, une suite de mots sans
+            signification utilisée à titre provisoire pour calibrer une mise en
+            page, le texte définitif venant remplacer le faux-texte dès qu'il
+            est prêt ou que la mise en page est achevée. Généralement, on
+            utilise un texte en faux latin, le Lorem ipsum ou Lipsum.
+          </p>
+          <ul className={"list-unstyled"}>
+            <li className={"py-2"}>
+            <span className={[contactStyle.list_color,'px-2 rounded-pill'].join(" ")}> <HiOutlineMail />  Email:{" "}
+              <strong>contact@sahemassociation.com</strong></span>
+            </li>
+            <li className={"py-2"}>
+            <span className={[contactStyle.list_color,'px-2 rounded-pill'].join(" ")}><FiPhoneCall /> Telephone 1: <strong>0641589632</strong></span>
+            </li>
+            <li className={"py-2"}>
+            <span className={[contactStyle.list_color,'px-2 rounded-pill'].join(" ")}> <FiPhoneCall />   Telephone 2: <strong>0655412348</strong></span>
+            </li>
+            <li className={"py-2"}>
+            <span className={[contactStyle.list_color,'px-2 rounded-pill'].join(" ")}> <FiPhoneCall />  Fix: <strong>0511456259</strong></span>
+            </li>
+          </ul>
         </div>
         <div></div>
       </div>
-
-    </div>
+    </section>
   );
 }
 
