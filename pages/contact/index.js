@@ -1,9 +1,8 @@
 import React from "react";
 import contactStyle from "../../styles/pages/Contact.module.scss";
-import containerStyle from "../../styles/pages/auth/login.module.scss";
 import { FiPhoneCall } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
-import SocialNetworks from "../../components/SocialNetworks";
+import SocialNetworks from "../../components/shared/SocialNetworks";
 
 function Contact() {
   return (
@@ -28,19 +27,19 @@ function Contact() {
               Fill up the form and our team will get back to you within 24
               hours.
             </p>
-            <div className={[contactStyle.input_field].join(" ")}>
+            <div className={['main-input'].join(" ")}>
               <i className="fas fa-user"></i>
               <input type="text" placeholder="Email" />
             </div>
-            <div className={[contactStyle.input_field].join(" ")}>
+            <div className={['main-input'].join(" ")}>
               <i className="fas fa-lock"></i>
               <input type="text" placeholder="First name" />
             </div>
-            <div className={[contactStyle.input_field].join(" ")}>
+            <div className={['main-input'].join(" ")}>
               <i className="fas fa-lock"></i>
               <input type="text" placeholder="Last name" />
             </div>
-            <div className={[contactStyle.input_field].join(" ")}>
+            <div className={['main-input'].join(" ")}>
               <i className="fas fa-lock"></i>
               <input type="textarea" placeholder="Message" />
             </div>

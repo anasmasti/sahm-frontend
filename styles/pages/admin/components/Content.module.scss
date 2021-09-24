@@ -1,0 +1,7 @@
+@use "../../../helpers" as *;
+
+.section {
+    & > div {
+        margin-top: 70px;
+    }
+}

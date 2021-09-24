@@ -5,7 +5,7 @@ import {
     FaTwitter,
   } from 'react-icons/fa';
   import Link from 'next/link';
-  import style from "../styles/shared/layout/Footer.module.scss";
+  import style from "../../styles/shared/layout/Footer.module.scss";
 
 function SocialNetworks() {
     return (

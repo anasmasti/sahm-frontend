@@ -1,6 +1,6 @@
 import React from "react";
-import style from "../styles/shared/layout/Footer.module.scss";
-import SocialNetworks from "./SocialNetworks";
+import style from "../../styles/shared/layout/Footer.module.scss";
+import SocialNetworks from "../shared/SocialNetworks";
 
 
 const Footer = () => {
