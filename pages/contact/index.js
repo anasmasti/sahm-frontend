@@ -57,7 +57,7 @@ function Contact() {
           className={[
             contactStyle.content,
             contactStyle.text_info,
-            "text-light col-lg-5 p-5",
+            "text-light d-flex flex-column flex-nowrap  col-lg-5 p-5",
           ].join(" ")}
         >
           <h2 className={"text-uppercase letter-spacing"}>
