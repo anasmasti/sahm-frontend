@@ -1,9 +1,8 @@
 import React from "react";
 import contactStyle from "../../styles/pages/Contact.module.scss";
-import containerStyle from "../../styles/pages/auth/login.module.scss";
 import { FiPhoneCall } from "react-icons/fi";
 import { HiOutlineMail } from "react-icons/hi";
-import SocialNetworks from "../../components/SocialNetworks";
+import SocialNetworks from "../../components/shared/SocialNetworks";
 
 function Contact() {
   return (

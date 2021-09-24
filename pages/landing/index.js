@@ -10,7 +10,7 @@ const Landing = () => {
 
             <section className={["row", landingStyle.home_section].join(' ')}>
                 <div className={["col-12 col-lg-6", landingStyle.left_section].join(' ')}>
-                    <h1 className="my-4">
+                    <h1 className="my-4"> 
                         <strong>Welcome To Sahem Association</strong>
                     </h1>
                     <p className="mt-3 mb-5">
@@ -23,7 +23,6 @@ const Landing = () => {
                             Savoir plus sur nous
                         </a>
                     </Link>
-
                 </div>
 
                 <div className={["col-12 col-lg-6 d-flex flex-column align-items-center", landingStyle.right_section].join(' ')}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import style from "../styles/shared/layout/Header.module.scss";
+import style from "../../styles/shared/layout/Header.module.scss";
 import {
   FaBars, FaTimes
 } from 'react-icons/fa';
