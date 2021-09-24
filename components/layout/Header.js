@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import style from "../styles/shared/layout/Header.module.scss";
+import style from "../../styles/shared/layout/Header.module.scss";
 import {
   FaBars, FaTimes
 } from 'react-icons/fa';
@@ -77,11 +77,7 @@ const Header = () => {
                     Se connecter
                   </a>
                 </Link>
-                <Link href="/auth/signup">
-                  <a className={['main-btn p-2'].join(' ')} >
-                    s'Inscrire
-                  </a>
-                </Link>
+               
               </li>
             </ul>
           </div>

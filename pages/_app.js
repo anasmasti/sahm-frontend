@@ -1,5 +1,5 @@
-import '../styles/globals.scss'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../styles/globals.scss'
 import MainLayout from '../layout/MainLayout'
 import { Provider } from "react-redux";
 import { useStore } from "../store/Store";

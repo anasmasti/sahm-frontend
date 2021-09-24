@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Style from "../../../styles/pages/auth/login.module.scss";
+import Style from "../../../styles/pages/auth/Login.module.scss";
 
 const Login = () => {
-  const [onSignUpMode, setOnSignUpMode] = useState(true);
+  const [onSignUpMode, setOnSignUpMode] = useState(false);
 
   function SwitchAuth(){
    if(onSignUpMode) 
