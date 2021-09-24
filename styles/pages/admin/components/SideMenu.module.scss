@@ -1,0 +1,78 @@
+@use "../../../helpers" as *;
+
+.section {
+    height: 100vh;
+    background-color: color(main-color);
+    color: color(light);
+
+    & .nav {
+        min-width: auto;
+        max-width: auto;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        position: relative;
+        margin-top: 50px;
+
+        & .custom-menu {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            right: 0;
+            margin-right: -20px;
+            -webkit-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+        }
+
+        & .active {
+            margin-left: -270px;
+        }
+
+        & ul .components {
+            padding: 0;
+        }
+
+        & ul li {
+            font-size: 16px;
+        }
+
+        & ul li > ul {
+            margin-left: 10px;
+        }
+
+        & ul li > ul li {
+            font-size: 14px;
+        }
+
+        & ul li a {
+            font-size: smaller;
+            padding: 10px 0;
+            display: block;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        & ul li a span {
+            color: color(main-color);
+        }
+
+        & ul li a:hover {
+            color: color(main-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        & ul li.active > a {
+            background: transparent;
+            color: rgb(49, 49, 49);
+        }
+    }
+
+    @include mobile($mobile-min-screen, $mobile-max-screen) {
+        height: auto;
+    }
+
+    @include mobile($tablet-min-screen, $tablet-max-screen) {
+        height: auto;
+    }
+}
