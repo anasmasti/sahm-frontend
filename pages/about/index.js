@@ -46,10 +46,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className={" row " + aboutStyle.content}>
-        <div className={" col-lg-12 " + aboutStyle.AboutImg}>
-         
-        </div>
+      <div className={"" + aboutStyle.content}>
       </div>
     </section>
   );
