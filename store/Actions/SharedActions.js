@@ -8,3 +8,18 @@ export const SetNavbarTheme = (theme) => (dispatch) =>
     },
   });
 
+export const SetLogoTheme = (theme) => (dispatch) =>
+  dispatch({
+    type: types.SETLOGOTHEME,
+    payload: {
+      darkLogo: theme,
+    },
+  });
+
+export const SetIsAdmin = (theme) => (dispatch) =>
+  dispatch({
+    type: types.SETISADMIN,
+    payload: {
+      isAdmin: true,
+    },
+  });

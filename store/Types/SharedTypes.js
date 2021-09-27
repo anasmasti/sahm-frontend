@@ -1,2 +1,4 @@
 // ACTION TYPES
 export const SETNAVTHEME = "SETNAVTHEME";
+export const SETLOGOTHEME = "SETLOGOTHEME";
+export const SETISADMIN = "SETISADMIN";
