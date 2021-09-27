@@ -14,7 +14,6 @@ import { StatistiqueComponent } from './ui/pages/admin/dashboard/statistique/sta
 import { InfoComponent } from './ui/pages/admin/dashboard/info/info.component';
 import { ListComponent } from './ui/pages/admin/dashboard/list/list.component';
 import { DetailComponent } from './ui/pages/admin/dashboard/detail/detail.component';
-import { AlertComponent } from './ui/pages/giver/dashboard/alert/alert.component';
 import { NavbarComponent } from './ui/shared/layouts/navbar/navbar.component';
 import { FooterComponent } from './ui/shared/layouts/footer/footer.component';
 import { GlobalModelComponent } from './ui/shared/global-model/global-model.component';
@@ -55,7 +54,7 @@ const material = [MatDialogModule , MatButtonModule];
     InfoComponent,
     ListComponent,
     DetailComponent,
-    AlertComponent,
+    // ActionComponent,
     NavbarComponent,
     FooterComponent,
     ChatComponent,

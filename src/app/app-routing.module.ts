@@ -61,6 +61,13 @@ const routes: Routes = [
       (mod)=>mod.SignupModule
     )
   },
+  {
+    path:'dashboard-giver',
+    loadChildren:() =>
+    import('./ui/pages/giver/giver-dashboard/dashboard.module').then(
+      (mod)=>mod.DashboardModule
+    )
+  },
 
   {
     path:'dashboard-action',

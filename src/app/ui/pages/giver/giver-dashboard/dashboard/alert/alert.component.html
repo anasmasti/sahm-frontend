@@ -1,0 +1,261 @@
+
+<div class="row titleH" *ngIf="afficherRecherch == 0">
+  <div class="col-md-5">
+    <h5 style= "color: var(--txtColor);">ALERT   </h5>
+  </div> 
+  <div class="col-md-7 searchDiv">
+    <button *ngIf="afficherRecherch == 0" class="search" (click)="displaySearch()">
+      TRIER PAR
+    </button>
+  </div>
+ </div>
+ <div class="row grp" *ngIf="afficherRecherch == 1">
+  <!-- <div class="btn-group" role="group" aria-label="Basic outlined example">
+    <button type="button" class="btn btn-outline-light btnGrpSearch radiusLeft" (click)="chercherAlert('vétement'); displaySearch()">vétement</button>
+    <button type="button" class="btn btn-outline-light btnGrpSearch" (click)="chercherAlert('abonnement_transport');chercherAlert('abonnement_mobile'); displaySearch()">abonnement</button>
+    <button type="button" class="btn btn-outline-light btnGrpSearch" (click)="chercherAlert('formation'); displaySearch()">formation</button>
+    <button type="button" class="btn btn-outline-light btnGrpSearch" (click)="chercherAlert('autre'); displaySearch()">autre</button>
+    <button type="button" class="btn btn-outline-light btnGrpSearch radiusRight" (click)=" chargerActions(); displaySearch()">tout</button>
+  </div> -->
+</div>
+ <div class="row  p-0 " style="height:180px;">
+ 
+ <div class="alert " style=" display: flex; justify-content: flex-start; flex-wrap: wrap;">
+   <button class="card" style="width: 103px;  "  *ngFor="let action of listActions | paginate: { id: 'id2', itemsPerPage: 4, currentPage: page, totalItems: totalLength }" (click)="selectedalert(action._id); open(content)" >
+      <div class="panel panel-default card-input" style="margin: auto;"  >
+         <div class="panel-body" style="color: var(--mainColor);" >
+            <div class="icn" >
+               <i class="fas fa-people-carry" style="font-size: 40px;"></i>
+            </div>
+             
+                <h6 *ngIf="action.vetement.selected == 'true'">vétement</h6>
+                <h6  *ngIf="action.abonnement_mobile.selected == 'true' || action.abonnement_transport.selected == 'true' ">abonnement</h6>
+                <h6 *ngIf="action.autre.selected == 'true'">autre</h6>
+                <h6 style="margin-top: 0px;margin-bottom: 5px;"> date : {{ action.date_action | date:'dd-MM-yyyy' }} </h6>
+           
+         </div>
+      </div>
+   </button>
+      
+ </div>
+ <div class="row">
+   <div class="col-md-12">
+     <pagination-controls id="id2" class="my-pagination hide-page-numbers"(pageChange)="page = $event"></pagination-controls>
+   </div>
+ </div>
+ 
+
+ 
+ </div>
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  ---------------------modal popup ------------------------- -->
+
+<ng-template #content let-modal>
+  <!-- header de modal -->
+  <div class="modal-header " style="color: var(--ColorText);" >
+    <h4 class="modal-title" id="modal-basic-title">{{ selectedAlert[0].benificier.username  }}   <i class="fas fa-hands-helping"></i> </h4> 
+    <button type="button" class=" close main-btn-secondary border-0 mx-2 btn" aria-label="Close" (click)="modal.close('Save click'); displayBenifDetails()">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+
+
+   <!-- body de modal -->
+  <div class="modal-body bg-light" style=" display:flex; justify-content: center; flex-wrap: wrap; padding-top: 0px; padding-left: 0px; padding-right: 0px; ">
+
+
+              <!-- button d'affichage INFO BENEFICIER/ACTION -->
+          <div class="btn-group " role="group" aria-label="Basic outlined example" style="width: 100%; height: 35px; margin-top: 0px;">
+            <div class="btnGrpSearchPopUP ">
+                  <label for="rdb" class="w-100 h-100  text-center " >
+                  <input name="test" type="radio" checked style="display: none;" id="rdb" class="activeBtn" (click)="displayBenifDetails()" >
+                <div class="radio w-100  d-flex flex-column justify-content-center ">
+                  Informations de bénéficiaire
+                </div>
+                </label>
+          </div>
+            <div class="btnGrpSearchPopUP " >
+              <label for="rdb2" class="w-100 h-100 text-center" >
+                <input name="test" type="radio" style="display: none;" id="rdb2" class="activeBtn" (click)="displayActioonDetails()" >
+                <div class="radio d-flex flex-column justify-content-center">
+                  Informations d'action
+                </div>
+              </label>
+            </div>
+          
+          </div>
+
+            <!-- div qui affiche les infos de BENEFICIER -->
+        <div style="width: 80%; margin-top: 10px; " *ngIf="afficherDetails == 'benif'">
+        <table class="table table-sm" >
+          <thead>
+            <tr>
+              <!-- <th scope="col" colspan="2">Informations de bénéficiaire</th> -->
+            </tr>
+          </thead>
+          <tbody *ngFor="let benif of selectedAlert">
+            <tr>
+              <td>Nom complet :</td>
+              <td><label>{{ benif.benificier.last_name }}  {{ benif.benificier.first_name }}</label></td>
+            </tr>
+            <tr>
+              <td>sexe :</td>
+              <td><label>{{ benif.benificier.gender }} </label></td>
+            </tr>
+            <tr>
+              <td>Age :</td>
+              <td><label>{{ benif.benificier.age }}</label></td>
+            </tr>
+            <tr>
+              <td>Tél :</td>
+              <td><label>{{ benif.benificier.phone }}</label></td>
+            </tr>
+            <tr>
+              <td>Email :</td>
+              <td><label>{{ benif.benificier.email }}</label></td>
+            </tr>
+            <tr>
+              <td>Adresse :</td>
+              <td><label>{{ benif.benificier.adress }}</label></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+            <!-- div qui affiche les infos d' ACTION -->
+        <div style="width: 80%; margin-top: 10px;" *ngIf="afficherDetails == 'action'">
+              
+              <div class="vetement text" *ngIf="selectedAlert[0].vetement.selected == 'true'" >
+                    <label>vétement </label>
+                  
+                      <div class="row">
+                        <div class="col-md-4 alEnd">
+                        <label>type :</label> 
+                        </div>
+                        <div class="col-md-8 alCenter">
+                          <label>{{ selectedAlert[0].vetement.type }}</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4 alEnd">
+                        <label>size :</label> 
+                        </div>
+                        <div class="col-md-8 alCenter">
+                          <label>{{ selectedAlert[0].vetement.size }}</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4 alEnd">
+                        <label>sexe :</label> 
+                        </div>
+                        <div class="col-md-8 alCenter">
+                          <label>{{ selectedAlert[0].vetement.gender }}</label>
+                        </div>
+                      </div>
+                <hr>
+              </div>
+              
+              <div class="abonnement text"   *ngIf="selectedAlert[0].abonnement_mobile.selected == 'true' || selectedAlert[0].abonnement_transport.selected == 'true' ">
+                
+                  <label>Abonnement </label>
+                
+                    <div class="row" *ngIf="selectedAlert[0].abonnement_transport.selected == 'true'">
+                      <div class="col-md-4 alEnd">
+                      <label >transport :</label>  
+                      </div>
+                      <div class="col-md-8 alCenter">
+                        <label>type : {{selectedAlert[0].abonnement_transport.type_abonnement}}</label>
+                      </div>
+                    </div>
+                    <div class="row" *ngIf="selectedAlert[0].abonnement_mobile.selected == 'true'" >
+                      <div class="col-md-4 alEnd">
+                      <label >mobile :</label> 
+                      </div>
+                      <div class="col-md-8 alCenter">
+                        <label>{{  selectedAlert[0].abonnement_mobile.operator }}</label>
+                      </div>
+                    </div>
+              <hr>
+              </div>
+                
+          
+              <div class="autre text" *ngIf="selectedAlert[0].autre.selected == 'true'">  
+                <div class="row text ">
+                  <div class="col-md-4">
+                    <label>Autre type :</label>
+                  </div>
+                  <div class="col-md-8 alCenter">
+                    <label>{{selectedAlert[0].autre.text}}</label>
+                  </div><hr>
+                </div>
+                
+                
+                </div> 
+
+              <div class="row text" *ngFor="let action of selectedAlert">
+          
+                <div class="col-md-4">Annoncé le :</div>
+                <div class="col-md-8"><label>{{ action.date_action | date:'dd-MM-yyyy' }}</label></div>
+                <hr>
+              </div>
+
+              <div class="row text" >
+                <div class="col-md-4">
+                    Plus :
+                </div>
+                <div class="col-md-8" *ngFor="let action of selectedAlert" >
+                    <p>{{ action.details }}</p> 
+                </div>
+                <hr>
+              </div> 
+            
+        </div> 
+  </div>
+   
+
+       <!-- footer de modal -->
+  <div class="modal-footer " >
+        <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="contribuer(selectedAlert[0]._id) ; modal.close('Save click') ; displayBenifDetails() " >Contribuer</button>
+        <button type="button" class="main-btn-secondary border-0 mx-2 btn" (click)="modal.close('Save click'); displayBenifDetails()">Annuler</button>
+  </div>
+  
+  
+</ng-template>

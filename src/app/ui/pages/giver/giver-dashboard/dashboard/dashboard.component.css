@@ -1,0 +1,9 @@
+
+.alertscmp{
+    
+    box-shadow: 0px 0px 20px 1px rgba(85, 85, 85, 0.5);
+}
+
+.btn:focus{
+    box-shadow: none;
+}
