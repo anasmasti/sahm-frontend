@@ -8,7 +8,8 @@
   }
 
   .bg_alert {
-    background-image: linear-gradient(#c8d6f5 ,#6674d0d7);
+    background-image: linear-gradient(#6674d0d7, #6674d046),
+    url("https://images.pexels.com/photos/4144095/pexels-photo-4144095.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,6 +17,19 @@
   
     &:hover {
       background: linear-gradient(#6674d0d7, #c8d6f5);
+    }
+  }
+
+  .bg_actions {
+    background-image: linear-gradient(#6674d0d7, #6674d046),
+      url("https://images.pexels.com/photos/6348104/pexels-photo-6348104.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+  
+    &:hover {
+      background: linear-gradient(#6674d046, #6674d0d7);
     }
   }
 

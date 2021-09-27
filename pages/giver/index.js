@@ -73,17 +73,89 @@ function index() {
             <button type="submit" className={["main-btn my-3", "text-light"].join(" ")}>Contact Us</button>
             </Link>
           </div>
-    
+     
           
         </div >
         </div>
-
-        {/* <div className={["row"].join(' ')}>
-
-        <div className={["main-card col-lg-7 ms-lg-4 p-4"].join(' ')}>
-
         </div>
-        </div> */}
+        
+        <div className={[" col-lg-11 ms-lg-5 p-4 my-2"].join(' ')}>
+        <h1 className={"style{color:color('main-color')"}>Actions</h1>
+          <div className={"d-flex justify-content-center flex-wrap"}>
+            <Link href="">
+              <a>
+                <div className={[giverStyle.bg_actions,"horizontal-card mx-4 my-2"].join(' ')}></div>
+              </a>
+            </Link>
+
+            <Link href="">
+              <a>
+                <div className={[giverStyle.bg_actions,"horizontal-card mx-4 my-2"].join(' ')}></div>
+              </a>
+            </Link>
+
+            <Link href="">
+              <a>
+                <div className={[giverStyle.bg_actions,"horizontal-card mx-4 my-2"].join(' ')}></div>
+              </a>
+            </Link>
+
+            <Link href="">
+              <a>
+                <div className={[giverStyle.bg_actions,"horizontal-card mx-4 my-2"].join(' ')}></div>
+              </a>
+            </Link>
+
+            <Link href="">
+              <a>
+                <div className={[giverStyle.bg_actions,"horizontal-card mx-4 my-2"].join(' ')}></div>
+              </a>
+            </Link>
+
+            <Link href="">
+              <a>
+                <div className={[giverStyle.bg_actions,"horizontal-card mx-4 my-2"].join(' ')}></div>
+              </a>
+            </Link>
+
+            <Link href="">
+              <a>
+                <div className={[giverStyle.bg_actions,"horizontal-card mx-4 my-2"].join(' ')}></div>
+              </a>
+            </Link>
+
+            <Link href="">
+              <a>
+                <div className={[giverStyle.bg_actions,"horizontal-card mx-4 my-2"].join(' ')}></div>
+              </a>
+            </Link>
+
+            <Link href="">
+              <a>
+                <div className={[giverStyle.bg_actions,"horizontal-card mx-4 my-2"].join(' ')}></div>
+              </a>
+            </Link>
+          </div>
+        </div>
+
+      <div className="table-responsive m-auto col-lg-10 d-flex justify-content-center align-items-center">
+         <table className="table">
+           <thead>
+             <tr>
+               <th>Name</th>
+               <th>Age</th>
+               <th>locolisation</th>
+             </tr>
+           </thead>
+
+           <tbody>
+             <tr>
+               <td>Heello</td>
+               <td>21</td>
+               <td>morroco</td>
+             </tr>
+           </tbody>
+         </table>
       </div>
     
     </section>
