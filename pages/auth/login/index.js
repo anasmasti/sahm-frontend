@@ -24,7 +24,7 @@ const Login = () => {
           <div className={[Style.signin_signup_forms].join(" ")}>
             <form action="#" className={[Style.form , Style.sign_in_form].join(" ")}>
               <h2 className={[Style.title].join(" ")}>Sign in</h2>
-              <div className={[Style.input_field].join(" ")}>
+              <div className={['main-input'].join(" ")}>
                 <i className="fas fa-user"></i>
                 <input type="text" placeholder="Username" />
               </div>
@@ -40,7 +40,7 @@ const Login = () => {
             </form>
             <form action="#" className={Style.form + " " + Style.sign_up_form}>
               <h2 className={[Style.title].join(" ")}>Sign up</h2>
-              <div className={[Style.input_field].join(" ")}>
+              <div className={['main-input'].join(" ")}>
                 <i className="fas fa-user"></i>
                 <input type="text" placeholder="Username" />
               </div>
@@ -48,7 +48,7 @@ const Login = () => {
                 <i className="fas fa-envelope"></i>
                 <input type="email" placeholder="Email" />
               </div>
-              <div className={[Style.input_field].join(" ")}>
+              <div className={['main-input'].join(" ")}>
                 <i className="fas fa-lock"></i>
                 <input type="password" placeholder="Password" />
               </div>

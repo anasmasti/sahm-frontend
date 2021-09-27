@@ -5,12 +5,21 @@
 .main-card {
     border-radius: $main-border-radius !important;
     box-shadow: $card-box-shadow;
+    background-color: color('seconde-color');
 }
 
 // Horizontal card
 .horizontal-card {
     width: 200px;
     height: 300px;
+    border-radius: $main-border-radius !important;
+    box-shadow: $card-box-shadow;
+}
+
+// Horizontal card
+.alert-card {
+    width: 150px;
+    height: 200px;
     border-radius: $main-border-radius !important;
     box-shadow: $card-box-shadow;
 }

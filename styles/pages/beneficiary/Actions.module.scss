@@ -1,8 +1,28 @@
 @use '../../helpers' as *;
 
+<<<<<<< HEAD
 .section {
   margin-top: 300px;
   height: 100vh;
+=======
+
+.actions__section{
+    height: 100vh;
+}
+
+.card{
+         position: relative;
+         height: 160px;
+         margin-left: 10px;
+         min-width:100px;max-width:100px;
+}
+
+.img__card{
+    width:100px;object-fit: cover;
+         height: 160px;
+         border-radius: 10px;
+         margin: 0;
+>>>>>>> 669ba29afd825a9adc547be0fb274d6b5ea4eaa1
 }
 
 .card {
