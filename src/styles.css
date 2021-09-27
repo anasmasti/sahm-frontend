@@ -175,3 +175,62 @@ body{
   border-radius: 30px;
 }
 
+/* remove outline from all bootstrap buttons */
+.btn:focus{
+  box-shadow: none;
+}
+
+/* modals style */
+  /* global div */
+  .div_global{
+    background-color: white;
+    border-radius: 30px;
+  } 
+
+  /* modal title */
+  .modal-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: gray; 
+    padding-bottom: 5px; 
+    user-select: none;
+  }
+  
+  /* modal buttons */
+  .btn-submit{
+    color: white;
+    background-color: #6C63FF ;
+    width: 30%;
+  }
+
+  .btn-submit:hover{
+    background-color: #B8B5FF ;
+    color: white;
+  }
+
+  .btn-secondary{
+    width: 20%;
+    border: none;
+    background-color: rgb(255, 63, 63);
+  }
+
+  .btn-secondary:hover{
+    background-color: rgb(253, 111, 111);
+  }
+
+/* cards style */
+  /* --cards title */
+  .title{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: gray; 
+    padding-bottom: 5px; 
+    user-select: none;
+  }
+
+/* mobile style */
+@media only screen and (max-width : 892px){
+  .btn-submit , .btn-secondary{
+    width: 40%;
+  }
+}

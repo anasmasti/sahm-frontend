@@ -1,60 +1,157 @@
 
-  <table class="table table-responsive my-5 p-5">
-    <thead>
-      <tr>
-        <th scope="col" class="text-center text-white p-3">Info Action</th>
-        <th scope="col" class="text-center text-white p-3">Etat</th>
-        <th scope="col" class="text-center text-white p-3" ></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let hero of HEROES">
-        <td class="text-center p-3 w-25"><label class="my-2 ">aaa</label></td>
-        <td class="text-center p-3 w-25"><label class="my-2">aaa</label></td>
-        <td class="text-center p-3 w-25">
-          <form action="#">
+  <div class="table-responsive  border border-0">
+    <table class="table my-5 p-5">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center text-white p-3">Info Action</th>
+          <th scope="col" class="text-center text-white p-3">Etat</th>
+          <th scope="col" class="text-center text-white p-3" ></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let action of actions">
+          <td class="text-center p-3 w-25"><label class="my-2 "> {{ action.Intitule }} </label></td>
+          <td class="text-center p-3 w-25"><label class="my-2">{{ action.Etat }}</label></td>
+          <td class="text-center p-3 w-25">
+            <form action="#">
+              <button
+                type="button"
+                class="btn btn-detail mx-2 rounded-pill text-white"
+                data-toggle="tooltip"
+                title="Détail"
+                (click)="open('DetailActionModal')"
+              >
+                <i class="fas fa-info"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger mx-2 rounded-pill"
+                data-toggle="tooltip"
+                title="Annuler"
+                value="test"
+                (click)="open('ConfirmationModal');GetDeletedAction(action.Intitule);"
+              >
+                <i class="fas fa-times" color="white"></i>
+              </button>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="text-center p-2 w-25"> <label class="my-2">Valider vos besoins :</label> </td>
+          <td class="text-center p-2 w-25">
             <button
-              type="button"
-              class="btn btn-detail mx-2 rounded-pill text-white"
+              class="btn btn-valider rounded-pill"
+              id="button-validate"
               data-toggle="tooltip"
-              title="Détail"
-              (click)="open()"
+              data-placement="top"
+              title="Valider"
+              (click)='changeClass()'
+              #ButtonValidate
             >
-              <i class="fas fa-info"></i>
+            <i class="fas fa-check"></i>
             </button>
-            <button
-              type="button"
-              class="btn btn-danger mx-2 rounded-pill"
-              data-toggle="tooltip"
-              title="Annuler"
-            >
-              <i class="fas fa-times" color="white"></i>
-            </button>
-          </form>
-        </td>
-      </tr>
-      <tr>
-        <td></td>
-        <td class="text-center p-2 w-25"> <label class="my-2">Valider vos besoins :</label> </td>
-        <td class="text-center p-2 w-25">
-          <button
-            class="btn btn-valider rounded-pill"
-            id="button-validate"
-            data-toggle="tooltip"
-            data-placement="top"
-            title="Valider"
-            (click)='changeClass()'
-            #ButtonValidate
-          >
-          <i class="fas fa-check"></i>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 <!-- Detail Modal -->
-<app-global-model [id]="ModalId">
-  <h1>From Detail Action</h1>
+<app-global-model [id]="detailModal">
+  <div class="div_global d-flex justify-content-center flex-wrap">
+    <div class="modal-header w-100">
+      <h5 class="modal-title title m-0 p-2">
+        Intitulé d'action
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="" class="mx-1">Type</label>
+          </div>
+          <div class="col-sm-6">
+            <span class="mx-1">T-shirt</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <label for="" class="mx-1">Size</label>
+          </div>
+          <div class="col-sm-6">
+            <span class="mx-1">M</span>
+          </div>
+        </div>
+        <div class="row border-0">
+          <div class="col-sm-6">
+            <label for="" class="mx-1">Etat</label>
+          </div>
+          <div class="col-sm-6">
+            <span class="mx-1">En cours</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="modal-footer w-100 text-center">
+      <button
+        type="button"
+        class="btn btn-secondary rounded-pill"
+        data-bs-dismiss="modal"
+      >
+        Close
+      </button>
+    </div>
+  </div>
 </app-global-model>
-<!-- /Detail Modal -->
+<!-- Detail Modal END -->
+
+<!-- Confirmation Modal -->
+<app-global-model [id]="confirmationModal">
+  <div class="div_global d-flex justify-content-center flex-wrap">
+    <div class="modal-header w-100">
+      <h5 class="modal-title m-0 p-2">
+        Confirmation
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      
+      <p>Etes vous sur d'annuler ce besoin</p>
+
+    </div>
+    <div class="modal-footer w-100 text-center">
+      <button
+        type="button"
+        class="btn btn-secondary rounded-pill"
+        data-bs-dismiss="modal"
+      >
+        Close
+      </button>
+      <button
+        type="button"
+        class="btn btn-submit rounded-pill"
+        data-bs-dismiss="modal"
+        (click)="deleteItem()"
+      >
+        Annuler
+      </button>
+    </div>
+  </div>
+</app-global-model>
+<!-- Confirmation Modal END -->
+
+

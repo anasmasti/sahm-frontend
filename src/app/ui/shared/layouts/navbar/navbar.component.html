@@ -199,8 +199,20 @@
 
 <!--//////////////////////// Detail Modal ///////////////////////////////-->
 <app-global-model [id]="ModalId">
-  <div class="modal-header">
+<div class="div_global d-flex justify-content-center flex-wrap">
+  <!-- <div class="modal-header bg-danger">
     <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div> -->
+  <div class="modal-header w-100">
+    <h5 class="modal-title m-0 p-2">
+      Taper le type de formation que vous voulez
+    </h5>
     <button
       type="button"
       class="btn-close"
@@ -210,7 +222,7 @@
   </div>
   <div class="modal-body">
     <form action="#" #f="ngForm" [formGroup]="InsertData">
-      <div class="row">
+      <div class="row my-3">
         <!-- firstName -->
         <div class="form-group col-sm-6">
           <label for="firstName">Prénom</label>
@@ -258,7 +270,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row my-3">
         <!-- age -->
         <div class="form-group col-sm-6">
           <label for="age">Age</label>
@@ -306,28 +318,30 @@
         </div>
       </div>
 
-      <!-- email -->
-      <div class="form-group">
-        <label for="email">Email address</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          class="form-control rounded-pill"
-          formControlName="email"
-          ngModel
-          required
-          email
-        />
-        <!-- Error Message !! -->
-        <span
-          class="help-block px-2"
-          *ngIf="
-            !InsertData.controls['email'].valid &&
-            InsertData.controls['email'].touched
-          "
-          >Email est invalide !!!!! Ex: abc@gmail.com</span
-        >
+      <div class="row my-3">
+        <!-- email -->
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control rounded-pill"
+            formControlName="email"
+            ngModel
+            required
+            email
+          />
+          <!-- Error Message !! -->
+          <span
+            class="help-block px-2"
+            *ngIf="
+              !InsertData.controls['email'].valid &&
+              InsertData.controls['email'].touched
+            "
+            >Email est invalide !!!!! Ex: abc@gmail.com</span
+          >
+        </div>
       </div>
 
       <!-- password -->
@@ -345,20 +359,22 @@
       </div> -->
     </form>
   </div>
-  <div class="modal-footer">
+  <div class="modal-footer w-100 text-center">
     <button
       type="button"
-      class="btn btn-secondary rounded-pill bg-danger btn-cancel"
+      class="btn btn-secondary rounded-pill"
       data-bs-dismiss="modal"
     >
       Close
     </button>
-    <input
+    <button
       type="submit"
-      value="Modifier"
-      class="btn main-btn rounded-pill"
+      class="btn btn-submit rounded-pill"
       [disabled]="!f.valid"
-    />
+    >
+      Modifier
+    </button>
   </div>
+</div>
 </app-global-model>
 <!--//////////////////////// End Mobile Menu end ///////////////////////////////-->

@@ -1,39 +1,44 @@
-
+<input type="text" id="txt">
+<button (click)="numbers()" >Click</button>
 <div class="action-header">
-  <h2 class="w-50" style="font-size: 30px; color: gray; padding: 20px;">
-   Quesque vous voulez :
+  <h2 class="" style="font-size: 30px; color: gray; padding: 20px">
+    De quels vous avez besoin ?
   </h2>
-  <div class="text-center d-flex justify-content-center w-25">
-    <button type="submit" id="action_Autre" class="btn-autre my-auto h-50 w-75  border-0" 
-      (click)="
-      open(this.ModalAutre , 'action_Autre' , true)
-      ">
-      Autre
+  <div class="action-autre text-center d-flex justify-content-center">
+    <button
+      type="submit"
+      id="action_Autre"
+      class="btn-autre my-auto h-50 w-75 border-0 rounded-pill text-center"
+      data-toggle="tooltip"
+      data-placement="top"
+      title="Autre besoin"
+      (click)="open(this.ModalAutre, 'action_Autre', true)"
+      value="Autre Besoin"
+    >
+      <i class="fas fa-plus mx-2"></i> Autre besoin
     </button>
   </div>
 </div>
-<div class="div_global">
+<div class="div_global d-flex justify-content-center flex-wrap bg-transparent">
   <!-- Vetement card --------------------------------------->
   <label class="card main-border-radius my-3 mx-4">
     <input
       type="checkbox"
       name="action_Vet"
-      class="card-input-element"
+      class="card-input-element d-none  action-input"
       id="action_Vet"
-      (change)="
-        MaximumSelection('action_Vet'); open(this.ModalVetement, 'action_Vet',false)
-      "
-      value="Vêtements"
+      value="Vêtement"
+      (click)="open(this.ModalVetement, 'action_Vet', false);"
     />
     <div class="panel panel-default card-input w-100 h-100">
       <img
         src="./../../../../../../assets/Action/fashion.svg"
         alt="registre-img"
-        class="card-img-top"
+        class="card-img-top mt-4 p-2"
       />
-      <div class="panel-body mx-auto">
+      <div class="panel-body mx-auto w-100">
         <h4 class="card-title text-center title">Vêtements</h4>
-        <p class="text-center">Choisir différent type de vêtement</p>
+        <p class="text-center">Choisir différent type de vêtement.</p>
       </div>
     </div>
   </label>
@@ -44,19 +49,20 @@
     <input
       type="checkbox"
       name="action_ATransport"
-      class="card-input-element"
+      class="card-input-element d-none action-input"
       id="action_ATransport"
       (change)="
-        MaximumSelection('action_ATransport');
-        open(this.ModalATran, 'action_ATransport',false)
+        Unchecked('action_ATransport')
       "
+      (click)="open(this.ModalATran, 'action_ATransport', false)"
       value="Abonnement Transport"
+      
     />
     <div class="panel panel-default card-input w-100 h-100">
       <img
-        src="./../../../../../../assets/Action/bus.svg"
+        src="./../../../../../../assets/Action/Abonnement Trasport/bus (1).svg"
         alt="registre-img"
-        class="card-img-top"
+        class="card-img-top mt-4 p-2"
       />
       <div class="panel-body mx-auto">
         <h4 class="card-title text-center title">Abonnement Transport</h4>
@@ -71,23 +77,26 @@
     <input
       type="checkbox"
       name="action_ATelephone"
-      class="card-input-element"
+      class="card-input-element d-none action-input"
       id="action_ATelephone"
       (change)="
-        MaximumSelection('action_ATelephone');
-        open(this.ModalATele, 'action_ATelephone',false)
+        Unchecked('action_ATelephone')
       "
+      (click)="open(this.ModalATele, 'action_ATelephone', false)"
       value="Abonnement Telephone"
+      
     />
     <div class="panel panel-default card-input w-100 h-100">
       <img
         src="./../../../../../../assets/Action/smartphone.svg"
         alt="registre-img"
-        class="card-img-top"
+        class="card-img-top mt-4 p-2"
       />
       <div class="panel-body mx-auto">
         <h4 class="card-title text-center title">Abonnement Telephone</h4>
-        <p class="text-center">Vous offre une abonnement dans différent opérateurs télécoms marocains</p>
+        <p class="text-center">
+          Vous offre une abonnement dans différent opérateurs télécoms marocains
+        </p>
       </div>
     </div>
   </label>
@@ -98,19 +107,20 @@
     <input
       type="checkbox"
       name="action_Formation"
-      class="card-input-element"
+      class="card-input-element d-none action-input"
       id="action_Formation"
       (change)="
-        MaximumSelection('action_Formation');
-        open(this.ModalFormation, 'action_Formation',false)
+        Unchecked('action_Formation')
       "
+      (click)="open(this.ModalFormation, 'action_Formation', false)"
       value="Formation"
+      
     />
     <div class="panel panel-default card-input w-100 h-100">
       <img
         src="./../../../../../../assets/Action/education.svg"
         alt="registre-img"
-        class="card-img-top"
+        class="card-img-top mt-4 p-2"
       />
       <div class="panel-body mx-auto">
         <h4 class="card-title text-center title">Formation</h4>
@@ -127,7 +137,7 @@
     <input
       type="checkbox"
       name="action_Autre"
-      class="card-input-element"
+      class="card-input-element  d-none"
       id="action_Autre"
       (change)="
         MaximumSelection('action_Autre'); open(this.ModalAutre , 'action_Autre')
@@ -155,11 +165,9 @@
 
 <!-- Vetement Modal -->
 <app-global-model [id]="ModalVetement">
-  <div class="div_global">
+  <div class="div_global d-flex justify-content-center flex-wrap">
     <div class="modal-header w-100">
-      <h5 class="modal-title title m-0 p-2">
-        Choisir votre besoin de vêtement
-      </h5>
+      <h5 class="modal-title m-0 p-2">Choisir un type de vêtement</h5>
       <button
         type="button"
         class="btn-close"
@@ -168,130 +176,141 @@
       ></button>
     </div>
 
-    <!-- <div class="modal-body w-100 mx-auto bg-danger"> -->
-    <label class="card-vetement main-border-radius my-3">
-      <input
-        type="radio"
-        name="product"
-        class="card-input-element"
-        id="product_tshirt"
-        value="Vêtements"
-        (change)="Size('product_tshirt', 'top')"
-      />
-      <div class="card-body">
-        <img
-          src="./../../../../../../assets/tshirt.svg"
-          alt="registre-img"
-          class="card-img"
-          width="450px"
-        />
-        <div class="vetement-type">
-          <h4 class="title text-center">T Shirt</h4>
-        </div>
-      </div>
-    </label>
+    <!-- <form #f="ngForm" [formGroup]="RadioForm"> -->
 
-    <label class="card-vetement main-border-radius my-3">
-      <input
-        type="radio"
-        name="product"
-        class="card-input-element"
-        id="product_sweater"
-        value="Sweater"
-        (change)="Size('product_sweater', 'top')"
-      />
-      <div class="card-body">
-        <img
-          src="./../../../../../../assets/sweater.svg"
-          alt="registre-img"
-          class="card-img"
-          width="450px"
+      <label class="card-item main-border-radius">
+        <input
+          type="radio"
+          name="product"
+          class="card-input-element d-none d-none"
+          id="product_tshirt"
+          value="T-shirt"
+          (change)="Size('product_tshirt', 'top')"
+          [(ngModel)]="vetement"
         />
-        <div class="vetement-type">
-          <h4 class="title text-center">Sweater</h4>
+        <div class="card-body w-100 h-100">
+          <img
+            src="./../../../../../../assets/tshirt.svg"
+            alt="registre-img"
+            class="card-img"
+            width="450px"
+          />
+          <div class="item-title h-25 text-center d-flex justify-content-center">
+            <h4 class="title text-center my-3 p-0">T Shirt</h4>
+          </div>
         </div>
-      </div>
-    </label>
-
-    <label class="card-vetement main-border-radius my-3">
-      <input
-        type="radio"
-        name="product"
-        class="card-input-element"
-        id="product_pullCapuche"
-        value="Sweater"
-        (change)="Size('product_pullCapuche', 'top')"
-      />
-      <div class="card-body">
-        <img
-          src="./../../../../../../assets/pull-avec-capuche.svg"
-          alt="registre-img"
-          class="card-img"
-          width="450px"
+      </label>
+  
+      <label class="card-item main-border-radius">
+        <input
+          type="radio"
+          name="product"
+          class="card-input-element d-none"
+          id="product_sweater"
+          value="Sweater"
+          (change)="Size('product_sweater', 'top')"
+          [(ngModel)]="vetement"
         />
-        <div class="vetement-type w-100">
-          <h4 class="title text-center">pull avec capuche</h4>
+        <div class="card-body w-100 h-100">
+          <img
+            src="./../../../../../../assets/sweater.svg"
+            alt="registre-img"
+            class="card-img"
+          />
+          <div class="item-title h-25 text-center d-flex justify-content-center">
+            <h4 class="title text-center my-3 p-0">Sweater</h4>
+          </div>
         </div>
-      </div>
-    </label>
-
-    <label class="card-vetement main-border-radius my-3">
-      <input
-        type="radio"
-        name="product"
-        class="card-input-element"
-        id="product_jeans"
-        value="Sweater"
-        (change)="Size('product_jeans', 'top')"
-      />
-      <div class="card-body">
-        <img
-          src="./../../../../../../assets/jeans.svg"
-          alt="registre-img"
-          class="card-img"
-          width="450px"
+      </label>
+  
+      <label class="card-item main-border-radius">
+        <input
+          type="radio"
+          name="product"
+          class="card-input-element d-none"
+          id="product_pullCapuche"
+          value="pullCapuche"
+          (change)="Size('product_pullCapuche', 'top')"
+          [(ngModel)]="vetement"
+          
         />
-        <div class="vetement-type">
-          <h4 class="title text-center">Pantalon</h4>
+        <div class="card-body w-100 h-100">
+          <img
+            src="./../../../../../../assets/pull-avec-capuche.svg"
+            alt="registre-img"
+            class="card-img"
+            width="450px"
+          />
+          <div class="item-title h-25 text-center d-flex justify-content-center">
+            <h4 class="title text-center my-3 p-0">pull avec capuche</h4>
+          </div>
         </div>
-      </div>
-    </label>
-
-    <label class="card-vetement main-border-radius my-3">
-      <input
-        type="radio"
-        name="product"
-        class="card-input-element"
-        id="product_sneakers"
-        value="sneakers"
-        (change)="Size('product_sneakers', 'bottom')"
-      />
-      <div class="card-body">
-        <img
-          src="./../../../../../../assets/sneakers.svg"
-          alt="registre-img"
-          class="card-img"
-          width="450px"
+      </label>
+  
+      <label class="card-item main-border-radius">
+        <input
+          type="radio"
+          name="product"
+          class="card-input-element d-none"
+          id="product_jeans"
+          value="jeans"
+          (change)="Size('product_jeans', 'top')"
+          [(ngModel)]="vetement"
+          
         />
-        <div class="vetement-type">
-          <h4 class="title text-center">Pantalon</h4>
+        <div class="card-body w-100 h-100">
+          <img
+            src="./../../../../../../assets/jeans.svg"
+            alt="registre-img"
+            class="card-img"
+            width="450px"
+          />
+          <div class="item-title h-25 text-center d-flex justify-content-center">
+            <h4 class="title text-center my-3 p-0">Pantalon</h4>
+          </div>
         </div>
-      </div>
-    </label>
+      </label>
+  
+      <label class="card-item main-border-radius">
+        <input
+          type="radio"
+          name="product"
+          class="card-input-element d-none"
+          id="product_sneakers"
+          value="sneakers"
+          (change)="Size('product_sneakers', 'bottom')"
+          [(ngModel)]="vetement"
+          
+        />
+        <div class="card-body w-100 h-100">
+          <img
+            src="./../../../../../../assets/sneakers.svg"
+            alt="registre-img"
+            class="card-img"
+            width="450px"
+          />
+          <div class="item-title h-25 text-center d-flex justify-content-center">
+            <h4 class="title text-center my-3 p-0">chaussure</h4>
+          </div>
+        </div>
+      </label>
+    
+   
     <!-- </div> -->
 
     <!-- Size -->
     <!-- Size Top -->
     <div class="size div_size_top" id="size_Top" style="display: none">
-      <h3>Taille :</h3>
-      <div class="size size_top">
+      <h3 class="text-secondary m-4">Taille :</h3>
+      <div class="size_top d-flex justify-content-center">
         <div class="form-check form-check-inline mx-4">
           <input
             class="form-check-input"
             type="radio"
             name="inlineRadioOptions"
             id="inlineRadio1"
-            value="option1"
+            value="XL"
+            [(ngModel)]="size"
           />
           <label class="form-check-label" for="inlineRadio1">XL</label>
         </div>
@@ -300,40 +319,44 @@
             class="form-check-input"
             type="radio"
             name="inlineRadioOptions"
-            id="inlineRadio1"
-            value="option1"
-          />
-          <label class="form-check-label" for="inlineRadio1">L</label>
+            id="inlineRadio2"
+            value="L"
+            [(ngModel)]="size"
+        />
+          <label class="form-check-label" for="inlineRadio2">L</label>
         </div>
         <div class="form-check form-check-inline mx-4">
           <input
             class="form-check-input"
             type="radio"
             name="inlineRadioOptions"
-            id="inlineRadio2"
-            value="option2"
+            id="inlineRadio3"
+            value="M"
+            [(ngModel)]="size"
           />
-          <label class="form-check-label" for="inlineRadio2">M</label>
+          <label class="form-check-label" for="inlineRadio3">M</label>
         </div>
         <div class="form-check form-check-inline mx-4">
           <input
             class="form-check-input"
             type="radio"
             name="inlineRadioOptions"
-            id="inlineRadio2"
-            value="option2"
+            id="inlineRadio4"
+            value="S"
+            [(ngModel)]="size"
           />
-          <label class="form-check-label" for="inlineRadio2">S</label>
+          <label class="form-check-label" for="inlineRadio4">S</label>
         </div>
         <div class="form-check form-check-inline mx-4">
           <input
             class="form-check-input"
             type="radio"
             name="inlineRadioOptions"
-            id="inlineRadio2"
-            value="option2"
+            id="inlineRadio5"
+            value="XS"
+            [(ngModel)]="size"
           />
-          <label class="form-check-label" for="inlineRadio2">XS</label>
+          <label class="form-check-label" for="inlineRadio5">XS</label>
         </div>
       </div>
     </div>
@@ -341,16 +364,18 @@
 
     <!-- Size buttom -->
     <div class="size div_size_buttom" id="size_Bottom" style="display: none">
-      <h3>Taille :</h3>
-      <div class="size">
+      <h3 class="text-secondary m-4">Taille :</h3>
+      <div class="d-flex justify-content-center">
         <input
           type="number"
           name="size_sneakers"
           id="size_sneakers"
+          class="text-center text-secondary"
           value="0"
           min="35"
           max="47"
-        />
+          [(ngModel)]="size"
+          />
         EU
       </div>
     </div>
@@ -360,12 +385,20 @@
         type="button"
         class="btn btn-secondary rounded-pill"
         data-bs-dismiss="modal"
+        (click)="Unchecked(null,'product')"
       >
         Close
       </button>
-      <button type="button" class="btn btn-submit rounded-pill">Submit</button>
+      <button
+        type="button"
+        class="btn btn-submit rounded-pill"
+        (click)="ValidateAction('action_Vet');Submit()"
+        data-bs-dismiss="modal"
+      >
+        Submit
+      </button>
     </div>
-    <div class="row"></div>
+  <!-- </form> -->
   </div>
 </app-global-model>
 <!-- /Vetement Modal -->
@@ -374,19 +407,9 @@
 
 <!-- Abonnement Telephone Modal -->
 <app-global-model [id]="ModalATele">
-  <h1>From Actions A Telephone</h1>
-</app-global-model>
-<!-- /Abonnement Telephone Modal -->
-
-<!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
-
-<!-- Abonnement Transport Modal -->
-<app-global-model [id]="ModalATran">
-  <div class="div_global">
+  <div class="div_global d-flex justify-content-center flex-wrap">
     <div class="modal-header w-100">
-      <h5 class="modal-title title m-0 p-2">
-        Choisir un type de Transport 
-      </h5>
+      <h5 class="modal-title m-0 p-2">Choisir votre type de réseau</h5>
       <button
         type="button"
         class="btn-close"
@@ -395,47 +418,152 @@
       ></button>
     </div>
 
+    <!-- <div class="row d-flex justify-content-around p-3 bg-danger"> -->
+
     <!-- Bus card -->
-    <label class="card-vetement main-border-radius my-3">
+    <label class="card-item main-border-radius">
       <input
         type="radio"
         name="Transport"
-        class="card-input-element"
+        class="card-input-element d-none"
         id="transport_bus"
         value="bus"
       />
-      <div class="card-body">
+      <div class="card-body w-100 h-100">
         <img
-          src="./../../../../../../assets/Action/bus.svg"
+          src="./../../../../../../assets/Action/Abonnement Telephone/maroc-telecom.svg"
+          alt="registre-img d-none"
+          class="card-img"
+        />
+        <div class="item-title">
+          <h4 class="title text-center">Maroc telecom</h4>
+        </div>
+      </div>
+    </label>
+    <!-- Bus card END -->
+
+    <!-- Tram card -->
+    <label class="card-item main-border-radius">
+      <input
+        type="radio"
+        name="Transport"
+        class="card-input-element d-none"
+        id="transport_tram"
+        value="tram"
+      />
+      <div class="card-body w-100 h-100">
+        <img
+          src="./../../../../../../assets/Action/Abonnement Telephone/orange-2.svg"
+          alt="registre-img"
+          class="card-img"
+        />
+        <div class="item-title">
+          <h4 class="title text-center">Orange</h4>
+        </div>
+      </div>
+    </label>
+    <!-- Tram card END -->
+
+    <!-- Tram card -->
+    <label class="card-item main-border-radius">
+      <input
+        type="radio"
+        name="Transport"
+        class="card-input-element d-none"
+        id="transport_tram"
+        value="tram"
+      />
+      <div class="card-body w-100 h-100">
+        <img
+          src="./../../../../../../assets/Action/Abonnement Telephone/inwi.svg"
           alt="registre-img"
           class="card-img"
           width="450px"
         />
-        <div class="vetement-type">
+        <div class="item-title">
+          <h4 class="title text-center">Inwi</h4>
+        </div>
+      </div>
+    </label>
+    <!-- Tram card END -->
+
+    <div class="modal-footer w-100 text-center">
+      <button
+        type="button"
+        class="btn btn-secondary rounded-pill"
+        data-bs-dismiss="modal"
+      >
+        Close
+      </button>
+      <button
+        type="button"
+        class="btn btn-submit rounded-pill"
+        (click)="ValidateAction('action_ATelephone');Submit()"
+        data-bs-dismiss="modal"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</app-global-model>
+<!-- /Abonnement Telephone Modal -->
+
+<!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+
+<!-- Abonnement Transport Modal -->
+<app-global-model [id]="ModalATran">
+  <div class="div_global d-flex justify-content-center flex-wrap">
+    <div class="modal-header w-100">
+      <h5 class="modal-title m-0 p-2">Choisir un type de Transport</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <!-- <div class="row d-flex justify-content-around p-3 bg-danger"> -->
+
+    <!-- Bus card -->
+    <label class="card-item main-border-radius">
+      <input
+        type="radio"
+        name="Transport"
+        class="card-input-element d-none"
+        id="transport_bus"
+        value="bus"
+      />
+      <div class="card-body w-100 h-100">
+        <img
+          src="./../../../../../../assets/Action/Abonnement Trasport/bus.svg"
+          alt="registre-img d-none"
+          class="card-img"
+        />
+        <div class="item-title">
           <h4 class="title text-center">Bus</h4>
         </div>
       </div>
     </label>
     <!-- Bus card END -->
 
-
     <!-- Tram card -->
-    <label class="card-vetement main-border-radius my-3">
+    <label class="card-item main-border-radius">
       <input
         type="radio"
         name="Transport"
-        class="card-input-element"
+        class="card-input-element d-none"
         id="transport_tram"
         value="tram"
       />
-      <div class="card-body">
+      <div class="card-body w-100 h-100">
         <img
-          src="./../../../../../../assets/Action/tram.svg"
+          src="./../../../../../../assets/Action/Abonnement Trasport/tram.svg"
           alt="registre-img"
           class="card-img"
           width="450px"
         />
-        <div class="vetement-type">
+        <div class="item-title">
           <h4 class="title text-center">Tram</h4>
         </div>
       </div>
@@ -448,11 +576,19 @@
         class="btn btn-secondary rounded-pill"
         data-bs-dismiss="modal"
       >
-       Close
+        Close
       </button>
-      <button type="button" class="btn btn-submit rounded-pill">Submit</button>
-    </div> 
+      <button
+        type="button"
+        class="btn btn-submit rounded-pill"
+        (click)="ValidateAction('action_ATransport');Submit()"
+        data-bs-dismiss="modal"
+      >
+        Submit
+      </button>
+    </div>
   </div>
+  <!-- </div> -->
 </app-global-model>
 <!-- /Abonnement Transport Modal -->
 
@@ -460,7 +596,64 @@
 
 <!-- Formation Modal -->
 <app-global-model [id]="ModalFormation">
-  <h1>From Actions A Formation</h1>
+  <div class="div_global d-flex justify-content-center flex-wrap">
+    <div class="modal-header w-100">
+      <h5 class="modal-title m-0 p-2">
+        Taper le type de formation que vous voulez
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <form action="" class="w-100" #f="ngForm" [formGroup]="ActionValidator">
+      <div class="modal-body">
+        <div class="form-group">
+          <textarea
+            class="form-control rounded-pill"
+            name="text_besoin"
+            id="text_besoin"
+            placeholder="..."
+            formControlName="TxtBesoin"
+            ngModel
+            required
+            #TxtBesoin
+          ></textarea>
+        </div>
+        <!-- Error Message !! -->
+        <span
+          class="help-block px-2"
+          *ngIf="
+            !ActionValidator.controls['TxtBesoin'].valid &&
+            ActionValidator.controls['TxtBesoin'].touched
+          "
+          >Prénom est invalid !!!!!</span
+        >
+      </div>
+    </form>
+
+    <div class="modal-footer w-100 text-center">
+      <button
+        type="button"
+        class="btn btn-secondary rounded-pill"
+        data-bs-dismiss="modal"
+      >
+        Close
+      </button>
+      <button
+        type="button"
+        class="btn btn-submit rounded-pill"
+        [disabled]="!f.valid"
+        (click)="ValidateAction('action_Formation');Submit()"
+        data-bs-dismiss="modal"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
 </app-global-model>
 <!-- /Formation Modal -->
 
@@ -468,7 +661,61 @@
 
 <!-- Autre Modal -->
 <app-global-model [id]="ModalAutre">
-  <h1>From Actions Autre</h1>
+  <div class="div_global d-flex justify-content-center flex-wrap">
+    <div class="modal-header w-100">
+      <h5 class="modal-title m-0 p-2">Tapez votre besoin</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <form action="" class="w-100" #f="ngForm" [formGroup]="ActionValidator">
+      <div class="modal-body">
+        <div class="form-group">
+          <textarea
+            class="form-control rounded-pill"
+            name="text_besoin"
+            id="text_besoin"
+            placeholder="..."
+            formControlName="TxtBesoin"
+            ngModel
+            required
+            #TxtBesoin
+          ></textarea>
+        </div>
+        <!-- Error Message !! -->
+        <span
+          class="help-block px-2"
+          *ngIf="
+            !ActionValidator.controls['TxtBesoin'].valid &&
+            ActionValidator.controls['TxtBesoin'].touched
+          "
+          >Prénom est invalid !!!!!</span
+        >
+      </div>
+    </form>
+
+    <div class="modal-footer w-100 text-center">
+      <button
+        type="button"
+        class="btn btn-secondary rounded-pill"
+        data-bs-dismiss="modal"
+      >
+        Close
+      </button>
+      <button
+        type="button"
+        class="btn btn-submit rounded-pill"
+        (click)="ValidateAction('action_Autre');Submit()"
+        data-bs-dismiss="modal"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
 </app-global-model>
 <!-- /Autre Modal -->
 

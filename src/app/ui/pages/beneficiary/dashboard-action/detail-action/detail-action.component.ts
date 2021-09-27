@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GlobalModalService  } from 'src/app/services/global-modal.service';
+import {Action} from './../model/Action'
 // import * as bootstrap from "bootstrap";
 
 @Component({
@@ -9,26 +10,22 @@ import { GlobalModalService  } from 'src/app/services/global-modal.service';
 })
 export class DetailActionComponent implements OnInit {
   
-   HEROES = [
-    {id: 1, name:'Superman'},
-    {id: 2, name:'Batman'},
-    {id: 5, name:'BatGirl'},
-    
-  ];
+  actions!: Action[];
   $ : any ;
-  ModalId : any = "DetailActionModal";
+  detailModal : any = "DetailActionModal";
+  confirmationModal : any = "ConfirmationModal";
   @ViewChild('ButtonValidate') ButtonValidate!: ElementRef  ;
+  DeletedAction!: any ;
   constructor( private ModalService : GlobalModalService ) { }
 
   ngOnInit(): void {
-    // $(document).ready(function(){
-    //   $('[data-toggle="tooltip"]').tooltip();   
-    // });
 
+    this.actions =  this.ModalService.getData();
+    
   }
 
-  open() {
-      this.ModalService.openModal(this.ModalId);
+  open(modalid : any) {
+      this.ModalService.openModal(modalid);
   }
 
   changeClass(){
@@ -42,6 +39,15 @@ export class DetailActionComponent implements OnInit {
 
     // console.log(this.myDiv.nativeElement.id);
     
+  }
+
+  GetDeletedAction(Action : any){
+    this.DeletedAction = Action ;
+  }
+
+  deleteItem(){
+    this.ModalService.DeleteData(this.DeletedAction);
+    this.ModalService.ActionDeleted = this.DeletedAction;
   }
 
 }
