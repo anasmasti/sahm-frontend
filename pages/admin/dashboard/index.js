@@ -4,7 +4,7 @@ import SideMenu from '../../../components/admin/SideMenu';
 import dashboardStyle from '../../../styles/pages/admin/Dashboard.module.scss'
 import ContentDashboardStyle from '../../../styles/pages/admin/components/Content.module.scss'
 import { useDispatch } from 'react-redux';
-import { SetNavbarTheme } from '../../../store/Actions/SharedActions';
+import { SetNavbarTheme, SetIsAdmin } from '../../../store/Actions/SharedActions';
 
 const AdminDashboard = () => {
 
@@ -12,6 +12,7 @@ const AdminDashboard = () => {
 
     useEffect(() => {
         dispatch(SetNavbarTheme(true))
+        dispatch(SetIsAdmin(true))
     }, [])
 
     return (

@@ -1,8 +1,9 @@
 import * as types from "../Types/SharedTypes";
 
-
 const initialSharedState = {
-  darkNavbar: false
+  darkNavbar: false,
+  darkLogo: false,
+  isAdmin: false
 };
 
 const SharedReducer = (
@@ -13,6 +14,14 @@ const SharedReducer = (
     case types.SETNAVTHEME:
       return {
         darkNavbar: payload.darkNavbar
+      }
+    case types.SETLOGOTHEME:
+      return {
+        darkNavbar: payload.isAdmin
+      }
+    case types.SETISADMIN:
+      return {
+        darkNavbar: payload.darkLogo
       }
 
     default:

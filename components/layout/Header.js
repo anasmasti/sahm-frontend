@@ -10,12 +10,14 @@ import { useSelector } from 'react-redux'
 const Header = () => {
 
   let darkNavbar = useSelector((state) => state.shared.darkNavbar)
+  let isAdmin = useSelector((state) => state.shared.isAdmin)
   const [active, setActive] = useState(false);
   const [show, setShow] = useState(false);
   const [navTheme, setnavTheme] = useState('');
 
   useEffect(() => {
     mount()
+    console.log(isAdmin);
   }, []);
 
   useEffect(() => {
@@ -41,11 +43,14 @@ const Header = () => {
       <div className={active ? style.navOnScroll : style.section}>
         <nav className={[style.nav, "text-center"].join(' ')}>
           <div>
-            <Link href="/">
-              <h5 className={" my-auto d-flex text-left " + (active ? style.logoOnScroll : style.logo)}>
-                <strong>SAHEM</strong>association
-              </h5>
-            </Link>
+            {
+              !isAdmin &&
+              <Link href="/">
+                <h5 className={" my-auto d-flex text-left " + (active ? style.logoOnScroll : style.logo)}>
+                  <strong>SAHEM</strong>association
+                </h5>
+              </Link>
+            }
           </div>
 
           <div>
@@ -77,7 +82,7 @@ const Header = () => {
                     Se connecter
                   </a>
                 </Link>
-               
+
               </li>
             </ul>
           </div>
